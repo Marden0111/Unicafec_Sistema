@@ -1,5 +1,39 @@
 ﻿Public Class xTablas
 
+#Region "Tablas"
+    Private _Orden As String
+    Private _IdTabla As String
+    Private _NomTabla As String
+
+
+    Public Property Orden As String
+        Get
+            Return _Orden
+        End Get
+        Set(value As String)
+            _Orden = value
+        End Set
+    End Property
+
+    Public Property IdTabla As String
+        Get
+            Return _IdTabla
+        End Get
+        Set(value As String)
+            _IdTabla = value
+        End Set
+    End Property
+
+    Public Property NomTabla As String
+        Get
+            Return _NomTabla
+        End Get
+        Set(value As String)
+            _NomTabla = value
+        End Set
+    End Property
+#End Region
+
 #Region "Pais"
     Private _IdPais As String
     Private _NomPais As String
@@ -61,6 +95,7 @@
             _FechaModif = value
         End Set
     End Property
+
 #End Region
 
     'Departamento
