@@ -1,4 +1,104 @@
-﻿Public Class frmxTablas
+﻿Imports System.Data.Common
+
+Public Class frmxTablas
+    Dim IndexCellResaltada As Integer = -1 'Variable para seleccionar al pasar con el mouse
+
+    Private Sub lblTablas_Click(sender As Object, e As EventArgs) Handles lblTablas.Click
+        Me.btnTablas_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub btnTablas_Click(sender As Object, e As EventArgs) Handles btnTablas.Click
+        If dgvTablas.Visible = False Then
+            dgvTablas.Visible = True
+            dgvTablas.Location = New Point(GroupBox1.Left + 5, GroupBox1.Top + 28)
+            dgvTablas.Size = New Size(Me.lblTablas.Width - 3, 400)
+            Me.Listar_zxTablas()
+
+        ElseIf dgvTablas.Visible = True Then
+            dgvTablas.Visible = False
+        End If
+    End Sub
+
+    Private Sub LimpiarDgvTabla()
+        dgvTablas.Visible = False
+        dgvTablas.Location = New Point(170, 8)
+        dgvTablas.Size = New Size(25, 25)
+        dgvTablas.DataSource = Nothing
+        dgvTablas.Rows.Clear()
+    End Sub
+
+    Private Sub dgvTablas_CellMouseEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTablas.CellMouseEnter
+        If e.RowIndex = IndexCellResaltada Then Return
+
+        If IndexCellResaltada >= 0 Then
+            dgvTablas.Rows(IndexCellResaltada).DefaultCellStyle = Nothing
+        End If
+
+        IndexCellResaltada = e.RowIndex
+
+        If IndexCellResaltada >= 0 Then
+            dgvTablas.Rows(IndexCellResaltada).DefaultCellStyle.BackColor = Color.FromArgb(46, 134, 193)
+        End If
+    End Sub
+
+    Private Sub dgvTablas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTablas.CellClick
+        On Error Resume Next
+        lblIdTabla.Text = dgvTablas.SelectedCells.Item(1).Value
+        lblTitulo.Text = "Registro de " & dgvTablas.SelectedCells.Item(2).Value
+        dgvListado.DataSource = Nothing
+        dgvListado.Rows.Clear()
+
+        If lblIdTabla.Text = "xDocIden" Then
+            Me.Listar_xDocIden()
+        ElseIf lblIdTabla.Text = "xPais" Then
+            Me.Listar_xPais()
+        ElseIf lblIdTabla.Text = "xDep" Then
+            Me.Listar_xDepartamento()
+        ElseIf lblIdTabla.Text = "xProv" Then
+            Me.Listar_xProvincia()
+        ElseIf lblIdTabla.Text = "xDist" Then
+            Me.Listar_xDistrito()
+        ElseIf lblIdTabla.Text = "xTipVia" Then
+            Me.Listar_xTipoVia()
+        End If
+
+        Me.LimpiarDgvTabla()
+    End Sub
+
+    Private Sub dgvTablas_MouseLeave(sender As Object, e As EventArgs) Handles dgvTablas.MouseLeave
+        Me.LimpiarDgvTabla()
+    End Sub
+
+
+    Function Listar_zxTablas() As DataTable
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvTablas.DataSource = Neg.Listar_Tablas()
+            dgvTablas.ClearSelection()
+            Me.Dimensionar_zxTablas()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Private Sub Dimensionar_zxTablas()
+        dgvTablas.Columns(0).HeaderText = "Código"
+        dgvTablas.Columns(1).Visible = False
+        dgvTablas.Columns(2).HeaderText = "Nombre de tabla"
+
+        dgvTablas.Columns(0).Width = 55
+        dgvTablas.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
+
+        If dgvTablas.Rows.Count <= 15 Then
+            dgvTablas.Height = 27 + (dgvTablas.Rows.Count * 19)
+        Else
+            dgvTablas.Height = 27 + (15 * 19)
+        End If
+    End Sub
+
+    Private Sub Dimensionar_xDocIden()
+
+    End Sub
 
     Private Sub Dimensionar_xPais()
         dgvListado.Columns(0).HeaderText = " CODIGO"
@@ -19,6 +119,17 @@
         dgvListado.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
     End Sub
 
+    'Listado de tablas
+    Private Sub Listar_xDocIden()
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvListado.DataSource = Neg.Listar_DocIden()
+            'Me.Dimensionar_xDocIden()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub Listar_xPais()
         Try
             Dim Neg As New Negocio.NxTablas
@@ -29,13 +140,53 @@
         End Try
     End Sub
 
-    Private Sub frmxPais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Me.Listar_xPais()
-
+    Private Sub Listar_xDepartamento()
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvListado.DataSource = Neg.Listar_Departamento()
+            'Me.Dimensionar_xDepartamento()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub frmxPais_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+    Private Sub Listar_xProvincia()
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvListado.DataSource = Neg.Listar_Provincia()
+            'Me.Dimensionar_xProvincia()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Listar_xDistrito()
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvListado.DataSource = Neg.Listar_Distrito()
+            'Me.Dimensionar_xDistrito()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Listar_xTipoVia()
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvListado.DataSource = Neg.Listar_TipoVia()
+            'Me.Dimensionar_xTipoVia()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+
+    Private Sub frmxTablas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Listar_xPais()
+    End Sub
+
+    Private Sub frmxTablas_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         On Error Resume Next
 
         GroupBox1.Location = New Point(Me.Width - 670, 1)
@@ -83,7 +234,7 @@
         End Select
     End Sub
 
-    Private Sub dgvRegistros_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub dgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
         Try
             Dim Neg As New Negocio.NxTablas
             Dim Valor As String
@@ -127,21 +278,4 @@
     End Sub
 
 
-    Private Sub btnTablas_Click(sender As Object, e As EventArgs) Handles btnTablas.Click
-        If dgvTablas.Visible = False Then
-            dgvTablas.Visible = True
-            dgvTablas.Location = New Point(GroupBox1.Left + 5, GroupBox1.Top + 28)
-            dgvTablas.Size = New Size(Me.lblTablas.Width, 400)
-            'Me.Listar_xDocIden()
-            'Me.Dimensionar_DocIden()
-            'dgvDocIden.Visible = True
-            'dgvDocIden.Select()
-        ElseIf dgvTablas.Visible = True Then
-            dgvTablas.Visible = False
-        End If
-    End Sub
-
-    Private Sub lblTablas_Click(sender As Object, e As EventArgs) Handles lblTablas.Click
-        Me.btnTablas_Click(Nothing, Nothing)
-    End Sub
 End Class
