@@ -46,8 +46,8 @@ Partial Class frmxTablas
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtNomTabla = New System.Windows.Forms.TextBox()
-        Me.txtIdTabla = New System.Windows.Forms.TextBox()
+        Me.txtNomCampo = New System.Windows.Forms.TextBox()
+        Me.txtIdCampo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvListado = New System.Windows.Forms.DataGridView()
@@ -99,6 +99,7 @@ Partial Class frmxTablas
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.dgvCargarDatos)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.TabControl1)
@@ -111,7 +112,6 @@ Partial Class frmxTablas
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel3.Controls.Add(Me.dgvCargarDatos)
         Me.Panel3.Controls.Add(Me.lblGuardar)
         Me.Panel3.Controls.Add(Me.btnCancelar)
         Me.Panel3.Controls.Add(Me.btnGuardar)
@@ -156,7 +156,7 @@ Partial Class frmxTablas
         Me.dgvCargarDatos.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCargarDatos.Enabled = False
         Me.dgvCargarDatos.EnableHeadersVisualStyles = False
-        Me.dgvCargarDatos.Location = New System.Drawing.Point(222, 262)
+        Me.dgvCargarDatos.Location = New System.Drawing.Point(311, 118)
         Me.dgvCargarDatos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvCargarDatos.Name = "dgvCargarDatos"
         Me.dgvCargarDatos.ReadOnly = True
@@ -181,7 +181,6 @@ Partial Class frmxTablas
         Me.dgvCargarDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCargarDatos.Size = New System.Drawing.Size(662, 46)
         Me.dgvCargarDatos.TabIndex = 18
-        Me.dgvCargarDatos.Visible = False
         '
         'lblGuardar
         '
@@ -217,8 +216,8 @@ Partial Class frmxTablas
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Controls.Add(Me.txtNomTabla)
-        Me.GroupBox4.Controls.Add(Me.txtIdTabla)
+        Me.GroupBox4.Controls.Add(Me.txtNomCampo)
+        Me.GroupBox4.Controls.Add(Me.txtIdCampo)
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(26, 40)
@@ -241,26 +240,26 @@ Partial Class frmxTablas
         Me.Label4.TabIndex = 68
         Me.Label4.Text = "Nombre:"
         '
-        'txtNomTabla
+        'txtNomCampo
         '
-        Me.txtNomTabla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtNomTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNomTabla.Location = New System.Drawing.Point(75, 53)
-        Me.txtNomTabla.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNomTabla.MaxLength = 150
-        Me.txtNomTabla.Name = "txtNomTabla"
-        Me.txtNomTabla.Size = New System.Drawing.Size(564, 19)
-        Me.txtNomTabla.TabIndex = 4
+        Me.txtNomCampo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNomCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNomCampo.Location = New System.Drawing.Point(75, 53)
+        Me.txtNomCampo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNomCampo.MaxLength = 150
+        Me.txtNomCampo.Name = "txtNomCampo"
+        Me.txtNomCampo.Size = New System.Drawing.Size(564, 19)
+        Me.txtNomCampo.TabIndex = 4
         '
-        'txtIdTabla
+        'txtIdCampo
         '
-        Me.txtIdTabla.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdTabla.Location = New System.Drawing.Point(75, 23)
-        Me.txtIdTabla.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtIdTabla.MaxLength = 3
-        Me.txtIdTabla.Name = "txtIdTabla"
-        Me.txtIdTabla.Size = New System.Drawing.Size(55, 19)
-        Me.txtIdTabla.TabIndex = 3
+        Me.txtIdCampo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdCampo.Location = New System.Drawing.Point(75, 23)
+        Me.txtIdCampo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdCampo.MaxLength = 3
+        Me.txtIdCampo.Name = "txtIdCampo"
+        Me.txtIdCampo.Size = New System.Drawing.Size(55, 19)
+        Me.txtIdCampo.TabIndex = 3
         '
         'Label2
         '
@@ -291,7 +290,7 @@ Partial Class frmxTablas
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
+        Me.dgvListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -335,6 +334,7 @@ Partial Class frmxTablas
         Me.dgvListado.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvListado.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvListado.RowTemplate.Height = 24
+        Me.dgvListado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListado.Size = New System.Drawing.Size(361, 66)
         Me.dgvListado.TabIndex = 21
@@ -522,6 +522,7 @@ Partial Class frmxTablas
         Me.lblIdTabla.Name = "lblIdTabla"
         Me.lblIdTabla.Size = New System.Drawing.Size(43, 13)
         Me.lblIdTabla.TabIndex = 107
+        Me.lblIdTabla.Visible = False
         '
         'frmxTablas
         '
@@ -562,8 +563,8 @@ Partial Class frmxTablas
     Friend WithEvents btnGuardar As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtNomTabla As TextBox
-    Friend WithEvents txtIdTabla As TextBox
+    Friend WithEvents txtNomCampo As TextBox
+    Friend WithEvents txtIdCampo As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvListado As DataGridView

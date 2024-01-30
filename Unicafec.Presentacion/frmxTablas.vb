@@ -1,8 +1,9 @@
 ﻿Imports System.Data.Common
 
 Public Class frmxTablas
-    Dim IndexCellResaltada As Integer = -1 'Variable para seleccionar al pasar con el mouse
+    Dim IndexCellResaltada As Integer = 0 '-1Variable para seleccionar al pasar con el mouse
 
+#Region "Eventos del dgvTabla"
     Private Sub lblTablas_Click(sender As Object, e As EventArgs) Handles lblTablas.Click
         Me.btnTablas_Click(Nothing, Nothing)
     End Sub
@@ -28,6 +29,8 @@ Public Class frmxTablas
     End Sub
 
     Private Sub dgvTablas_CellMouseEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTablas.CellMouseEnter
+        On Error Resume Next
+
         If e.RowIndex = IndexCellResaltada Then Return
 
         If IndexCellResaltada >= 0 Then
@@ -45,6 +48,8 @@ Public Class frmxTablas
         On Error Resume Next
         lblIdTabla.Text = dgvTablas.SelectedCells.Item(1).Value
         lblTitulo.Text = "Registro de " & dgvTablas.SelectedCells.Item(2).Value
+        dgvTablas.Columns(1).Visible = True
+        lblTablas.Text = dgvTablas.SelectedCells.Item(2).Value
         dgvListado.DataSource = Nothing
         dgvListado.Rows.Clear()
 
@@ -68,18 +73,9 @@ Public Class frmxTablas
     Private Sub dgvTablas_MouseLeave(sender As Object, e As EventArgs) Handles dgvTablas.MouseLeave
         Me.LimpiarDgvTabla()
     End Sub
+#End Region
 
-
-    Function Listar_zxTablas() As DataTable
-        Try
-            Dim Neg As New Negocio.NxTablas
-            dgvTablas.DataSource = Neg.Listar_Tablas()
-            dgvTablas.ClearSelection()
-            Me.Dimensionar_zxTablas()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Function
+#Region "Dimensionar tablas"
 
     Private Sub Dimensionar_zxTablas()
         dgvTablas.Columns(0).HeaderText = "Código"
@@ -97,6 +93,25 @@ Public Class frmxTablas
     End Sub
 
     Private Sub Dimensionar_xDocIden()
+        dgvListado.Columns(0).HeaderText = "Código"
+        dgvListado.Columns(1).HeaderText = "Tipo"
+        dgvListado.Columns(2).HeaderText = "Abreviatura"
+        dgvListado.Columns(3).HeaderText = "Agregado"
+        dgvListado.Columns(4).HeaderText = "Fecha"
+        dgvListado.Columns(5).HeaderText = "Modificado"
+        dgvListado.Columns(6).HeaderText = "Fecha"
+
+        dgvListado.Columns(0).Width = 80
+        dgvListado.Columns(1).Width = 400
+        dgvListado.Columns(2).Width = 80
+        dgvListado.Columns(3).Width = 95
+        dgvListado.Columns(4).Width = 120
+        dgvListado.Columns(5).Width = 95
+
+        dgvListado.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
+        dgvListado.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
+        dgvListado.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
+        dgvListado.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
 
     End Sub
 
@@ -119,12 +134,44 @@ Public Class frmxTablas
         dgvListado.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
     End Sub
 
-    'Listado de tablas
+    Private Sub Dimensionar_xTablasDePais()
+        dgvListado.Columns(0).HeaderText = " CODIGO"
+        dgvListado.Columns(1).HeaderText = " NOMBRE"
+        dgvListado.Columns(2).Visible = False
+        dgvListado.Columns(3).HeaderText = " INGRESO"
+        dgvListado.Columns(4).HeaderText = " FECHA"
+        dgvListado.Columns(5).HeaderText = " MODIFICACIÓN"
+        dgvListado.Columns(6).HeaderText = " FECHA"
+
+        dgvListado.Columns(0).Width = 70
+        dgvListado.Columns(1).Width = 420
+        dgvListado.Columns(3).Width = 95
+        dgvListado.Columns(4).Width = 120
+        dgvListado.Columns(5).Width = 95
+
+        dgvListado.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
+        dgvListado.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
+        dgvListado.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
+    End Sub
+#End Region
+
+#Region "Listado de tablas"
+    Private Function Listar_zxTablas() As DataTable
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvTablas.DataSource = Neg.Listar_Tablas()
+            dgvTablas.ClearSelection()
+            Me.Dimensionar_zxTablas()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
     Private Sub Listar_xDocIden()
         Try
             Dim Neg As New Negocio.NxTablas
             dgvListado.DataSource = Neg.Listar_DocIden()
-            'Me.Dimensionar_xDocIden()
+            Me.Dimensionar_xDocIden()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -144,7 +191,7 @@ Public Class frmxTablas
         Try
             Dim Neg As New Negocio.NxTablas
             dgvListado.DataSource = Neg.Listar_Departamento()
-            'Me.Dimensionar_xDepartamento()
+            Me.Dimensionar_xTablasDePais()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -154,7 +201,7 @@ Public Class frmxTablas
         Try
             Dim Neg As New Negocio.NxTablas
             dgvListado.DataSource = Neg.Listar_Provincia()
-            'Me.Dimensionar_xProvincia()
+            Me.Dimensionar_xTablasDePais()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -164,7 +211,7 @@ Public Class frmxTablas
         Try
             Dim Neg As New Negocio.NxTablas
             dgvListado.DataSource = Neg.Listar_Distrito()
-            'Me.Dimensionar_xDistrito()
+            Me.Dimensionar_xTablasDePais()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -174,16 +221,18 @@ Public Class frmxTablas
         Try
             Dim Neg As New Negocio.NxTablas
             dgvListado.DataSource = Neg.Listar_TipoVia()
-            'Me.Dimensionar_xTipoVia()
+            Me.Dimensionar_xTablasDePais()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
+#End Region
 
 
 
     Private Sub frmxTablas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Listar_xPais()
+        lblIdTabla.Text = "xPais"
     End Sub
 
     Private Sub frmxTablas_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -202,6 +251,41 @@ Public Class frmxTablas
         Panel3.Size = New Size(Panel2.Width, Panel2.Height)
     End Sub
 
+    Private Sub dgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
+        Try
+            Dim Neg As New Negocio.NxTablas
+            Dim Valor As String
+            Valor = dgvListado.SelectedCells.Item(0).Value
+
+            If lblIdTabla.Text = "xDocIden" Then
+                dgvCargarDatos.DataSource = Neg.CargarDatos_DocIden(Valor)
+            ElseIf lblIdTabla.Text = "xPais" Then
+                dgvCargarDatos.DataSource = Neg.CargarDatos_Pais(Valor)
+            ElseIf lblIdTabla.Text = "xDep" Then
+                dgvCargarDatos.DataSource = Neg.CargarDatos_Departamento(Valor)
+            ElseIf lblIdTabla.Text = "xProv" Then
+                dgvCargarDatos.DataSource = Neg.CargarDatos_Provincia(Valor)
+            ElseIf lblIdTabla.Text = "xDist" Then
+                dgvCargarDatos.DataSource = Neg.CargarDatos_Distrito(Valor)
+            ElseIf lblIdTabla.Text = "xTipVia" Then
+                dgvCargarDatos.DataSource = Neg.CargarDatos_TipoVia(Valor)
+            End If
+
+            If dgvCargarDatos.Rows.Count <> 0 Then
+                txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
+                txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
+                TabControl1.SelectedIndex = 3
+                Panel3.Visible = True
+                TabControl1.Enabled = False
+                lblGuardar.Text = "MODIFICAR"
+            Else
+                MsgBox("No se encontró registro", vbOKOnly + vbCritical, "Mensaje del Sistema")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub TabControl1_Click(sender As Object, e As EventArgs) Handles TabControl1.Click
 
         Select Case TabControl1.SelectedIndex
@@ -217,7 +301,8 @@ Public Class frmxTablas
                 Panel3.Visible = True
                 TabControl1.Enabled = False
                 lblGuardar.Text = "INGRESAR"
-                txtIdTabla.Select()
+                txtIdCampo.Select()
+
 
             Case 3 ' Modificar
                 Panel3.Visible = True
@@ -232,29 +317,6 @@ Public Class frmxTablas
                 lblGuardar.Text = "ELIMINAR"
 
         End Select
-    End Sub
-
-    Private Sub dgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
-        Try
-            Dim Neg As New Negocio.NxTablas
-            Dim Valor As String
-            Valor = Trim(dgvListado.SelectedCells.Item(0).Value)
-
-            dgvCargarDatos.DataSource = Neg.CargarDatos_Pais(Valor)
-
-            If dgvCargarDatos.Rows.Count <> 0 Then
-                txtIdTabla.Text = dgvCargarDatos.SelectedCells.Item(0).Value
-                txtNomTabla.Text = dgvCargarDatos.SelectedCells.Item(1).Value
-                TabControl1.SelectedIndex = 3
-                Panel3.Visible = True
-                TabControl1.Enabled = False
-                lblGuardar.Text = "MODIFICAR"
-            Else
-                MsgBox("No se encontró registro", vbOKOnly + vbCritical, "Mensaje del Sistema")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -276,6 +338,4 @@ Public Class frmxTablas
         Panel3.Visible = False
         TabControl1.SelectedIndex = 0
     End Sub
-
-
 End Class
