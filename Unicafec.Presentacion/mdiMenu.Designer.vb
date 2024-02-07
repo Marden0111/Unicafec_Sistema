@@ -100,8 +100,8 @@ Partial Class mdiMenu
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip.SuspendLayout()
@@ -165,7 +165,7 @@ Partial Class mdiMenu
         '
         Me.ConfigurarUsuariosToolStripMenuItem.Name = "ConfigurarUsuariosToolStripMenuItem"
         Me.ConfigurarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.ConfigurarUsuariosToolStripMenuItem.Text = "Configurar Usuarios"
+        Me.ConfigurarUsuariosToolStripMenuItem.Text = "Registro de Usuarios"
         '
         'CambioPasswordToolStripMenuItem
         '
@@ -609,16 +609,6 @@ Partial Class mdiMenu
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
         Me.ToolStripSeparator10.Size = New System.Drawing.Size(6, 30)
         '
-        'ToolStripButton4
-        '
-        Me.ToolStripButton4.AutoSize = False
-        Me.ToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
-        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(30, 30)
-        Me.ToolStripButton4.Text = "ToolStripButton4"
-        '
         'ToolStripButton5
         '
         Me.ToolStripButton5.AutoSize = False
@@ -628,6 +618,16 @@ Partial Class mdiMenu
         Me.ToolStripButton5.Name = "ToolStripButton5"
         Me.ToolStripButton5.Size = New System.Drawing.Size(30, 30)
         Me.ToolStripButton5.Text = "ToolStripButton5"
+        '
+        'ToolStripButton4
+        '
+        Me.ToolStripButton4.AutoSize = False
+        Me.ToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
+        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton4.Name = "ToolStripButton4"
+        Me.ToolStripButton4.Size = New System.Drawing.Size(30, 30)
+        Me.ToolStripButton4.Text = "ToolStripButton4"
         '
         'ToolStripSeparator9
         '
@@ -654,6 +654,7 @@ Partial Class mdiMenu
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "mdiMenu"

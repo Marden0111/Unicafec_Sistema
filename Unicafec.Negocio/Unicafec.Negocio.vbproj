@@ -82,6 +82,7 @@
     <Compile Include="NxDocIden.vb" />
     <Compile Include="NxEntidades.vb" />
     <Compile Include="NxTablas.vb" />
+    <Compile Include="NxUsua.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

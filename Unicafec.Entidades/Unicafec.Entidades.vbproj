@@ -82,6 +82,7 @@
     <Compile Include="xDocIden.vb" />
     <Compile Include="xEnti.vb" />
     <Compile Include="xTablas.vb" />
+    <Compile Include="xUsua.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

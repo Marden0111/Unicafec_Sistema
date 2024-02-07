@@ -1,6 +1,10 @@
 ﻿Imports System.Windows.Forms
 
 Public Class mdiMenu
+    Private _IdUsuario As String
+    Private _IdRol As String
+    Private _Rol As String
+    Private _Nombre As String
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripButton.Click
         ' Cree una nueva instancia del formulario secundario.
@@ -85,6 +89,42 @@ Public Class mdiMenu
 
     Private m_ChildFormNumber As Integer
 
+    Public Property IdUsuario As String
+        Get
+            Return _IdUsuario
+        End Get
+        Set(value As String)
+            _IdUsuario = value
+        End Set
+    End Property
+
+    Public Property IdRol As String
+        Get
+            Return _IdRol
+        End Get
+        Set(value As String)
+            _IdRol = value
+        End Set
+    End Property
+
+    Public Property Rol As String
+        Get
+            Return _Rol
+        End Get
+        Set(value As String)
+            _Rol = value
+        End Set
+    End Property
+
+    Public Property Nombre As String
+        Get
+            Return _Nombre
+        End Get
+        Set(value As String)
+            _Nombre = value
+        End Set
+    End Property
+
     Private Sub Entidades_ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Entidades_ToolStripMenuItem.Click
 
         Dim frm As New frmxEntidades
@@ -112,10 +152,19 @@ Public Class mdiMenu
 
     End Sub
 
+    Private Sub mdiMenu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
+    End Sub
+
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Dim frm As New frmxEntidades
         frm.MdiParent = Me
         frm.WindowState = FormWindowState.Maximized
         frm.Show()
     End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        End
+    End Sub
+
 End Class

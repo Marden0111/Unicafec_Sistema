@@ -1,4 +1,7 @@
 ﻿Imports System.Data.Common
+Imports System.IO
+Imports System.Net
+Imports Newtonsoft.Json.Linq
 
 Public Class frmxTablas
     Dim IndexCellResaltada As Integer = 0 '-1Variable para seleccionar al pasar con el mouse
@@ -46,6 +49,8 @@ Public Class frmxTablas
 
     Private Sub dgvTablas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTablas.CellClick
         On Error Resume Next
+        dgvCargarDatos.DataSource = Nothing
+        dgvCargarDatos.Rows.Clear()
         lblIdTabla.Text = dgvTablas.SelectedCells.Item(1).Value
         lblTitulo.Text = "Registro de " & dgvTablas.SelectedCells.Item(2).Value
         dgvTablas.Columns(1).Visible = True
@@ -67,7 +72,7 @@ Public Class frmxTablas
             Me.Listar_xTipoVia()
         End If
 
-        Me.LimpiarDgvTabla()
+        LimpiarDgvTabla()
     End Sub
 
     Private Sub dgvTablas_MouseLeave(sender As Object, e As EventArgs) Handles dgvTablas.MouseLeave
@@ -232,7 +237,11 @@ Public Class frmxTablas
 
     Private Sub frmxTablas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Listar_xPais()
+        lblTablas.Text = "Paises"
         lblIdTabla.Text = "xPais"
+        txtNomCampo.Text = "61219553"
+
+        'Me.btnSunat_Click(Nothing, Nothing)
     End Sub
 
     Private Sub frmxTablas_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -284,6 +293,10 @@ Public Class frmxTablas
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+        btnSunat.Visible = False
+        lblTablas.Enabled = False
+        Me.btnTablas.Enabled = False
     End Sub
 
     Private Sub TabControl1_Click(sender As Object, e As EventArgs) Handles TabControl1.Click
@@ -308,6 +321,7 @@ Public Class frmxTablas
                 Panel3.Visible = True
                 TabControl1.Enabled = False
                 lblGuardar.Text = "MODIFICAR"
+                btnSunat.Visible = False
 
             Case 4 'eleminar
                 Panel3.Visible = True
@@ -337,5 +351,43 @@ Public Class frmxTablas
         lblGuardar.Text = ""
         Panel3.Visible = False
         TabControl1.SelectedIndex = 0
+
+        btnSunat.Visible = True
+        lblTablas.Enabled = True
+        Me.btnTablas.Enabled = True
     End Sub
+
+    'Private Sub btnSunat_Click(sender As Object, e As EventArgs) Handles btnSunat.Click
+    '    Dim idcampo = txtNomCampo.Text
+
+    '    Dim RUC = ""
+    '    'MsgBox(RUC, vbOKOnly)
+
+
+    '    'Me.miBrowser.
+
+    '    Dim Token As String
+    '    Token = "apis-token-7193.0JO72i0TQAwEKtiKIUEMvxydxvgwgr1n"
+
+    '    Dim request As HttpWebRequest = DirectCast(WebRequest.Create("https://api.apis.net.pe/v2/reniec/dni?numero=46027897"), HttpWebRequest)
+    '    request.Method = "GET"
+    '    request.Headers.Add("Authorization", "Bearer " & Token)
+    '    request.ContentType = "application/json"
+
+    '    Dim response As HttpWebResponse = DirectCast(request.GetResponse(), HttpWebResponse)
+    '    Dim responseString As String = New StreamReader(response.GetResponseStream()).ReadToEnd()
+
+    '    'MsgBox(responseString, vbOK)
+
+    '    ' Parsear la respuesta JSON a un objeto JObject
+    '    Dim jsonObject As JObject = JObject.Parse(responseString)
+
+    '    ' Ahora puedes acceder a los valores en el objeto JSON usando los nombres de las claves
+    '    ' Por ejemplo, si la respuesta tiene una clave llamada "nombre", puedes obtener su valor así:
+    '    Dim nombre As String = jsonObject("nombres").ToString()
+
+    '    MsgBox("Nombre: " & nombre, vbOKOnly, "ARCHIVO JSON")
+
+
+    'End Sub
 End Class

@@ -68,6 +68,7 @@
     <Compile Include="DxDocIden.vb" />
     <Compile Include="DxEnti.vb" />
     <Compile Include="DxTablas.vb" />
+    <Compile Include="DxUsua.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

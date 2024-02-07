@@ -1,3 +1,3 @@
 ﻿Public Class Variables
-    Public IdUsuario As String
+    Public Shared IdUsuario As String
 End Class
