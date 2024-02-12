@@ -133,6 +133,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property flecha_hacia_abajo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("flecha-hacia-abajo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Listar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Listar", resourceCulture)

@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+﻿Imports System.Net.Security
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class frmLogin
     'Verificacion del usuario
@@ -41,6 +42,11 @@ Public Class frmLogin
     Private Sub TxtClave_KeyDown(sender As Object, e As KeyEventArgs) Handles txtClave.KeyDown
         If e.KeyCode = Keys.Enter Then
             Me.Cargar()
+
+        ElseIf e.KeyCode = Keys.Back Then
+            If txtClave.Text.Length = 0 Then
+                TxtEmail.Select()
+            End If
         End If
     End Sub
 
@@ -51,4 +57,7 @@ Public Class frmLogin
         End If
     End Sub
 
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtEmail.Select()
+    End Sub
 End Class

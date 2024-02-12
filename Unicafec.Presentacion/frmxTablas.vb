@@ -161,7 +161,7 @@ Public Class frmxTablas
 #End Region
 
 #Region "Listado de tablas"
-    Private Function Listar_zxTablas() As DataTable
+    Private Sub Listar_zxTablas()
         Try
             Dim Neg As New Negocio.NxTablas
             dgvTablas.DataSource = Neg.Listar_Tablas()
@@ -170,7 +170,7 @@ Public Class frmxTablas
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-    End Function
+    End Sub
 
     Private Sub Listar_xDocIden()
         Try
@@ -233,15 +233,16 @@ Public Class frmxTablas
     End Sub
 #End Region
 
-
-
     Private Sub frmxTablas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Listar_xPais()
         lblTablas.Text = "Paises"
         lblIdTabla.Text = "xPais"
-        txtNomCampo.Text = "61219553"
 
-        'Me.btnSunat_Click(Nothing, Nothing)
+        Dim Neg As New Negocio.NxTablas
+        Dim Valor As String
+        Valor = dgvListado.SelectedCells.Item(0).Value
+        dgvCargarDatos.DataSource = Neg.CargarDatos_Pais(Valor)
+
     End Sub
 
     Private Sub frmxTablas_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -261,6 +262,28 @@ Public Class frmxTablas
     End Sub
 
     Private Sub dgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
+        Try
+
+            If dgvCargarDatos.Rows.Count <> 0 Then
+                txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
+                txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
+                TabControl1.SelectedIndex = 3
+                Panel3.Visible = True
+                TabControl1.Enabled = False
+                lblGuardar.Text = "MODIFICAR"
+            Else
+                MsgBox("No se encontró registro", vbOKOnly + vbCritical, "Mensaje del Sistema")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        btnSunat.Visible = False
+        lblTablas.Enabled = False
+        Me.btnTablas.Enabled = False
+    End Sub
+
+    Private Sub dgvListado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListado.CellClick
         Try
             Dim Neg As New Negocio.NxTablas
             Dim Valor As String
@@ -283,10 +306,7 @@ Public Class frmxTablas
             If dgvCargarDatos.Rows.Count <> 0 Then
                 txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
                 txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
-                TabControl1.SelectedIndex = 3
-                Panel3.Visible = True
-                TabControl1.Enabled = False
-                lblGuardar.Text = "MODIFICAR"
+                lblGuardar.Text = "Detalle"
             Else
                 MsgBox("No se encontró registro", vbOKOnly + vbCritical, "Mensaje del Sistema")
             End If
@@ -295,8 +315,6 @@ Public Class frmxTablas
         End Try
 
         btnSunat.Visible = False
-        lblTablas.Enabled = False
-        Me.btnTablas.Enabled = False
     End Sub
 
     Private Sub TabControl1_Click(sender As Object, e As EventArgs) Handles TabControl1.Click
@@ -307,25 +325,40 @@ Public Class frmxTablas
 
             Case 1 'Detalle
                 Panel3.Visible = True
+                txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
+                txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
+                btnGuardar.Visible = False
                 TabControl1.Enabled = False
 
 
             Case 2 'Ingresar
                 Panel3.Visible = True
+                txtIdCampo.Text = Nothing
+                txtNomCampo.Text = Nothing
                 TabControl1.Enabled = False
+                btnGuardar.Visible = True
                 lblGuardar.Text = "INGRESAR"
                 txtIdCampo.Select()
 
 
             Case 3 ' Modificar
                 Panel3.Visible = True
+                txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
+                txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
                 TabControl1.Enabled = False
+                btnGuardar.Visible = True
+                btnGuardar.Text = "Modificar"
                 lblGuardar.Text = "MODIFICAR"
                 btnSunat.Visible = False
 
             Case 4 'eleminar
                 Panel3.Visible = True
+                txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
+                txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
                 TabControl1.Enabled = False
+                btnGuardar.Visible = True
+                btnGuardar.Text = "Eliminar"
+                btnCancelar.Visible = True
                 'dgvRegistros_CellDoubleClick(Nothing, Nothing)
                 TabControl1.SelectedIndex = 4
                 lblGuardar.Text = "ELIMINAR"
@@ -356,6 +389,7 @@ Public Class frmxTablas
         lblTablas.Enabled = True
         Me.btnTablas.Enabled = True
     End Sub
+
 
     'Private Sub btnSunat_Click(sender As Object, e As EventArgs) Handles btnSunat.Click
     '    Dim idcampo = txtNomCampo.Text

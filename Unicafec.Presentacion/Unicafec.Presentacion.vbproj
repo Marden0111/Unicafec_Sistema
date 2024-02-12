@@ -239,7 +239,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.ico" />
-    <Content Include="Home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-hacia-abajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\flecha-hacia-abajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-hacia-abajo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -24,21 +24,22 @@ Partial Class frmxEntidades
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmxEntidades))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblGuardar = New System.Windows.Forms.Label()
+        Me.dgvCargarDatos = New System.Windows.Forms.DataGridView()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.lblAbrev_TVia = New System.Windows.Forms.Label()
         Me.lblOtros = New System.Windows.Forms.Label()
         Me.lblEmpleado = New System.Windows.Forms.Label()
         Me.lblProveedor = New System.Windows.Forms.Label()
@@ -53,51 +54,51 @@ Partial Class frmxEntidades
         Me.lblTipo_Empr = New System.Windows.Forms.Label()
         Me.lblTipo_Enti = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.GvoTipoEmpr = New System.Windows.Forms.GroupBox()
+        Me.gvoTipoEmpr = New System.Windows.Forms.GroupBox()
         Me.rbtJuridica = New System.Windows.Forms.RadioButton()
         Me.rbtNatural = New System.Windows.Forms.RadioButton()
-        Me.GvoDatosEnti = New System.Windows.Forms.GroupBox()
+        Me.gvoDatosEnti = New System.Windows.Forms.GroupBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.dgvPais = New System.Windows.Forms.DataGridView()
-        Me.dgvDocIden = New System.Windows.Forms.DataGridView()
-        Me.btnDocIden = New System.Windows.Forms.Button()
-        Me.txtNum_DocIden = New System.Windows.Forms.TextBox()
+        Me.picbxPais = New System.Windows.Forms.PictureBox()
+        Me.dgvListarCombo = New System.Windows.Forms.DataGridView()
+        Me.picbxDist = New System.Windows.Forms.PictureBox()
+        Me.picbxProv = New System.Windows.Forms.PictureBox()
+        Me.picbxDep = New System.Windows.Forms.PictureBox()
+        Me.txtNom_Dist = New System.Windows.Forms.TextBox()
+        Me.txtNom_Prov = New System.Windows.Forms.TextBox()
+        Me.txtNom_Dep = New System.Windows.Forms.TextBox()
+        Me.picbxTVia = New System.Windows.Forms.PictureBox()
+        Me.txtNom_Pais = New System.Windows.Forms.TextBox()
+        Me.txtNom_TVia = New System.Windows.Forms.TextBox()
+        Me.picbxDocIden = New System.Windows.Forms.PictureBox()
         Me.txtNom_DocIden = New System.Windows.Forms.TextBox()
+        Me.txtNroVia = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.txtNum_DocIden = New System.Windows.Forms.TextBox()
         Me.txtTip_DocIden = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.dgvTVia = New System.Windows.Forms.DataGridView()
-        Me.btnTVia = New System.Windows.Forms.Button()
-        Me.txtNom_TVia = New System.Windows.Forms.TextBox()
-        Me.btnDist = New System.Windows.Forms.Button()
-        Me.btnProv = New System.Windows.Forms.Button()
-        Me.btnDep = New System.Windows.Forms.Button()
-        Me.btnPais = New System.Windows.Forms.Button()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.txtCelular = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.txtMail = New System.Windows.Forms.TextBox()
+        Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.txtUbigeo = New System.Windows.Forms.TextBox()
-        Me.txtNom_Dist = New System.Windows.Forms.TextBox()
         Me.txtIdDist = New System.Windows.Forms.TextBox()
-        Me.txtNom_Prov = New System.Windows.Forms.TextBox()
         Me.txtIdProv = New System.Windows.Forms.TextBox()
-        Me.txtNom_Dep = New System.Windows.Forms.TextBox()
         Me.txtReferencia = New System.Windows.Forms.TextBox()
         Me.txtIdDep = New System.Windows.Forms.TextBox()
-        Me.txtNom_Pais = New System.Windows.Forms.TextBox()
         Me.txtIdPais = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtZona = New System.Windows.Forms.TextBox()
         Me.txtInterior = New System.Windows.Forms.TextBox()
-        Me.txtNom_Via = New System.Windows.Forms.TextBox()
+        Me.txtNombre_Via = New System.Windows.Forms.TextBox()
         Me.txtIdTVia = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -114,7 +115,7 @@ Partial Class frmxEntidades
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtNom_Comercial = New System.Windows.Forms.TextBox()
         Me.txtNomEnti_RS = New System.Windows.Forms.TextBox()
-        Me.txtIdAux = New System.Windows.Forms.TextBox()
+        Me.txtIdEnti = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -133,13 +134,18 @@ Partial Class frmxEntidades
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.dgvCargarDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.govFuncionEnti.SuspendLayout()
-        Me.GvoTipoEmpr.SuspendLayout()
-        Me.GvoDatosEnti.SuspendLayout()
+        Me.gvoTipoEmpr.SuspendLayout()
+        Me.gvoDatosEnti.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.dgvPais, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvDocIden, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvTVia, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbxPais, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvListarCombo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbxDist, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbxProv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbxDep, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbxTVia, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picbxDocIden, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GvoTipoEnti.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvRegistrosListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +171,7 @@ Partial Class frmxEntidades
         Me.ImageList1.Images.SetKeyName(2, "ver.png")
         Me.ImageList1.Images.SetKeyName(3, "Listar.png")
         Me.ImageList1.Images.SetKeyName(4, "Eliminar.png")
+        Me.ImageList1.Images.SetKeyName(5, "flecha-hacia-abajo.png")
         '
         'Label1
         '
@@ -174,9 +181,9 @@ Partial Class frmxEntidades
         Me.Label1.ForeColor = System.Drawing.Color.Turquoise
         Me.Label1.Location = New System.Drawing.Point(11, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 18)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Entidades"
+        Me.Label1.Size = New System.Drawing.Size(410, 18)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Registro de Entidades (Empresas, Personas y Otros)"
         '
         'Panel1
         '
@@ -188,13 +195,14 @@ Partial Class frmxEntidades
         Me.Panel1.Location = New System.Drawing.Point(0, 41)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1370, 708)
-        Me.Panel1.TabIndex = 23
+        Me.Panel1.TabIndex = 2
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel3.Controls.Add(Me.lblGuardar)
+        Me.Panel3.Controls.Add(Me.dgvCargarDatos)
         Me.Panel3.Controls.Add(Me.btnCancelar)
-        Me.Panel3.Controls.Add(Me.lblAbrev_TVia)
         Me.Panel3.Controls.Add(Me.lblOtros)
         Me.Panel3.Controls.Add(Me.lblEmpleado)
         Me.Panel3.Controls.Add(Me.lblProveedor)
@@ -204,20 +212,62 @@ Partial Class frmxEntidades
         Me.Panel3.Controls.Add(Me.lblTipo_Empr)
         Me.Panel3.Controls.Add(Me.lblTipo_Enti)
         Me.Panel3.Controls.Add(Me.btnGuardar)
-        Me.Panel3.Controls.Add(Me.GvoTipoEmpr)
-        Me.Panel3.Controls.Add(Me.GvoDatosEnti)
+        Me.Panel3.Controls.Add(Me.gvoTipoEmpr)
+        Me.Panel3.Controls.Add(Me.gvoDatosEnti)
         Me.Panel3.Controls.Add(Me.GvoTipoEnti)
-        Me.Panel3.Location = New System.Drawing.Point(145, 136)
+        Me.Panel3.Location = New System.Drawing.Point(9, 40)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1316, 624)
-        Me.Panel3.TabIndex = 24
+        Me.Panel3.TabIndex = 6
         Me.Panel3.Visible = False
+        '
+        'lblGuardar
+        '
+        Me.lblGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lblGuardar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblGuardar.Location = New System.Drawing.Point(989, 214)
+        Me.lblGuardar.Name = "lblGuardar"
+        Me.lblGuardar.Size = New System.Drawing.Size(88, 19)
+        Me.lblGuardar.TabIndex = 77
+        '
+        'dgvCargarDatos
+        '
+        Me.dgvCargarDatos.AllowUserToAddRows = False
+        Me.dgvCargarDatos.AllowUserToDeleteRows = False
+        Me.dgvCargarDatos.AllowUserToOrderColumns = True
+        Me.dgvCargarDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCargarDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+        Me.dgvCargarDatos.BackgroundColor = System.Drawing.SystemColors.Window
+        Me.dgvCargarDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.dgvCargarDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCargarDatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.dgvCargarDatos.ColumnHeadersHeight = 25
+        Me.dgvCargarDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvCargarDatos.EnableHeadersVisualStyles = False
+        Me.dgvCargarDatos.Location = New System.Drawing.Point(989, 165)
+        Me.dgvCargarDatos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvCargarDatos.Name = "dgvCargarDatos"
+        Me.dgvCargarDatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvCargarDatos.RowHeadersVisible = False
+        Me.dgvCargarDatos.RowHeadersWidth = 51
+        Me.dgvCargarDatos.RowTemplate.Height = 24
+        Me.dgvCargarDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCargarDatos.Size = New System.Drawing.Size(159, 42)
+        Me.dgvCargarDatos.TabIndex = 76
+        Me.dgvCargarDatos.Visible = False
         '
         'btnCancelar
         '
         Me.btnCancelar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancelar.Location = New System.Drawing.Point(727, 419)
+        Me.btnCancelar.Location = New System.Drawing.Point(727, 440)
         Me.btnCancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(94, 32)
@@ -225,70 +275,60 @@ Partial Class frmxEntidades
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
-        'lblAbrev_TVia
-        '
-        Me.lblAbrev_TVia.BackColor = System.Drawing.SystemColors.Window
-        Me.lblAbrev_TVia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblAbrev_TVia.Location = New System.Drawing.Point(1040, 166)
-        Me.lblAbrev_TVia.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblAbrev_TVia.Name = "lblAbrev_TVia"
-        Me.lblAbrev_TVia.Size = New System.Drawing.Size(56, 18)
-        Me.lblAbrev_TVia.TabIndex = 16
-        '
         'lblOtros
         '
         Me.lblOtros.BackColor = System.Drawing.SystemColors.Window
         Me.lblOtros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblOtros.Location = New System.Drawing.Point(1040, 141)
+        Me.lblOtros.Location = New System.Drawing.Point(989, 145)
         Me.lblOtros.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOtros.Name = "lblOtros"
-        Me.lblOtros.Size = New System.Drawing.Size(26, 16)
+        Me.lblOtros.Size = New System.Drawing.Size(45, 16)
         Me.lblOtros.TabIndex = 14
-        Me.lblOtros.Text = "No"
+        Me.lblOtros.Text = "False"
         '
         'lblEmpleado
         '
         Me.lblEmpleado.BackColor = System.Drawing.SystemColors.Window
         Me.lblEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblEmpleado.Location = New System.Drawing.Point(1040, 123)
+        Me.lblEmpleado.Location = New System.Drawing.Point(989, 127)
         Me.lblEmpleado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEmpleado.Name = "lblEmpleado"
-        Me.lblEmpleado.Size = New System.Drawing.Size(26, 16)
+        Me.lblEmpleado.Size = New System.Drawing.Size(45, 21)
         Me.lblEmpleado.TabIndex = 13
-        Me.lblEmpleado.Text = "No"
+        Me.lblEmpleado.Text = "False"
         '
         'lblProveedor
         '
         Me.lblProveedor.BackColor = System.Drawing.SystemColors.Window
         Me.lblProveedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblProveedor.Location = New System.Drawing.Point(1040, 104)
+        Me.lblProveedor.Location = New System.Drawing.Point(989, 108)
         Me.lblProveedor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblProveedor.Name = "lblProveedor"
-        Me.lblProveedor.Size = New System.Drawing.Size(26, 16)
+        Me.lblProveedor.Size = New System.Drawing.Size(45, 19)
         Me.lblProveedor.TabIndex = 12
-        Me.lblProveedor.Text = "No"
+        Me.lblProveedor.Text = "False"
         '
         'lblCliente
         '
         Me.lblCliente.BackColor = System.Drawing.SystemColors.Window
         Me.lblCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblCliente.Location = New System.Drawing.Point(1040, 87)
+        Me.lblCliente.Location = New System.Drawing.Point(989, 91)
         Me.lblCliente.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCliente.Name = "lblCliente"
-        Me.lblCliente.Size = New System.Drawing.Size(26, 16)
+        Me.lblCliente.Size = New System.Drawing.Size(45, 17)
         Me.lblCliente.TabIndex = 11
-        Me.lblCliente.Text = "No"
+        Me.lblCliente.Text = "False"
         '
         'lblSocio
         '
         Me.lblSocio.BackColor = System.Drawing.SystemColors.Window
         Me.lblSocio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblSocio.Location = New System.Drawing.Point(1040, 69)
+        Me.lblSocio.Location = New System.Drawing.Point(989, 73)
         Me.lblSocio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSocio.Name = "lblSocio"
-        Me.lblSocio.Size = New System.Drawing.Size(26, 16)
+        Me.lblSocio.Size = New System.Drawing.Size(45, 18)
         Me.lblSocio.TabIndex = 10
-        Me.lblSocio.Text = "No"
+        Me.lblSocio.Text = "False"
         '
         'govFuncionEnti
         '
@@ -365,7 +405,7 @@ Partial Class frmxEntidades
         '
         Me.lblTipo_Empr.BackColor = System.Drawing.SystemColors.Window
         Me.lblTipo_Empr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTipo_Empr.Location = New System.Drawing.Point(1040, 44)
+        Me.lblTipo_Empr.Location = New System.Drawing.Point(989, 48)
         Me.lblTipo_Empr.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTipo_Empr.Name = "lblTipo_Empr"
         Me.lblTipo_Empr.Size = New System.Drawing.Size(90, 18)
@@ -376,7 +416,7 @@ Partial Class frmxEntidades
         '
         Me.lblTipo_Enti.BackColor = System.Drawing.SystemColors.Window
         Me.lblTipo_Enti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTipo_Enti.Location = New System.Drawing.Point(1040, 21)
+        Me.lblTipo_Enti.Location = New System.Drawing.Point(989, 25)
         Me.lblTipo_Enti.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTipo_Enti.Name = "lblTipo_Enti"
         Me.lblTipo_Enti.Size = New System.Drawing.Size(90, 18)
@@ -386,7 +426,7 @@ Partial Class frmxEntidades
         'btnGuardar
         '
         Me.btnGuardar.BackColor = System.Drawing.SystemColors.Control
-        Me.btnGuardar.Location = New System.Drawing.Point(26, 410)
+        Me.btnGuardar.Location = New System.Drawing.Point(26, 440)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(94, 32)
@@ -394,18 +434,18 @@ Partial Class frmxEntidades
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
-        'GvoTipoEmpr
+        'gvoTipoEmpr
         '
-        Me.GvoTipoEmpr.Controls.Add(Me.rbtJuridica)
-        Me.GvoTipoEmpr.Controls.Add(Me.rbtNatural)
-        Me.GvoTipoEmpr.Location = New System.Drawing.Point(290, 20)
-        Me.GvoTipoEmpr.Margin = New System.Windows.Forms.Padding(2)
-        Me.GvoTipoEmpr.Name = "GvoTipoEmpr"
-        Me.GvoTipoEmpr.Padding = New System.Windows.Forms.Padding(2)
-        Me.GvoTipoEmpr.Size = New System.Drawing.Size(187, 49)
-        Me.GvoTipoEmpr.TabIndex = 5
-        Me.GvoTipoEmpr.TabStop = False
-        Me.GvoTipoEmpr.Text = "Tipo de Empresa"
+        Me.gvoTipoEmpr.Controls.Add(Me.rbtJuridica)
+        Me.gvoTipoEmpr.Controls.Add(Me.rbtNatural)
+        Me.gvoTipoEmpr.Location = New System.Drawing.Point(290, 20)
+        Me.gvoTipoEmpr.Margin = New System.Windows.Forms.Padding(2)
+        Me.gvoTipoEmpr.Name = "gvoTipoEmpr"
+        Me.gvoTipoEmpr.Padding = New System.Windows.Forms.Padding(2)
+        Me.gvoTipoEmpr.Size = New System.Drawing.Size(187, 49)
+        Me.gvoTipoEmpr.TabIndex = 5
+        Me.gvoTipoEmpr.TabStop = False
+        Me.gvoTipoEmpr.Text = "Tipo de Empresa"
         '
         'rbtJuridica
         '
@@ -415,7 +455,7 @@ Partial Class frmxEntidades
         Me.rbtJuridica.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtJuridica.Name = "rbtJuridica"
         Me.rbtJuridica.Size = New System.Drawing.Size(61, 17)
-        Me.rbtJuridica.TabIndex = 3
+        Me.rbtJuridica.TabIndex = 10
         Me.rbtJuridica.TabStop = True
         Me.rbtJuridica.Text = "Juridica"
         Me.rbtJuridica.UseVisualStyleBackColor = True
@@ -427,77 +467,77 @@ Partial Class frmxEntidades
         Me.rbtNatural.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtNatural.Name = "rbtNatural"
         Me.rbtNatural.Size = New System.Drawing.Size(59, 17)
-        Me.rbtNatural.TabIndex = 4
+        Me.rbtNatural.TabIndex = 9
         Me.rbtNatural.Text = "Natural"
         Me.rbtNatural.UseVisualStyleBackColor = True
         '
-        'GvoDatosEnti
+        'gvoDatosEnti
         '
-        Me.GvoDatosEnti.Controls.Add(Me.Panel4)
-        Me.GvoDatosEnti.Controls.Add(Me.txt2do_Apellido)
-        Me.GvoDatosEnti.Controls.Add(Me.txt1er_Apellido)
-        Me.GvoDatosEnti.Controls.Add(Me.txtNombres)
-        Me.GvoDatosEnti.Controls.Add(Me.Label6)
-        Me.GvoDatosEnti.Controls.Add(Me.Label5)
-        Me.GvoDatosEnti.Controls.Add(Me.Label4)
-        Me.GvoDatosEnti.Controls.Add(Me.txtNom_Comercial)
-        Me.GvoDatosEnti.Controls.Add(Me.txtNomEnti_RS)
-        Me.GvoDatosEnti.Controls.Add(Me.txtIdAux)
-        Me.GvoDatosEnti.Controls.Add(Me.Label7)
-        Me.GvoDatosEnti.Controls.Add(Me.Label3)
-        Me.GvoDatosEnti.Controls.Add(Me.Label2)
-        Me.GvoDatosEnti.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GvoDatosEnti.Location = New System.Drawing.Point(26, 73)
-        Me.GvoDatosEnti.Margin = New System.Windows.Forms.Padding(2)
-        Me.GvoDatosEnti.Name = "GvoDatosEnti"
-        Me.GvoDatosEnti.Padding = New System.Windows.Forms.Padding(2)
-        Me.GvoDatosEnti.Size = New System.Drawing.Size(795, 333)
-        Me.GvoDatosEnti.TabIndex = 4
-        Me.GvoDatosEnti.TabStop = False
-        Me.GvoDatosEnti.Text = "Datos"
+        Me.gvoDatosEnti.Controls.Add(Me.Panel4)
+        Me.gvoDatosEnti.Controls.Add(Me.txt2do_Apellido)
+        Me.gvoDatosEnti.Controls.Add(Me.txt1er_Apellido)
+        Me.gvoDatosEnti.Controls.Add(Me.txtNombres)
+        Me.gvoDatosEnti.Controls.Add(Me.Label6)
+        Me.gvoDatosEnti.Controls.Add(Me.Label5)
+        Me.gvoDatosEnti.Controls.Add(Me.Label4)
+        Me.gvoDatosEnti.Controls.Add(Me.txtNom_Comercial)
+        Me.gvoDatosEnti.Controls.Add(Me.txtNomEnti_RS)
+        Me.gvoDatosEnti.Controls.Add(Me.txtIdEnti)
+        Me.gvoDatosEnti.Controls.Add(Me.Label7)
+        Me.gvoDatosEnti.Controls.Add(Me.Label3)
+        Me.gvoDatosEnti.Controls.Add(Me.Label2)
+        Me.gvoDatosEnti.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gvoDatosEnti.Location = New System.Drawing.Point(26, 73)
+        Me.gvoDatosEnti.Margin = New System.Windows.Forms.Padding(2)
+        Me.gvoDatosEnti.Name = "gvoDatosEnti"
+        Me.gvoDatosEnti.Padding = New System.Windows.Forms.Padding(2)
+        Me.gvoDatosEnti.Size = New System.Drawing.Size(795, 360)
+        Me.gvoDatosEnti.TabIndex = 4
+        Me.gvoDatosEnti.TabStop = False
+        Me.gvoDatosEnti.Text = "Datos"
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.dgvPais)
-        Me.Panel4.Controls.Add(Me.dgvDocIden)
-        Me.Panel4.Controls.Add(Me.btnDocIden)
-        Me.Panel4.Controls.Add(Me.txtNum_DocIden)
+        Me.Panel4.Controls.Add(Me.dgvListarCombo)
+        Me.Panel4.Controls.Add(Me.picbxPais)
+        Me.Panel4.Controls.Add(Me.picbxDist)
+        Me.Panel4.Controls.Add(Me.picbxProv)
+        Me.Panel4.Controls.Add(Me.picbxDep)
+        Me.Panel4.Controls.Add(Me.txtNom_Dist)
+        Me.Panel4.Controls.Add(Me.txtNom_Prov)
+        Me.Panel4.Controls.Add(Me.txtNom_Dep)
+        Me.Panel4.Controls.Add(Me.picbxTVia)
+        Me.Panel4.Controls.Add(Me.txtNom_Pais)
+        Me.Panel4.Controls.Add(Me.txtNom_TVia)
+        Me.Panel4.Controls.Add(Me.picbxDocIden)
         Me.Panel4.Controls.Add(Me.txtNom_DocIden)
+        Me.Panel4.Controls.Add(Me.txtNroVia)
+        Me.Panel4.Controls.Add(Me.Label24)
+        Me.Panel4.Controls.Add(Me.txtNum_DocIden)
         Me.Panel4.Controls.Add(Me.txtTip_DocIden)
         Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.Label8)
-        Me.Panel4.Controls.Add(Me.dgvTVia)
-        Me.Panel4.Controls.Add(Me.btnTVia)
-        Me.Panel4.Controls.Add(Me.txtNom_TVia)
-        Me.Panel4.Controls.Add(Me.btnDist)
-        Me.Panel4.Controls.Add(Me.btnProv)
-        Me.Panel4.Controls.Add(Me.btnDep)
-        Me.Panel4.Controls.Add(Me.btnPais)
         Me.Panel4.Controls.Add(Me.txtObservaciones)
         Me.Panel4.Controls.Add(Me.Label23)
         Me.Panel4.Controls.Add(Me.txtCelular)
         Me.Panel4.Controls.Add(Me.Label22)
         Me.Panel4.Controls.Add(Me.txtTelefono)
-        Me.Panel4.Controls.Add(Me.txtMail)
+        Me.Panel4.Controls.Add(Me.txtCorreo)
         Me.Panel4.Controls.Add(Me.Label21)
         Me.Panel4.Controls.Add(Me.Label17)
         Me.Panel4.Controls.Add(Me.Button2)
         Me.Panel4.Controls.Add(Me.txtUbigeo)
-        Me.Panel4.Controls.Add(Me.txtNom_Dist)
         Me.Panel4.Controls.Add(Me.txtIdDist)
-        Me.Panel4.Controls.Add(Me.txtNom_Prov)
         Me.Panel4.Controls.Add(Me.txtIdProv)
-        Me.Panel4.Controls.Add(Me.txtNom_Dep)
         Me.Panel4.Controls.Add(Me.txtReferencia)
         Me.Panel4.Controls.Add(Me.txtIdDep)
-        Me.Panel4.Controls.Add(Me.txtNom_Pais)
         Me.Panel4.Controls.Add(Me.txtIdPais)
         Me.Panel4.Controls.Add(Me.Label20)
         Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Label18)
         Me.Panel4.Controls.Add(Me.txtZona)
         Me.Panel4.Controls.Add(Me.txtInterior)
-        Me.Panel4.Controls.Add(Me.txtNom_Via)
+        Me.Panel4.Controls.Add(Me.txtNombre_Via)
         Me.Panel4.Controls.Add(Me.txtIdTVia)
         Me.Panel4.Controls.Add(Me.Label16)
         Me.Panel4.Controls.Add(Me.Label15)
@@ -509,113 +549,223 @@ Partial Class frmxEntidades
         Me.Panel4.Location = New System.Drawing.Point(15, 109)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(758, 215)
+        Me.Panel4.Size = New System.Drawing.Size(763, 243)
         Me.Panel4.TabIndex = 73
         '
-        'dgvPais
+        'picbxPais
         '
-        Me.dgvPais.AllowUserToAddRows = False
-        Me.dgvPais.AllowUserToDeleteRows = False
-        Me.dgvPais.AllowUserToOrderColumns = True
-        Me.dgvPais.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvPais.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        Me.dgvPais.BackgroundColor = System.Drawing.SystemColors.Window
-        Me.dgvPais.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        Me.dgvPais.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPais.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvPais.ColumnHeadersHeight = 25
-        Me.dgvPais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvPais.EnableHeadersVisualStyles = False
-        Me.dgvPais.Location = New System.Drawing.Point(435, 215)
-        Me.dgvPais.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvPais.Name = "dgvPais"
-        Me.dgvPais.ReadOnly = True
-        Me.dgvPais.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvPais.RowHeadersVisible = False
-        Me.dgvPais.RowHeadersWidth = 51
-        Me.dgvPais.RowTemplate.Height = 24
-        Me.dgvPais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPais.Size = New System.Drawing.Size(308, 145)
-        Me.dgvPais.TabIndex = 107
-        Me.dgvPais.Visible = False
+        Me.picbxPais.BackColor = System.Drawing.SystemColors.Window
+        Me.picbxPais.Image = Global.Unicafec.Presentacion.My.Resources.Resources.flecha_hacia_abajo
+        Me.picbxPais.Location = New System.Drawing.Point(348, 96)
+        Me.picbxPais.Name = "picbxPais"
+        Me.picbxPais.Size = New System.Drawing.Size(18, 16)
+        Me.picbxPais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picbxPais.TabIndex = 118
+        Me.picbxPais.TabStop = False
         '
-        'dgvDocIden
+        'dgvListarCombo
         '
-        Me.dgvDocIden.AllowUserToAddRows = False
-        Me.dgvDocIden.AllowUserToDeleteRows = False
-        Me.dgvDocIden.AllowUserToOrderColumns = True
-        Me.dgvDocIden.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvDocIden.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        Me.dgvDocIden.BackgroundColor = System.Drawing.SystemColors.Window
-        Me.dgvDocIden.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        Me.dgvDocIden.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDocIden.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvDocIden.ColumnHeadersHeight = 25
-        Me.dgvDocIden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDocIden.EnableHeadersVisualStyles = False
-        Me.dgvDocIden.Location = New System.Drawing.Point(435, 147)
-        Me.dgvDocIden.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvDocIden.Name = "dgvDocIden"
-        Me.dgvDocIden.ReadOnly = True
-        Me.dgvDocIden.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvDocIden.RowHeadersVisible = False
-        Me.dgvDocIden.RowHeadersWidth = 51
-        Me.dgvDocIden.RowTemplate.Height = 24
-        Me.dgvDocIden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDocIden.Size = New System.Drawing.Size(308, 145)
-        Me.dgvDocIden.TabIndex = 73
-        Me.dgvDocIden.Visible = False
+        Me.dgvListarCombo.AllowUserToAddRows = False
+        Me.dgvListarCombo.AllowUserToDeleteRows = False
+        Me.dgvListarCombo.AllowUserToOrderColumns = True
+        Me.dgvListarCombo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvListarCombo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+        Me.dgvListarCombo.BackgroundColor = System.Drawing.SystemColors.Window
+        Me.dgvListarCombo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.dgvListarCombo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListarCombo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvListarCombo.ColumnHeadersHeight = 25
+        Me.dgvListarCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvListarCombo.EnableHeadersVisualStyles = False
+        Me.dgvListarCombo.Location = New System.Drawing.Point(250, 235)
+        Me.dgvListarCombo.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvListarCombo.Name = "dgvListarCombo"
+        Me.dgvListarCombo.ReadOnly = True
+        Me.dgvListarCombo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListarCombo.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvListarCombo.RowHeadersVisible = False
+        Me.dgvListarCombo.RowHeadersWidth = 51
+        Me.dgvListarCombo.RowTemplate.Height = 24
+        Me.dgvListarCombo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvListarCombo.Size = New System.Drawing.Size(90, 30)
+        Me.dgvListarCombo.TabIndex = 115
+        Me.dgvListarCombo.Visible = False
         '
-        'btnDocIden
+        'picbxDist
         '
-        Me.btnDocIden.BackColor = System.Drawing.SystemColors.Control
-        Me.btnDocIden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnDocIden.Image = CType(resources.GetObject("btnDocIden.Image"), System.Drawing.Image)
-        Me.btnDocIden.Location = New System.Drawing.Point(326, 6)
-        Me.btnDocIden.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnDocIden.Name = "btnDocIden"
-        Me.btnDocIden.Size = New System.Drawing.Size(16, 15)
-        Me.btnDocIden.TabIndex = 17
-        Me.btnDocIden.UseVisualStyleBackColor = False
+        Me.picbxDist.BackColor = System.Drawing.SystemColors.Window
+        Me.picbxDist.Image = Global.Unicafec.Presentacion.My.Resources.Resources.flecha_hacia_abajo
+        Me.picbxDist.Location = New System.Drawing.Point(733, 125)
+        Me.picbxDist.Name = "picbxDist"
+        Me.picbxDist.Size = New System.Drawing.Size(18, 16)
+        Me.picbxDist.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picbxDist.TabIndex = 124
+        Me.picbxDist.TabStop = False
         '
-        'txtNum_DocIden
+        'picbxProv
         '
-        Me.txtNum_DocIden.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNum_DocIden.Location = New System.Drawing.Point(412, 4)
-        Me.txtNum_DocIden.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNum_DocIden.Name = "txtNum_DocIden"
-        Me.txtNum_DocIden.Size = New System.Drawing.Size(121, 19)
-        Me.txtNum_DocIden.TabIndex = 18
+        Me.picbxProv.BackColor = System.Drawing.SystemColors.Window
+        Me.picbxProv.Image = Global.Unicafec.Presentacion.My.Resources.Resources.flecha_hacia_abajo
+        Me.picbxProv.Location = New System.Drawing.Point(348, 125)
+        Me.picbxProv.Name = "picbxProv"
+        Me.picbxProv.Size = New System.Drawing.Size(18, 16)
+        Me.picbxProv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picbxProv.TabIndex = 122
+        Me.picbxProv.TabStop = False
+        '
+        'picbxDep
+        '
+        Me.picbxDep.BackColor = System.Drawing.SystemColors.Window
+        Me.picbxDep.Image = Global.Unicafec.Presentacion.My.Resources.Resources.flecha_hacia_abajo
+        Me.picbxDep.Location = New System.Drawing.Point(733, 96)
+        Me.picbxDep.Name = "picbxDep"
+        Me.picbxDep.Size = New System.Drawing.Size(18, 16)
+        Me.picbxDep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picbxDep.TabIndex = 120
+        Me.picbxDep.TabStop = False
+        '
+        'txtNom_Dist
+        '
+        Me.txtNom_Dist.BackColor = System.Drawing.SystemColors.Window
+        Me.txtNom_Dist.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNom_Dist.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNom_Dist.Location = New System.Drawing.Point(466, 124)
+        Me.txtNom_Dist.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNom_Dist.Name = "txtNom_Dist"
+        Me.txtNom_Dist.ReadOnly = True
+        Me.txtNom_Dist.Size = New System.Drawing.Size(285, 19)
+        Me.txtNom_Dist.TabIndex = 123
+        '
+        'txtNom_Prov
+        '
+        Me.txtNom_Prov.BackColor = System.Drawing.SystemColors.Window
+        Me.txtNom_Prov.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNom_Prov.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNom_Prov.Location = New System.Drawing.Point(106, 124)
+        Me.txtNom_Prov.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNom_Prov.Name = "txtNom_Prov"
+        Me.txtNom_Prov.ReadOnly = True
+        Me.txtNom_Prov.Size = New System.Drawing.Size(260, 19)
+        Me.txtNom_Prov.TabIndex = 121
+        '
+        'txtNom_Dep
+        '
+        Me.txtNom_Dep.BackColor = System.Drawing.SystemColors.Window
+        Me.txtNom_Dep.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNom_Dep.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNom_Dep.Location = New System.Drawing.Point(503, 95)
+        Me.txtNom_Dep.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNom_Dep.Name = "txtNom_Dep"
+        Me.txtNom_Dep.ReadOnly = True
+        Me.txtNom_Dep.Size = New System.Drawing.Size(248, 19)
+        Me.txtNom_Dep.TabIndex = 119
+        '
+        'picbxTVia
+        '
+        Me.picbxTVia.BackColor = System.Drawing.SystemColors.Window
+        Me.picbxTVia.Image = Global.Unicafec.Presentacion.My.Resources.Resources.flecha_hacia_abajo
+        Me.picbxTVia.Location = New System.Drawing.Point(235, 35)
+        Me.picbxTVia.Name = "picbxTVia"
+        Me.picbxTVia.Size = New System.Drawing.Size(18, 16)
+        Me.picbxTVia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picbxTVia.TabIndex = 116
+        Me.picbxTVia.TabStop = False
+        '
+        'txtNom_Pais
+        '
+        Me.txtNom_Pais.BackColor = System.Drawing.SystemColors.Window
+        Me.txtNom_Pais.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNom_Pais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNom_Pais.Location = New System.Drawing.Point(100, 95)
+        Me.txtNom_Pais.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNom_Pais.Name = "txtNom_Pais"
+        Me.txtNom_Pais.ReadOnly = True
+        Me.txtNom_Pais.Size = New System.Drawing.Size(266, 19)
+        Me.txtNom_Pais.TabIndex = 117
+        '
+        'txtNom_TVia
+        '
+        Me.txtNom_TVia.BackColor = System.Drawing.SystemColors.Window
+        Me.txtNom_TVia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNom_TVia.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNom_TVia.Location = New System.Drawing.Point(103, 34)
+        Me.txtNom_TVia.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNom_TVia.Name = "txtNom_TVia"
+        Me.txtNom_TVia.ReadOnly = True
+        Me.txtNom_TVia.Size = New System.Drawing.Size(150, 19)
+        Me.txtNom_TVia.TabIndex = 115
+        '
+        'picbxDocIden
+        '
+        Me.picbxDocIden.BackColor = System.Drawing.SystemColors.Window
+        Me.picbxDocIden.Image = Global.Unicafec.Presentacion.My.Resources.Resources.flecha_hacia_abajo
+        Me.picbxDocIden.Location = New System.Drawing.Point(357, 5)
+        Me.picbxDocIden.Name = "picbxDocIden"
+        Me.picbxDocIden.Size = New System.Drawing.Size(18, 16)
+        Me.picbxDocIden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.picbxDocIden.TabIndex = 114
+        Me.picbxDocIden.TabStop = False
         '
         'txtNom_DocIden
         '
+        Me.txtNom_DocIden.BackColor = System.Drawing.SystemColors.Window
         Me.txtNom_DocIden.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNom_DocIden.Location = New System.Drawing.Point(122, 4)
         Me.txtNom_DocIden.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNom_DocIden.Name = "txtNom_DocIden"
-        Me.txtNom_DocIden.Size = New System.Drawing.Size(222, 19)
-        Me.txtNom_DocIden.TabIndex = 16
+        Me.txtNom_DocIden.ReadOnly = True
+        Me.txtNom_DocIden.Size = New System.Drawing.Size(254, 19)
+        Me.txtNom_DocIden.TabIndex = 113
+        '
+        'txtNroVia
+        '
+        Me.txtNroVia.Location = New System.Drawing.Point(693, 34)
+        Me.txtNroVia.MaxLength = 6
+        Me.txtNroVia.Name = "txtNroVia"
+        Me.txtNroVia.Size = New System.Drawing.Size(58, 19)
+        Me.txtNroVia.TabIndex = 111
+        Me.txtNroVia.Text = "999999"
+        Me.txtNroVia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(665, 37)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(27, 13)
+        Me.Label24.TabIndex = 110
+        Me.Label24.Text = "Nro:"
+        '
+        'txtNum_DocIden
+        '
+        Me.txtNum_DocIden.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNum_DocIden.Location = New System.Drawing.Point(430, 4)
+        Me.txtNum_DocIden.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNum_DocIden.MaxLength = 11
+        Me.txtNum_DocIden.Name = "txtNum_DocIden"
+        Me.txtNum_DocIden.Size = New System.Drawing.Size(121, 19)
+        Me.txtNum_DocIden.TabIndex = 18
         '
         'txtTip_DocIden
         '
         Me.txtTip_DocIden.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTip_DocIden.Location = New System.Drawing.Point(80, 4)
         Me.txtTip_DocIden.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtTip_DocIden.MaxLength = 2
+        Me.txtTip_DocIden.MaxLength = 3
         Me.txtTip_DocIden.Name = "txtTip_DocIden"
         Me.txtTip_DocIden.Size = New System.Drawing.Size(38, 19)
         Me.txtTip_DocIden.TabIndex = 16
@@ -625,7 +775,7 @@ Partial Class frmxEntidades
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(366, 8)
+        Me.Label9.Location = New System.Drawing.Point(384, 8)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(47, 13)
@@ -643,113 +793,11 @@ Partial Class frmxEntidades
         Me.Label8.TabIndex = 108
         Me.Label8.Text = "Cód. Docum.:"
         '
-        'dgvTVia
-        '
-        Me.dgvTVia.AllowUserToAddRows = False
-        Me.dgvTVia.AllowUserToDeleteRows = False
-        Me.dgvTVia.AllowUserToOrderColumns = True
-        Me.dgvTVia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvTVia.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
-        Me.dgvTVia.BackgroundColor = System.Drawing.SystemColors.Window
-        Me.dgvTVia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        Me.dgvTVia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTVia.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvTVia.ColumnHeadersHeight = 25
-        Me.dgvTVia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvTVia.EnableHeadersVisualStyles = False
-        Me.dgvTVia.Location = New System.Drawing.Point(358, 147)
-        Me.dgvTVia.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvTVia.Name = "dgvTVia"
-        Me.dgvTVia.ReadOnly = True
-        Me.dgvTVia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvTVia.RowHeadersVisible = False
-        Me.dgvTVia.RowHeadersWidth = 51
-        Me.dgvTVia.RowTemplate.Height = 24
-        Me.dgvTVia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTVia.Size = New System.Drawing.Size(308, 145)
-        Me.dgvTVia.TabIndex = 105
-        Me.dgvTVia.Visible = False
-        '
-        'btnTVia
-        '
-        Me.btnTVia.BackColor = System.Drawing.SystemColors.Control
-        Me.btnTVia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnTVia.Image = CType(resources.GetObject("btnTVia.Image"), System.Drawing.Image)
-        Me.btnTVia.Location = New System.Drawing.Point(217, 36)
-        Me.btnTVia.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnTVia.Name = "btnTVia"
-        Me.btnTVia.Size = New System.Drawing.Size(16, 15)
-        Me.btnTVia.TabIndex = 20
-        Me.btnTVia.UseVisualStyleBackColor = False
-        '
-        'txtNom_TVia
-        '
-        Me.txtNom_TVia.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNom_TVia.Location = New System.Drawing.Point(100, 34)
-        Me.txtNom_TVia.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNom_TVia.Name = "txtNom_TVia"
-        Me.txtNom_TVia.Size = New System.Drawing.Size(135, 19)
-        Me.txtNom_TVia.TabIndex = 19
-        '
-        'btnDist
-        '
-        Me.btnDist.BackColor = System.Drawing.SystemColors.Control
-        Me.btnDist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnDist.Image = CType(resources.GetObject("btnDist.Image"), System.Drawing.Image)
-        Me.btnDist.Location = New System.Drawing.Point(733, 96)
-        Me.btnDist.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnDist.Name = "btnDist"
-        Me.btnDist.Size = New System.Drawing.Size(16, 15)
-        Me.btnDist.TabIndex = 34
-        Me.btnDist.UseVisualStyleBackColor = False
-        '
-        'btnProv
-        '
-        Me.btnProv.BackColor = System.Drawing.SystemColors.Control
-        Me.btnProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnProv.Image = CType(resources.GetObject("btnProv.Image"), System.Drawing.Image)
-        Me.btnProv.Location = New System.Drawing.Point(501, 96)
-        Me.btnProv.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnProv.Name = "btnProv"
-        Me.btnProv.Size = New System.Drawing.Size(16, 15)
-        Me.btnProv.TabIndex = 31
-        Me.btnProv.UseVisualStyleBackColor = False
-        '
-        'btnDep
-        '
-        Me.btnDep.BackColor = System.Drawing.SystemColors.Control
-        Me.btnDep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnDep.Image = CType(resources.GetObject("btnDep.Image"), System.Drawing.Image)
-        Me.btnDep.Location = New System.Drawing.Point(243, 96)
-        Me.btnDep.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnDep.Name = "btnDep"
-        Me.btnDep.Size = New System.Drawing.Size(16, 15)
-        Me.btnDep.TabIndex = 28
-        Me.btnDep.UseVisualStyleBackColor = False
-        '
-        'btnPais
-        '
-        Me.btnPais.BackColor = System.Drawing.SystemColors.Control
-        Me.btnPais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnPais.Image = CType(resources.GetObject("btnPais.Image"), System.Drawing.Image)
-        Me.btnPais.Location = New System.Drawing.Point(733, 66)
-        Me.btnPais.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPais.Name = "btnPais"
-        Me.btnPais.Size = New System.Drawing.Size(16, 15)
-        Me.btnPais.TabIndex = 25
-        Me.btnPais.UseVisualStyleBackColor = False
-        '
         'txtObservaciones
         '
+        Me.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtObservaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtObservaciones.Location = New System.Drawing.Point(88, 184)
+        Me.txtObservaciones.Location = New System.Drawing.Point(88, 214)
         Me.txtObservaciones.Margin = New System.Windows.Forms.Padding(2)
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(665, 19)
@@ -759,7 +807,7 @@ Partial Class frmxEntidades
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(8, 188)
+        Me.Label23.Location = New System.Drawing.Point(8, 218)
         Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(81, 13)
@@ -768,8 +816,9 @@ Partial Class frmxEntidades
         '
         'txtCelular
         '
+        Me.txtCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCelular.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCelular.Location = New System.Drawing.Point(232, 154)
+        Me.txtCelular.Location = New System.Drawing.Point(232, 184)
         Me.txtCelular.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(121, 19)
@@ -779,7 +828,7 @@ Partial Class frmxEntidades
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(191, 158)
+        Me.Label22.Location = New System.Drawing.Point(191, 188)
         Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(42, 13)
@@ -788,27 +837,29 @@ Partial Class frmxEntidades
         '
         'txtTelefono
         '
+        Me.txtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(58, 154)
+        Me.txtTelefono.Location = New System.Drawing.Point(58, 184)
         Me.txtTelefono.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(121, 19)
         Me.txtTelefono.TabIndex = 38
         '
-        'txtMail
+        'txtCorreo
         '
-        Me.txtMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMail.Location = New System.Drawing.Point(404, 154)
-        Me.txtMail.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(348, 19)
-        Me.txtMail.TabIndex = 40
+        Me.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCorreo.Location = New System.Drawing.Point(404, 184)
+        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Size = New System.Drawing.Size(348, 19)
+        Me.txtCorreo.TabIndex = 40
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(367, 158)
+        Me.Label21.Location = New System.Drawing.Point(367, 188)
         Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(39, 13)
@@ -819,7 +870,7 @@ Partial Class frmxEntidades
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(8, 158)
+        Me.Label17.Location = New System.Drawing.Point(8, 188)
         Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(52, 13)
@@ -828,11 +879,12 @@ Partial Class frmxEntidades
         '
         'Button2
         '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(90, 124)
+        Me.Button2.Location = New System.Drawing.Point(135, 154)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(22, 18)
+        Me.Button2.Size = New System.Drawing.Size(23, 19)
         Me.Button2.TabIndex = 36
         Me.Button2.Text = "..."
         Me.Button2.UseVisualStyleBackColor = True
@@ -840,95 +892,65 @@ Partial Class frmxEntidades
         'txtUbigeo
         '
         Me.txtUbigeo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUbigeo.Location = New System.Drawing.Point(51, 124)
+        Me.txtUbigeo.Location = New System.Drawing.Point(55, 154)
         Me.txtUbigeo.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtUbigeo.MaxLength = 11
         Me.txtUbigeo.Name = "txtUbigeo"
-        Me.txtUbigeo.Size = New System.Drawing.Size(38, 19)
+        Me.txtUbigeo.Size = New System.Drawing.Size(80, 19)
         Me.txtUbigeo.TabIndex = 35
-        '
-        'txtNom_Dist
-        '
-        Me.txtNom_Dist.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNom_Dist.Location = New System.Drawing.Point(611, 94)
-        Me.txtNom_Dist.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNom_Dist.Name = "txtNom_Dist"
-        Me.txtNom_Dist.Size = New System.Drawing.Size(140, 19)
-        Me.txtNom_Dist.TabIndex = 33
+        Me.txtUbigeo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtIdDist
         '
         Me.txtIdDist.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdDist.Location = New System.Drawing.Point(568, 94)
+        Me.txtIdDist.Location = New System.Drawing.Point(424, 124)
         Me.txtIdDist.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdDist.MaxLength = 4
         Me.txtIdDist.Name = "txtIdDist"
         Me.txtIdDist.Size = New System.Drawing.Size(38, 19)
         Me.txtIdDist.TabIndex = 32
         Me.txtIdDist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtNom_Prov
-        '
-        Me.txtNom_Prov.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNom_Prov.Location = New System.Drawing.Point(364, 94)
-        Me.txtNom_Prov.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNom_Prov.Name = "txtNom_Prov"
-        Me.txtNom_Prov.Size = New System.Drawing.Size(155, 19)
-        Me.txtNom_Prov.TabIndex = 30
-        '
         'txtIdProv
         '
         Me.txtIdProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdProv.Location = New System.Drawing.Point(320, 94)
+        Me.txtIdProv.Location = New System.Drawing.Point(62, 124)
         Me.txtIdProv.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdProv.MaxLength = 4
         Me.txtIdProv.Name = "txtIdProv"
         Me.txtIdProv.Size = New System.Drawing.Size(38, 19)
         Me.txtIdProv.TabIndex = 29
         Me.txtIdProv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtNom_Dep
-        '
-        Me.txtNom_Dep.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNom_Dep.Location = New System.Drawing.Point(128, 94)
-        Me.txtNom_Dep.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNom_Dep.Name = "txtNom_Dep"
-        Me.txtNom_Dep.Size = New System.Drawing.Size(133, 19)
-        Me.txtNom_Dep.TabIndex = 27
-        '
         'txtReferencia
         '
+        Me.txtReferencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtReferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReferencia.Location = New System.Drawing.Point(182, 124)
+        Me.txtReferencia.Location = New System.Drawing.Point(243, 154)
         Me.txtReferencia.Margin = New System.Windows.Forms.Padding(2)
         Me.txtReferencia.Name = "txtReferencia"
-        Me.txtReferencia.Size = New System.Drawing.Size(569, 19)
+        Me.txtReferencia.Size = New System.Drawing.Size(508, 19)
         Me.txtReferencia.TabIndex = 37
         '
         'txtIdDep
         '
         Me.txtIdDep.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdDep.Location = New System.Drawing.Point(85, 94)
+        Me.txtIdDep.Location = New System.Drawing.Point(460, 95)
         Me.txtIdDep.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdDep.MaxLength = 3
         Me.txtIdDep.Name = "txtIdDep"
         Me.txtIdDep.Size = New System.Drawing.Size(39, 19)
         Me.txtIdDep.TabIndex = 26
         Me.txtIdDep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txtNom_Pais
-        '
-        Me.txtNom_Pais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNom_Pais.Location = New System.Drawing.Point(611, 64)
-        Me.txtNom_Pais.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNom_Pais.Name = "txtNom_Pais"
-        Me.txtNom_Pais.Size = New System.Drawing.Size(140, 19)
-        Me.txtNom_Pais.TabIndex = 24
-        '
         'txtIdPais
         '
         Me.txtIdPais.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdPais.Location = New System.Drawing.Point(568, 64)
+        Me.txtIdPais.Location = New System.Drawing.Point(45, 95)
         Me.txtIdPais.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtIdPais.MaxLength = 3
+        Me.txtIdPais.MaxLength = 6
         Me.txtIdPais.Name = "txtIdPais"
-        Me.txtIdPais.Size = New System.Drawing.Size(38, 19)
+        Me.txtIdPais.Size = New System.Drawing.Size(50, 19)
         Me.txtIdPais.TabIndex = 23
         Me.txtIdPais.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -936,7 +958,7 @@ Partial Class frmxEntidades
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(8, 128)
+        Me.Label20.Location = New System.Drawing.Point(8, 158)
         Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(44, 13)
@@ -947,7 +969,7 @@ Partial Class frmxEntidades
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(527, 98)
+        Me.Label19.Location = New System.Drawing.Point(380, 128)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(42, 13)
@@ -958,7 +980,7 @@ Partial Class frmxEntidades
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(268, 98)
+        Me.Label18.Location = New System.Drawing.Point(8, 128)
         Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(54, 13)
@@ -967,37 +989,40 @@ Partial Class frmxEntidades
         '
         'txtZona
         '
+        Me.txtZona.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtZona.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtZona.Location = New System.Drawing.Point(311, 64)
+        Me.txtZona.Location = New System.Drawing.Point(419, 64)
         Me.txtZona.Margin = New System.Windows.Forms.Padding(2)
         Me.txtZona.Name = "txtZona"
-        Me.txtZona.Size = New System.Drawing.Size(218, 19)
+        Me.txtZona.Size = New System.Drawing.Size(332, 19)
         Me.txtZona.TabIndex = 22
         '
         'txtInterior
         '
+        Me.txtInterior.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtInterior.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtInterior.Location = New System.Drawing.Point(50, 64)
         Me.txtInterior.Margin = New System.Windows.Forms.Padding(2)
         Me.txtInterior.Name = "txtInterior"
-        Me.txtInterior.Size = New System.Drawing.Size(218, 19)
+        Me.txtInterior.Size = New System.Drawing.Size(316, 19)
         Me.txtInterior.TabIndex = 21
         '
-        'txtNom_Via
+        'txtNombre_Via
         '
-        Me.txtNom_Via.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtNom_Via.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNom_Via.Location = New System.Drawing.Point(307, 34)
-        Me.txtNom_Via.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtNom_Via.Name = "txtNom_Via"
-        Me.txtNom_Via.Size = New System.Drawing.Size(444, 19)
-        Me.txtNom_Via.TabIndex = 20
+        Me.txtNombre_Via.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtNombre_Via.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre_Via.Location = New System.Drawing.Point(333, 34)
+        Me.txtNombre_Via.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNombre_Via.Name = "txtNombre_Via"
+        Me.txtNombre_Via.Size = New System.Drawing.Size(320, 19)
+        Me.txtNombre_Via.TabIndex = 20
         '
         'txtIdTVia
         '
         Me.txtIdTVia.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIdTVia.Location = New System.Drawing.Point(58, 34)
         Me.txtIdTVia.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdTVia.MaxLength = 3
         Me.txtIdTVia.Name = "txtIdTVia"
         Me.txtIdTVia.Size = New System.Drawing.Size(38, 19)
         Me.txtIdTVia.TabIndex = 19
@@ -1007,7 +1032,7 @@ Partial Class frmxEntidades
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(8, 98)
+        Me.Label16.Location = New System.Drawing.Point(380, 99)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(77, 13)
@@ -1018,7 +1043,7 @@ Partial Class frmxEntidades
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(538, 68)
+        Me.Label15.Location = New System.Drawing.Point(8, 99)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(32, 13)
@@ -1029,7 +1054,7 @@ Partial Class frmxEntidades
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(122, 128)
+        Me.Label14.Location = New System.Drawing.Point(180, 158)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(62, 13)
@@ -1040,7 +1065,7 @@ Partial Class frmxEntidades
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(278, 68)
+        Me.Label13.Location = New System.Drawing.Point(380, 68)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(35, 13)
@@ -1062,7 +1087,7 @@ Partial Class frmxEntidades
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(242, 38)
+        Me.Label11.Location = New System.Drawing.Point(265, 37)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(67, 13)
@@ -1073,7 +1098,7 @@ Partial Class frmxEntidades
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(8, 38)
+        Me.Label10.Location = New System.Drawing.Point(7, 37)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(51, 13)
@@ -1169,15 +1194,15 @@ Partial Class frmxEntidades
         Me.txtNomEnti_RS.Size = New System.Drawing.Size(672, 19)
         Me.txtNomEnti_RS.TabIndex = 11
         '
-        'txtIdAux
+        'txtIdEnti
         '
-        Me.txtIdAux.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdAux.Location = New System.Drawing.Point(65, 23)
-        Me.txtIdAux.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtIdAux.MaxLength = 11
-        Me.txtIdAux.Name = "txtIdAux"
-        Me.txtIdAux.Size = New System.Drawing.Size(121, 19)
-        Me.txtIdAux.TabIndex = 10
+        Me.txtIdEnti.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdEnti.Location = New System.Drawing.Point(65, 23)
+        Me.txtIdEnti.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIdEnti.MaxLength = 11
+        Me.txtIdEnti.Name = "txtIdEnti"
+        Me.txtIdEnti.Size = New System.Drawing.Size(121, 19)
+        Me.txtIdEnti.TabIndex = 10
         '
         'Label7
         '
@@ -1234,7 +1259,7 @@ Partial Class frmxEntidades
         Me.rbtOtro.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtOtro.Name = "rbtOtro"
         Me.rbtOtro.Size = New System.Drawing.Size(45, 17)
-        Me.rbtOtro.TabIndex = 2
+        Me.rbtOtro.TabIndex = 9
         Me.rbtOtro.Text = "Otro"
         Me.rbtOtro.UseVisualStyleBackColor = True
         '
@@ -1246,7 +1271,7 @@ Partial Class frmxEntidades
         Me.rbtEmpresa.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtEmpresa.Name = "rbtEmpresa"
         Me.rbtEmpresa.Size = New System.Drawing.Size(66, 17)
-        Me.rbtEmpresa.TabIndex = 0
+        Me.rbtEmpresa.TabIndex = 7
         Me.rbtEmpresa.TabStop = True
         Me.rbtEmpresa.Text = "Empresa"
         Me.rbtEmpresa.UseVisualStyleBackColor = True
@@ -1258,7 +1283,7 @@ Partial Class frmxEntidades
         Me.rbtPersona.Margin = New System.Windows.Forms.Padding(2)
         Me.rbtPersona.Name = "rbtPersona"
         Me.rbtPersona.Size = New System.Drawing.Size(64, 17)
-        Me.rbtPersona.TabIndex = 1
+        Me.rbtPersona.TabIndex = 8
         Me.rbtPersona.Text = "Persona"
         Me.rbtPersona.UseVisualStyleBackColor = True
         '
@@ -1266,67 +1291,67 @@ Partial Class frmxEntidades
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.dgvRegistrosListado)
-        Me.Panel2.Location = New System.Drawing.Point(92, 86)
+        Me.Panel2.Location = New System.Drawing.Point(12, 45)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(447, 34)
-        Me.Panel2.TabIndex = 23
+        Me.Panel2.TabIndex = 4
         '
         'dgvRegistrosListado
         '
         Me.dgvRegistrosListado.AllowUserToAddRows = False
         Me.dgvRegistrosListado.AllowUserToDeleteRows = False
         Me.dgvRegistrosListado.AllowUserToOrderColumns = True
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvRegistrosListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvRegistrosListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
         Me.dgvRegistrosListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvRegistrosListado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
         Me.dgvRegistrosListado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvRegistrosListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRegistrosListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRegistrosListado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvRegistrosListado.ColumnHeadersHeight = 29
         Me.dgvRegistrosListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRegistrosListado.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRegistrosListado.DefaultCellStyle = DataGridViewCellStyle14
         Me.dgvRegistrosListado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRegistrosListado.EnableHeadersVisualStyles = False
         Me.dgvRegistrosListado.Location = New System.Drawing.Point(0, 0)
         Me.dgvRegistrosListado.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvRegistrosListado.Name = "dgvRegistrosListado"
         Me.dgvRegistrosListado.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRegistrosListado.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRegistrosListado.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvRegistrosListado.RowHeadersWidth = 30
         Me.dgvRegistrosListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DodgerBlue
-        Me.dgvRegistrosListado.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DodgerBlue
+        Me.dgvRegistrosListado.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvRegistrosListado.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvRegistrosListado.RowTemplate.Height = 24
         Me.dgvRegistrosListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvRegistrosListado.Size = New System.Drawing.Size(443, 30)
-        Me.dgvRegistrosListado.TabIndex = 22
+        Me.dgvRegistrosListado.TabIndex = 5
         '
         'TabControl1
         '
@@ -1338,13 +1363,13 @@ Partial Class frmxEntidades
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.ImageList = Me.ImageList1
         Me.TabControl1.ItemSize = New System.Drawing.Size(263, 25)
-        Me.TabControl1.Location = New System.Drawing.Point(24, 29)
+        Me.TabControl1.Location = New System.Drawing.Point(1, 2)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1370, 38)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.TabControl1.TabIndex = 16
+        Me.TabControl1.TabIndex = 3
         '
         'TabPage1
         '
@@ -1420,17 +1445,22 @@ Partial Class frmxEntidades
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        CType(Me.dgvCargarDatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.govFuncionEnti.ResumeLayout(False)
         Me.govFuncionEnti.PerformLayout()
-        Me.GvoTipoEmpr.ResumeLayout(False)
-        Me.GvoTipoEmpr.PerformLayout()
-        Me.GvoDatosEnti.ResumeLayout(False)
-        Me.GvoDatosEnti.PerformLayout()
+        Me.gvoTipoEmpr.ResumeLayout(False)
+        Me.gvoTipoEmpr.PerformLayout()
+        Me.gvoDatosEnti.ResumeLayout(False)
+        Me.gvoDatosEnti.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.dgvPais, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvDocIden, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvTVia, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbxPais, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListarCombo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbxDist, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbxProv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbxDep, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbxTVia, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picbxDocIden, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GvoTipoEnti.ResumeLayout(False)
         Me.GvoTipoEnti.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -1447,7 +1477,6 @@ Partial Class frmxEntidades
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnCancelar As Button
-    Friend WithEvents lblAbrev_TVia As Label
     Friend WithEvents lblOtros As Label
     Friend WithEvents lblEmpleado As Label
     Friend WithEvents lblProveedor As Label
@@ -1462,51 +1491,36 @@ Partial Class frmxEntidades
     Friend WithEvents lblTipo_Empr As Label
     Friend WithEvents lblTipo_Enti As Label
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents GvoTipoEmpr As GroupBox
+    Friend WithEvents gvoTipoEmpr As GroupBox
     Friend WithEvents rbtJuridica As RadioButton
     Friend WithEvents rbtNatural As RadioButton
-    Friend WithEvents GvoDatosEnti As GroupBox
+    Friend WithEvents gvoDatosEnti As GroupBox
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents dgvPais As DataGridView
-    Friend WithEvents dgvDocIden As DataGridView
-    Friend WithEvents btnDocIden As Button
     Friend WithEvents txtNum_DocIden As TextBox
-    Friend WithEvents txtNom_DocIden As TextBox
     Friend WithEvents txtTip_DocIden As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents dgvTVia As DataGridView
-    Friend WithEvents btnTVia As Button
-    Friend WithEvents txtNom_TVia As TextBox
-    Friend WithEvents btnDist As Button
-    Friend WithEvents btnProv As Button
-    Friend WithEvents btnDep As Button
-    Friend WithEvents btnPais As Button
     Friend WithEvents txtObservaciones As TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents txtCelular As TextBox
     Friend WithEvents Label22 As Label
     Friend WithEvents txtTelefono As TextBox
-    Friend WithEvents txtMail As TextBox
+    Friend WithEvents txtCorreo As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents txtUbigeo As TextBox
-    Friend WithEvents txtNom_Dist As TextBox
     Friend WithEvents txtIdDist As TextBox
-    Friend WithEvents txtNom_Prov As TextBox
     Friend WithEvents txtIdProv As TextBox
-    Friend WithEvents txtNom_Dep As TextBox
     Friend WithEvents txtReferencia As TextBox
     Friend WithEvents txtIdDep As TextBox
-    Friend WithEvents txtNom_Pais As TextBox
     Friend WithEvents txtIdPais As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents txtZona As TextBox
     Friend WithEvents txtInterior As TextBox
-    Friend WithEvents txtNom_Via As TextBox
+    Friend WithEvents txtNombre_Via As TextBox
     Friend WithEvents txtIdTVia As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
@@ -1523,7 +1537,7 @@ Partial Class frmxEntidades
     Friend WithEvents Label4 As Label
     Friend WithEvents txtNom_Comercial As TextBox
     Friend WithEvents txtNomEnti_RS As TextBox
-    Friend WithEvents txtIdAux As TextBox
+    Friend WithEvents txtIdEnti As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -1539,4 +1553,21 @@ Partial Class frmxEntidades
     Public WithEvents TabPage3 As TabPage
     Public WithEvents TabPage4 As TabPage
     Public WithEvents TabPage5 As TabPage
+    Friend WithEvents dgvCargarDatos As DataGridView
+    Friend WithEvents txtNroVia As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents lblGuardar As Label
+    Friend WithEvents txtNom_DocIden As TextBox
+    Friend WithEvents picbxDocIden As PictureBox
+    Friend WithEvents dgvListarCombo As DataGridView
+    Friend WithEvents picbxTVia As PictureBox
+    Friend WithEvents txtNom_TVia As TextBox
+    Friend WithEvents picbxPais As PictureBox
+    Friend WithEvents txtNom_Pais As TextBox
+    Friend WithEvents picbxDep As PictureBox
+    Friend WithEvents txtNom_Dep As TextBox
+    Friend WithEvents picbxProv As PictureBox
+    Friend WithEvents txtNom_Prov As TextBox
+    Friend WithEvents picbxDist As PictureBox
+    Friend WithEvents txtNom_Dist As TextBox
 End Class

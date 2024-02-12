@@ -13,4 +13,16 @@ Public Class NxEntidades
             Return Nothing
         End Try
     End Function
+
+    Public Function CargarDatos(Valor As String) As DataTable
+        Try
+            Dim Datos As New DxEnti
+            Dim Tabla As New DataTable
+            Tabla = Datos.CargarDatos(Valor)
+            Return Tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

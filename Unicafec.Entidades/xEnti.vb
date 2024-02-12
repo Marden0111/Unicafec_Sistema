@@ -32,9 +32,9 @@
     Private _CorreoElectronico As String
     Private _Observaciones As String
     Private _UserIngre As String
-    Private _FechaIngre As Date
+    Private _FechaIngre As DateTime
     Private _UserModif As String
-    Private _FechaModif As Date
+    Private _FechaModif As DateTime
 #End Region
 
 #Region "Propiedades"
