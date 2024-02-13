@@ -1,5 +1,7 @@
 ﻿Public Class frmxEntidades
 
+    Dim IndexCellResaltada As Integer = 0 '-1Variable para seleccionar al pasar con el mouse
+
     Private Sub xEnti_Listar()
         Try
             Dim Neg As New Negocio.NxEntidades
@@ -142,6 +144,31 @@
         dgvRegistrosListado.Columns(12).Width = 100
         dgvRegistrosListado.Columns(13).Width = 90
         dgvRegistrosListado.Columns(14).Width = 100
+    End Sub
+
+    Private Sub Dimensionar_ListaCombo()
+
+        dgvListarCombo.Columns(0).HeaderText = "Código"
+        dgvListarCombo.Columns(0).Width = 45
+        dgvListarCombo.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
+        dgvListarCombo.Columns(1).HeaderText = "Nombre"
+
+        If lblIdCombo.Text = "cboDocIden" Then
+            dgvListarCombo.Columns(2).HeaderText = "Abrevt."
+            dgvListarCombo.Columns(1).Width = 225
+
+        ElseIf lblIdCombo.Text = "cboTipVia" Then
+            dgvListarCombo.Columns(2).HeaderText = "Abrevt."
+            dgvListarCombo.Columns(1).Width = 130
+
+        End If
+
+        If dgvListarCombo.Rows.Count <= 5 Then
+            dgvListarCombo.Height = 27 + (dgvListarCombo.Rows.Count * 19)
+        Else
+            dgvListarCombo.Height = 27 + (5 * 19)
+        End If
+
     End Sub
 
     Private Sub Visualizar_Campos_Empresa()
@@ -710,6 +737,27 @@
 
         If txtTip_DocIden.Text <> "" Then
             txtTip_DocIden.Text = Format(CLng(txtTip_DocIden.Text), "000")
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.BuscarDocIden(txtTip_DocIden.Text)
+
+            If dgvListarCombo.Rows.Count = 1 Then
+
+                txtNom_DocIden.Text = dgvListarCombo.SelectedCells.Item(1).Value
+            Else
+
+                MsgBox("El código " & txtTip_DocIden.Text & " no existe en los registros Documentos de Identidad", vbCritical, "Mensjae del Sistema")
+
+                txtNom_DocIden.Text = ""
+                txtTip_DocIden.Select()
+                txtTip_DocIden.SelectionStart = 0
+                txtTip_DocIden.SelectionLength = txtTip_DocIden.Text.Length
+
+            End If
+
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
+
         End If
 
         txtTip_DocIden.BackColor = Color.White
@@ -793,6 +841,27 @@
 
         If txtIdTVia.Text <> "" Then
             txtIdTVia.Text = Format(CLng(txtIdTVia.Text), "000")
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.BuscarTipVia(txtIdTVia.Text)
+
+            If dgvListarCombo.Rows.Count = 1 Then
+
+                txtNom_TVia.Text = dgvListarCombo.SelectedCells.Item(1).Value
+            Else
+
+                MsgBox("El código " & txtIdTVia.Text & " no existe en los registros De Vias", vbCritical, "Mensjae del Sistema")
+
+                txtNom_TVia.Text = ""
+                txtIdTVia.Select()
+                txtIdTVia.SelectionStart = 0
+                txtIdTVia.SelectionLength = txtIdTVia.Text.Length
+
+            End If
+
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
+
         End If
 
         txtIdTVia.BackColor = Color.White
@@ -974,6 +1043,26 @@
 
         If txtIdPais.Text <> "" Then
             txtIdPais.Text = Format(CLng(txtIdPais.Text), "000000")
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.BuscarPais(txtIdPais.Text)
+
+            If dgvListarCombo.Rows.Count = 1 Then
+
+                txtNom_Pais.Text = dgvListarCombo.SelectedCells.Item(1).Value
+            Else
+
+                MsgBox("El código " & txtIdPais.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
+
+                txtNom_Pais.Text = ""
+                txtIdPais.Select()
+                txtIdPais.SelectionStart = 0
+                txtIdPais.SelectionLength = txtIdPais.Text.Length
+
+            End If
+
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdPais.BackColor = Color.White
@@ -1017,6 +1106,26 @@
 
         If txtIdDep.Text <> "" Then
             txtIdDep.Text = Format(CLng(txtIdDep.Text), "000")
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.BuscarDep(txtIdDep.Text)
+
+            If dgvListarCombo.Rows.Count = 1 Then
+
+                txtNom_Dep.Text = dgvListarCombo.SelectedCells.Item(1).Value
+            Else
+
+                MsgBox("El código " & txtIdDep.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
+
+                txtNom_Dep.Text = ""
+                txtIdDep.Select()
+                txtIdDep.SelectionStart = 0
+                txtIdDep.SelectionLength = txtIdDep.Text.Length
+
+            End If
+
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdDep.BackColor = Color.White
@@ -1060,6 +1169,26 @@
 
         If txtIdProv.Text <> "" Then
             txtIdProv.Text = Format(CLng(txtIdProv.Text), "0000")
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.BuscarProv(txtIdProv.Text)
+
+            If dgvListarCombo.Rows.Count = 1 Then
+
+                txtNom_Prov.Text = dgvListarCombo.SelectedCells.Item(1).Value
+            Else
+
+                MsgBox("El código " & txtIdProv.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
+
+                txtNom_Prov.Text = ""
+                txtIdProv.Select()
+                txtIdProv.SelectionStart = 0
+                txtIdProv.SelectionLength = txtIdProv.Text.Length
+
+            End If
+
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdProv.BackColor = Color.White
@@ -1103,6 +1232,26 @@
 
         If txtIdDist.Text <> "" Then
             txtIdDist.Text = Format(CLng(txtIdDist.Text), "0000")
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.BuscarDist(txtIdDist.Text)
+
+            If dgvListarCombo.Rows.Count = 1 Then
+
+                txtNom_Dist.Text = dgvListarCombo.SelectedCells.Item(1).Value
+            Else
+
+                MsgBox("El código " & txtIdDist.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
+
+                txtNom_Dist.Text = ""
+                txtIdDist.Select()
+                txtIdDist.SelectionStart = 0
+                txtIdDist.SelectionLength = txtIdDist.Text.Length
+
+            End If
+
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdDist.BackColor = Color.White
@@ -1331,15 +1480,21 @@
 #End Region
 
 
-
-
-#Region "texbox de los combobox"
+#Region "TEXTOS DE LOS COMBOBOX"
     Private Sub txtNom_DocIden_Click(sender As Object, e As EventArgs) Handles txtNom_DocIden.Click
 
         txtNom_DocIden.SelectionStart = 0
         txtNom_DocIden.SelectionLength = txtNom_DocIden.Text.Length
-        'picbxDocIden.BackColor = Color.FromArgb(229, 241, 251)
         Me.picbxDocIden_Click(Nothing, Nothing)
+
+    End Sub
+
+
+    Private Sub txtNom_DocIden_LostFocus(sender As Object, e As EventArgs) Handles txtNom_DocIden.LostFocus
+
+        If dgvListarCombo.Visible = True Then
+            Me.picbxDocIden_Click(Nothing, Nothing)
+        End If
 
     End Sub
 
@@ -1349,10 +1504,22 @@
         Me.picbxTVia_Click(Nothing, Nothing)
     End Sub
 
+    Private Sub txtNom_TVia_LostFocus(sender As Object, e As EventArgs) Handles txtNom_TVia.LostFocus
+        If dgvListarCombo.Visible = True Then
+            Me.picbxTVia_Click(Nothing, Nothing)
+        End If
+    End Sub
+
     Private Sub txtNom_Pais_Click(sender As Object, e As EventArgs) Handles txtNom_Pais.Click
         txtNom_Pais.SelectionStart = 0
         txtNom_Pais.SelectionLength = txtNom_Pais.Text.Length
         Me.picbxPais_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub txtNom_Pais_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Pais.LostFocus
+        If dgvListarCombo.Visible = True Then
+            Me.picbxPais_Click(Nothing, Nothing)
+        End If
     End Sub
 
     Private Sub txtNom_Dep_Click(sender As Object, e As EventArgs) Handles txtNom_Dep.Click
@@ -1361,16 +1528,34 @@
         Me.picbxDep_Click(Nothing, Nothing)
     End Sub
 
+    Private Sub txtNom_Dep_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Dep.LostFocus
+        If dgvListarCombo.Visible = True Then
+            Me.picbxDep_Click(Nothing, Nothing)
+        End If
+    End Sub
+
     Private Sub txtNom_Prov_Click(sender As Object, e As EventArgs) Handles txtNom_Prov.Click
         txtNom_Prov.SelectionStart = 0
         txtNom_Prov.SelectionLength = txtNom_Prov.Text.Length
         Me.picbxProv_Click(Nothing, Nothing)
     End Sub
 
+    Private Sub txtNom_Prov_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Prov.LostFocus
+        If dgvListarCombo.Visible = True Then
+            Me.picbxProv_Click(Nothing, Nothing)
+        End If
+    End Sub
+
     Private Sub txtNom_Dist_Click(sender As Object, e As EventArgs) Handles txtNom_Dist.Click
         txtNom_Dist.SelectionStart = 0
         txtNom_Dist.SelectionLength = txtNom_Dist.Text.Length
         Me.picbxDist_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub txtNom_Dist_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Dist.LostFocus
+        If dgvListarCombo.Visible = True Then
+            Me.picbxDist_Click(Nothing, Nothing)
+        End If
     End Sub
 #End Region
 
@@ -1388,18 +1573,24 @@
     End Sub
 
     Private Sub picbxDocIden_Click(sender As Object, e As EventArgs) Handles picbxDocIden.Click
+        lblIdCombo.Text = "cboDocIden"
 
         If dgvListarCombo.Visible = False Then
+
             dgvListarCombo.Visible = True
-            dgvListarCombo.Location = New Point(txtNom_DocIden.Left, (txtNom_DocIden.Top + txtNom_DocIden.Height))
-            dgvListarCombo.Size = New Size(Me.txtNom_DocIden.Width, 180)
-            txtNom_DocIden.Select()
+            dgvListarCombo.Location = New Point(txtNom_DocIden.Left, (txtNom_DocIden.Top + txtNom_DocIden.Height) - 1)
+            dgvListarCombo.Size = New Size(Me.txtNom_DocIden.Width + 86, 150)
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.ListarDocIden()
+            dgvListarCombo.ClearSelection()
+            Me.Dimensionar_ListaCombo()
 
         ElseIf dgvListarCombo.Visible = True Then
             dgvListarCombo.Location = New Point(250, 235)
             dgvListarCombo.Size = New Size(90, 30)
-            'dgvListarCombo.DataSource = Nothing
-            'dgvListarCombo.Rows.Clear()
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
             dgvListarCombo.Visible = False
 
         End If
@@ -1419,16 +1610,25 @@
     End Sub
 
     Private Sub picbxTVia_Click(sender As Object, e As EventArgs) Handles picbxTVia.Click
+        lblIdCombo.Text = "cboTipVia"
+
         If dgvListarCombo.Visible = False Then
+
             dgvListarCombo.Visible = True
+            dgvListarCombo.Size = New Size(txtNom_TVia.Width + 95, 180)
             dgvListarCombo.Location = New Point(txtNom_TVia.Left, (txtNom_TVia.Top + txtNom_TVia.Height))
-            dgvListarCombo.Size = New Size(txtNom_TVia.Width, 180)
-            txtNom_TVia.Select()
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.ListarTipVia()
+            dgvListarCombo.ClearSelection()
+            Me.Dimensionar_ListaCombo()
+
+
         ElseIf dgvListarCombo.Visible = True Then
             dgvListarCombo.Location = New Point(88, 205)
             dgvListarCombo.Size = New Size(90, 30)
-            'dgvListarCombo.DataSource = Nothing
-            'dgvListarCombo.Rows.Clear()
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
             dgvListarCombo.Visible = False
         End If
     End Sub
@@ -1446,16 +1646,25 @@
     End Sub
 
     Private Sub picbxPais_Click(sender As Object, e As EventArgs) Handles picbxPais.Click
+        lblIdCombo.Text = "cboPais"
+
         If dgvListarCombo.Visible = False Then
+
             dgvListarCombo.Visible = True
             dgvListarCombo.Location = New Point(txtNom_Pais.Left, (txtNom_Pais.Top + txtNom_Pais.Height))
             dgvListarCombo.Size = New Size(txtNom_Pais.Width, 180)
-            txtNom_Pais.Select()
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.ListarPais()
+            dgvListarCombo.ClearSelection()
+            Me.Dimensionar_ListaCombo()
+
+
         ElseIf dgvListarCombo.Visible = True Then
             dgvListarCombo.Location = New Point(88, 205)
             dgvListarCombo.Size = New Size(90, 30)
-            'dgvListarCombo.DataSource = Nothing
-            'dgvListarCombo.Rows.Clear()
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
             dgvListarCombo.Visible = False
         End If
     End Sub
@@ -1469,16 +1678,25 @@
     End Sub
 
     Private Sub picbxDep_Click(sender As Object, e As EventArgs) Handles picbxDep.Click
+        lblIdCombo.Text = "cboDep"
+
         If dgvListarCombo.Visible = False Then
+
             dgvListarCombo.Visible = True
             dgvListarCombo.Location = New Point(txtNom_Dep.Left, (txtNom_Dep.Top + txtNom_Dep.Height))
             dgvListarCombo.Size = New Size(txtNom_Dep.Width, 180)
-            txtNom_Dep.Select()
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.ListarDep()
+            dgvListarCombo.ClearSelection()
+            Me.Dimensionar_ListaCombo()
+
+
         ElseIf dgvListarCombo.Visible = True Then
             dgvListarCombo.Location = New Point(88, 205)
             dgvListarCombo.Size = New Size(90, 30)
-            'dgvListarCombo.DataSource = Nothing
-            'dgvListarCombo.Rows.Clear()
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
             dgvListarCombo.Visible = False
         End If
     End Sub
@@ -1492,16 +1710,25 @@
     End Sub
 
     Private Sub picbxProv_Click(sender As Object, e As EventArgs) Handles picbxProv.Click
+        lblIdCombo.Text = "cboProv"
+
         If dgvListarCombo.Visible = False Then
+
             dgvListarCombo.Visible = True
             dgvListarCombo.Location = New Point(txtNom_Prov.Left, (txtNom_Prov.Top + txtNom_Prov.Height))
             dgvListarCombo.Size = New Size(txtNom_Prov.Width, 180)
-            txtNom_Prov.Select()
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.ListarProv()
+            dgvListarCombo.ClearSelection()
+            Me.Dimensionar_ListaCombo()
+
+
         ElseIf dgvListarCombo.Visible = True Then
             dgvListarCombo.Location = New Point(88, 205)
             dgvListarCombo.Size = New Size(90, 30)
-            'dgvListarCombo.DataSource = Nothing
-            'dgvListarCombo.Rows.Clear()
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
             dgvListarCombo.Visible = False
         End If
     End Sub
@@ -1515,20 +1742,127 @@
     End Sub
 
     Private Sub picbxDist_Click(sender As Object, e As EventArgs) Handles picbxDist.Click
+        lblIdCombo.Text = "cboDist"
+
         If dgvListarCombo.Visible = False Then
+
             dgvListarCombo.Visible = True
             dgvListarCombo.Location = New Point(txtNom_Dist.Left, (txtNom_Dist.Top + txtNom_Dist.Height))
             dgvListarCombo.Size = New Size(txtNom_Dist.Width, 180)
-            txtNom_Dist.Select()
+
+            Dim Neg As New Negocio.NxEntidades
+            dgvListarCombo.DataSource = Neg.ListarDist()
+            dgvListarCombo.ClearSelection()
+            Me.Dimensionar_ListaCombo()
+
+
         ElseIf dgvListarCombo.Visible = True Then
             dgvListarCombo.Location = New Point(88, 205)
             dgvListarCombo.Size = New Size(90, 30)
-            'dgvListarCombo.DataSource = Nothing
-            'dgvListarCombo.Rows.Clear()
+            dgvListarCombo.DataSource = Nothing
+            dgvListarCombo.Rows.Clear()
             dgvListarCombo.Visible = False
         End If
     End Sub
 
+
 #End Region
 
+    Private Sub dgvListarCombo_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListarCombo.CellClick
+
+        If lblIdCombo.Text = "cboDocIden" Then
+            txtTip_DocIden.Text = dgvListarCombo.SelectedCells.Item(0).Value
+            txtNom_DocIden.Text = dgvListarCombo.SelectedCells.Item(1).Value
+
+            txtNum_DocIden.Select()
+            txtNum_DocIden.SelectionStart = 0
+            txtNum_DocIden.SelectionLength = txtNum_DocIden.Text.Length
+
+            picbxDocIden_Click(Nothing, Nothing)
+
+
+        ElseIf lblIdCombo.Text = "cboTipVia" Then
+
+            txtIdTVia.Text = dgvListarCombo.SelectedCells.Item(0).Value
+            txtNom_TVia.Text = dgvListarCombo.SelectedCells.Item(1).Value
+
+            txtNombre_Via.Select()
+            txtNombre_Via.SelectionStart = 0
+            txtNombre_Via.SelectionLength = txtNombre_Via.Text.Length
+
+            picbxTVia_Click(Nothing, Nothing)
+
+        ElseIf lblIdCombo.Text = "cboPais" Then
+
+            txtIdPais.Text = dgvListarCombo.SelectedCells.Item(0).Value
+            txtNom_Pais.Text = dgvListarCombo.SelectedCells.Item(1).Value
+
+            txtIdDep.Select()
+            txtIdDep.SelectionStart = 0
+            txtIdDep.SelectionLength = txtIdDep.Text.Length
+
+            picbxPais_Click(Nothing, Nothing)
+
+        ElseIf lblIdCombo.Text = "cboDep" Then
+
+            txtIdDep.Text = dgvListarCombo.SelectedCells.Item(0).Value
+            txtNom_Dep.Text = dgvListarCombo.SelectedCells.Item(1).Value
+
+            txtIdProv.Select()
+            txtIdProv.SelectionStart = 0
+            txtIdProv.SelectionLength = txtIdProv.Text.Length
+
+            picbxDep_Click(Nothing, Nothing)
+
+        ElseIf lblIdCombo.Text = "cboProv" Then
+
+            txtIdProv.Text = dgvListarCombo.SelectedCells.Item(0).Value
+            txtNom_Prov.Text = dgvListarCombo.SelectedCells.Item(1).Value
+
+            txtIdDist.Select()
+            txtIdDist.SelectionStart = 0
+            txtIdDist.SelectionLength = txtIdDist.Text.Length
+
+            picbxProv_Click(Nothing, Nothing)
+
+        ElseIf lblIdCombo.Text = "cboDist" Then
+
+            txtIdDist.Text = dgvListarCombo.SelectedCells.Item(0).Value
+            txtNom_Dist.Text = dgvListarCombo.SelectedCells.Item(1).Value
+
+            txtUbigeo.Select()
+            txtUbigeo.SelectionStart = 0
+            txtUbigeo.SelectionLength = txtUbigeo.Text.Length
+
+            picbxDist_Click(Nothing, Nothing)
+        End If
+
+    End Sub
+
+    Private Sub dgvListarCombo_CellMouseEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListarCombo.CellMouseEnter
+        On Error Resume Next
+
+        If e.RowIndex = IndexCellResaltada Then Return
+
+        If IndexCellResaltada >= 0 Then
+            dgvListarCombo.Rows(IndexCellResaltada).DefaultCellStyle = Nothing
+        End If
+
+        IndexCellResaltada = e.RowIndex
+
+        If IndexCellResaltada >= 0 Then
+            dgvListarCombo.Rows(IndexCellResaltada).DefaultCellStyle.BackColor = Color.FromArgb(46, 134, 193)
+        End If
+
+    End Sub
+
+    Private Sub dgvListarCombo_MouseLeave(sender As Object, e As EventArgs) Handles dgvListarCombo.MouseLeave
+        dgvListarCombo.Visible = False
+        dgvListarCombo.DataSource = Nothing
+        dgvListarCombo.Rows.Clear()
+    End Sub
+
+    Private Sub txtNom_DocIden_TextChanged(sender As Object, e As EventArgs) Handles txtNom_DocIden.TextChanged
+
+    End Sub
 End Class

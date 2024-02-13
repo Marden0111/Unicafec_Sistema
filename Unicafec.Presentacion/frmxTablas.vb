@@ -8,10 +8,13 @@ Public Class frmxTablas
 
 #Region "Eventos del dgvTabla"
     Private Sub lblTablas_Click(sender As Object, e As EventArgs) Handles lblTablas.Click
+
         Me.btnTablas_Click(Nothing, Nothing)
+
     End Sub
 
     Private Sub btnTablas_Click(sender As Object, e As EventArgs) Handles btnTablas.Click
+
         If dgvTablas.Visible = False Then
             dgvTablas.Visible = True
             dgvTablas.Location = New Point(GroupBox1.Left + 5, GroupBox1.Top + 28)
@@ -21,6 +24,7 @@ Public Class frmxTablas
         ElseIf dgvTablas.Visible = True Then
             dgvTablas.Visible = False
         End If
+
     End Sub
 
     Private Sub LimpiarDgvTabla()
@@ -389,7 +393,6 @@ Public Class frmxTablas
         lblTablas.Enabled = True
         Me.btnTablas.Enabled = True
     End Sub
-
 
     'Private Sub btnSunat_Click(sender As Object, e As EventArgs) Handles btnSunat.Click
     '    Dim idcampo = txtNomCampo.Text

@@ -96,8 +96,8 @@ Partial Class mdiMenu
         Me.TsCorp = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbTablas = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEntidades = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
@@ -566,32 +566,32 @@ Partial Class mdiMenu
         'ToolStrip1
         '
         Me.ToolStrip1.AutoSize = False
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator10, Me.ToolStripButton5, Me.ToolStripButton4, Me.ToolStripSeparator9, Me.ToolStripButton6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbTablas, Me.tsbEntidades, Me.ToolStripButton3, Me.ToolStripSeparator10, Me.ToolStripButton5, Me.ToolStripButton4, Me.ToolStripSeparator9, Me.ToolStripButton6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 54)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(957, 30)
         Me.ToolStrip1.TabIndex = 9
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'tsbTablas
         '
-        Me.ToolStripButton1.AutoSize = False
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.Unicafec.Presentacion.My.Resources.Resources.Tablas
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(30, 30)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.tsbTablas.AutoSize = False
+        Me.tsbTablas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbTablas.Image = Global.Unicafec.Presentacion.My.Resources.Resources.Tablas
+        Me.tsbTablas.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbTablas.Name = "tsbTablas"
+        Me.tsbTablas.Size = New System.Drawing.Size(30, 30)
+        Me.tsbTablas.Text = "ToolStripButton1"
         '
-        'ToolStripButton2
+        'tsbEntidades
         '
-        Me.ToolStripButton2.AutoSize = False
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton2.Image = Global.Unicafec.Presentacion.My.Resources.Resources.Entidades1
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(30, 30)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
+        Me.tsbEntidades.AutoSize = False
+        Me.tsbEntidades.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbEntidades.Image = Global.Unicafec.Presentacion.My.Resources.Resources.Entidades1
+        Me.tsbEntidades.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEntidades.Name = "tsbEntidades"
+        Me.tsbEntidades.Size = New System.Drawing.Size(30, 30)
+        Me.tsbEntidades.Text = "ToolStripButton2"
         '
         'ToolStripButton3
         '
@@ -701,8 +701,8 @@ Partial Class mdiMenu
     Friend WithEvents GrupoTablas_ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents tsbTablas As ToolStripButton
+    Friend WithEvents tsbEntidades As ToolStripButton
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
     Friend WithEvents ToolStripButton4 As ToolStripButton

@@ -141,7 +141,7 @@ Public Class mdiMenu
         frm.Show()
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles tsbTablas.Click
         Dim frm As New frmxTablas
         frm.MdiParent = Me
         frm.WindowState = FormWindowState.Maximized
@@ -156,7 +156,7 @@ Public Class mdiMenu
         Application.Exit()
     End Sub
 
-    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles tsbEntidades.Click
         Dim frm As New frmxEntidades
         frm.MdiParent = Me
         frm.WindowState = FormWindowState.Maximized
