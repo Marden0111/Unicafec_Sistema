@@ -59,7 +59,7 @@ Public Class frmxEntidades
                 Obj.CorreoElectronico = txtCorreo.Text
                 Obj.Observaciones = txtObservaciones.Text
                 Obj.UserIngre = "ADMIN" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
-                Obj.FechaIngre = DateAndTime.Today
+                Obj.FechaIngre = DateAndTime.Now.ToLocalTime
 
                 If (Neg.Insertar(Obj)) Then
                     MsgBox("Se a registrado Correctamente", vbOKOnly + vbInformation, "Registro Correcto")
@@ -113,7 +113,7 @@ Public Class frmxEntidades
                 Obj.CorreoElectronico = txtCorreo.Text
                 Obj.Observaciones = txtObservaciones.Text
                 Obj.UserModif = "ADMIN" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
-                Obj.FechaModif = DateAndTime.Today
+                Obj.FechaModif = DateAndTime.Now.ToLocalTime
 
                 If (Neg.Actualizar(Obj)) Then
                     MsgBox("Se a actualizado Correctamente", vbOKOnly + vbInformation, "Actualizacion Correcta")
@@ -208,7 +208,7 @@ Public Class frmxEntidades
         txtNom_Dep.Text = dgvCargarDatos.SelectedCells.Item(16).Value
         txtIdProv.Text = dgvCargarDatos.SelectedCells.Item(17).Value
         txtNom_Prov.Text = dgvCargarDatos.SelectedCells.Item(18).Value
-        txtIdDist = dgvCargarDatos.SelectedCells.Item(19).Value
+        txtIdDist.Text = dgvCargarDatos.SelectedCells.Item(19).Value 'falloooo
         txtNom_Dist.Text = dgvCargarDatos.SelectedCells.Item(20).Value
         txtTelefono.Text = dgvCargarDatos.SelectedCells.Item(21).Value
         txtCelular.Text = dgvCargarDatos.SelectedCells.Item(22).Value
@@ -289,6 +289,12 @@ Public Class frmxEntidades
         Panel3.Visible = False
         TabControl1.SelectedIndex = 0
         TabControl1.Enabled = True
+
+        GvoTipoEnti.Enabled = True
+        gvoTipoEmpr.Enabled = True
+        gvoDatosEnti.Enabled = True
+        gvoFuncionEnti.Enabled = True
+        btnGuardar.Enabled = True
     End Sub
 
     Private Sub Dimensionar_xEnti()
@@ -306,8 +312,12 @@ Public Class frmxEntidades
         dgvRegistrosListado.Columns(11).HeaderText = "OTROS"
         dgvRegistrosListado.Columns(12).HeaderText = "INGRESO"
         dgvRegistrosListado.Columns(13).HeaderText = "FECHA"
+        dgvRegistrosListado.Columns(13).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgvRegistrosListado.Columns(13).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
         dgvRegistrosListado.Columns(14).HeaderText = "MODIFICACIÓN"
         dgvRegistrosListado.Columns(15).HeaderText = "FECHA"
+        dgvRegistrosListado.Columns(15).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight
+        dgvRegistrosListado.Columns(15).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
 
         dgvRegistrosListado.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
         dgvRegistrosListado.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
@@ -318,19 +328,20 @@ Public Class frmxEntidades
         dgvRegistrosListado.Columns(13).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
         dgvRegistrosListado.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
 
-        dgvRegistrosListado.Columns(0).Width = 90
+        dgvRegistrosListado.Columns(0).Width = 85
         dgvRegistrosListado.Columns(1).Width = 55
         dgvRegistrosListado.Columns(2).Width = 300
         dgvRegistrosListado.Columns(5).Width = 50
-        dgvRegistrosListado.Columns(6).Width = 90
+        dgvRegistrosListado.Columns(6).Width = 85
         dgvRegistrosListado.Columns(7).Width = 50
         dgvRegistrosListado.Columns(8).Width = 60
         dgvRegistrosListado.Columns(9).Width = 80
         dgvRegistrosListado.Columns(10).Width = 70
         dgvRegistrosListado.Columns(11).Width = 50
-        dgvRegistrosListado.Columns(12).Width = 100
-        dgvRegistrosListado.Columns(13).Width = 90
-        dgvRegistrosListado.Columns(14).Width = 100
+        dgvRegistrosListado.Columns(12).Width = 95
+        dgvRegistrosListado.Columns(13).Width = 115
+        dgvRegistrosListado.Columns(14).Width = 95
+
     End Sub
 
     Private Sub Dimensionar_ListaCombo()
@@ -395,7 +406,7 @@ Public Class frmxEntidades
 
         Panel4.Location = New Point(15, 109)
         gvoDatosEnti.Height = 360
-        govFuncionEnti.Height = 360
+        gvoFuncionEnti.Height = 360
         btnGuardar.Top = 440
         btnCancelar.Top = 440
 
@@ -419,7 +430,7 @@ Public Class frmxEntidades
 
         Panel4.Location = New Point(15, 78)
         gvoDatosEnti.Height = 330
-        govFuncionEnti.Height = 330
+        gvoFuncionEnti.Height = 330
         btnGuardar.Top = 410
         btnCancelar.Top = 410
     End Sub
@@ -445,13 +456,12 @@ Public Class frmxEntidades
 
         Panel4.Location = New Point(15, 78)
         gvoDatosEnti.Height = 330
-        govFuncionEnti.Height = 330
+        gvoFuncionEnti.Height = 330
         btnGuardar.Top = 410
         btnCancelar.Top = 410
     End Sub
 
     Private Sub frmxEntidades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Me.xEnti_Listar()
 
     End Sub
@@ -481,6 +491,12 @@ Public Class frmxEntidades
                 TabControl1.Enabled = False
                 CargarDatos()
 
+                GvoTipoEnti.Enabled = False
+                gvoTipoEmpr.Enabled = False
+                gvoDatosEnti.Enabled = False
+                gvoFuncionEnti.Enabled = False
+                btnGuardar.Enabled = False
+
             Case 2 'Nuevo
                 Panel3.Visible = True
                 TabControl1.Enabled = False
@@ -496,6 +512,7 @@ Public Class frmxEntidades
                 Panel3.Visible = True
                 TabControl1.Enabled = False
                 CargarDatos()
+                lblGuardar.Text = "Eliminar"
 
         End Select
     End Sub
@@ -511,7 +528,7 @@ Public Class frmxEntidades
             Me.xEnti_Actualizar()
             Me.Limpiar()
 
-        Else
+        ElseIf lblGuardar.Text = "Eliminar" And lblGuardar.Text = "Detalle" Then
 
 
         End If
@@ -530,8 +547,7 @@ Public Class frmxEntidades
         Me.CargarDatos()
 
         TabControl1.SelectedIndex = 1
-        Panel3.Visible = True
-        TabControl1.Enabled = False
+        TabControl1_Click(Nothing, Nothing)
 
     End Sub
 
@@ -633,6 +649,23 @@ Public Class frmxEntidades
     End Sub
 
     Private Sub txtIdEnti_LostFocus(sender As Object, e As EventArgs) Handles txtIdEnti.LostFocus
+
+        If Trim(txtIdEnti.Text) <> "" Then
+            txtIdEnti.Text = Format(CULng(txtIdEnti.Text), "00000000")
+        End If
+
+        Dim Neg As New Negocio.NxEntidades
+        Dim Valor As String
+        Valor = Trim(txtIdEnti.Text)
+        Dim IdEnti As DataTable = Neg.BuscarIdEnti(Valor)
+
+        If IdEnti.Rows.Count = 1 Then
+            MsgBox("Esta código ya se encuentra registrada con" & vbNewLine & "los siguentes datos:" & vbNewLine & vbNewLine & "Código: " & IdEnti.Rows(0)(columnIndex:=0).ToString() & vbNewLine & "Nombre: " & IdEnti.Rows(0)(columnIndex:=1).ToString(), vbInformation, "Mensaje del sistema")
+            txtIdEnti.Select()
+            txtIdEnti.SelectionStart = 0
+            txtIdEnti.SelectionLength = txtIdEnti.Text.Length
+            Return
+        End If
 
         txtIdEnti.BackColor = Color.White
 
@@ -1982,4 +2015,7 @@ Public Class frmxEntidades
 
     End Sub
 
+    Private Sub txtIdEnti_TextChanged(sender As Object, e As EventArgs) Handles txtIdEnti.TextChanged
+
+    End Sub
 End Class

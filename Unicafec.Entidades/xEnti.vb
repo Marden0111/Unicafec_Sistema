@@ -321,7 +321,7 @@
         Get
             Return _FechaIngre
         End Get
-        Set(value As Date)
+        Set(value As DateTime)
             _FechaIngre = value
         End Set
     End Property
@@ -339,7 +339,7 @@
         Get
             Return _FechaModif
         End Get
-        Set(value As Date)
+        Set(value As DateTime)
             _FechaModif = value
         End Set
     End Property

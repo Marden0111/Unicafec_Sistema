@@ -126,11 +126,44 @@ Public Class DxEnti
 
     End Sub
 
+    Public Function InsertarEntiOtro() As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("select Max(IdEnti) from xEnti Where TipoEnti ='Otros'", MyBase.conn)
+            Comando.CommandType = CommandType.Text
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function BuscarIdEnti(valor As String) As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("Select IdEnti, NomEntiRS From xEnti Where IdEnti='" & valor & "'", MyBase.conn)
+            Comando.CommandType = CommandType.Text
+            Comando.Parameters.Add("@IdEnti", SqlDbType.VarChar).Value = valor
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function BuscarDocIden(valor As String) As DataTable
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("Select * From xDocIDen Where IdDocIden=" & valor, MyBase.conn)
+            Dim Comando As New SqlCommand("Select * From xDocIDen Where IdDocIden='" & valor & "'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             Comando.Parameters.Add("@IdEnti", SqlDbType.VarChar).Value = valor
             MyBase.conn.Open()
@@ -163,7 +196,7 @@ Public Class DxEnti
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("Select * From xTipVia Where IdTipVia=" & valor, MyBase.conn)
+            Dim Comando As New SqlCommand("Select * From xTipVia Where IdTipVia='" & valor & "'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             Comando.Parameters.Add("@IdTipVia", SqlDbType.VarChar).Value = valor
             MyBase.conn.Open()
@@ -196,7 +229,7 @@ Public Class DxEnti
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("Select * From xPais Where IdPais=" & valor, MyBase.conn)
+            Dim Comando As New SqlCommand("Select * From xPais Where IdPais='" & valor & "'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             Comando.Parameters.Add("@IdPais", SqlDbType.VarChar).Value = valor
             MyBase.conn.Open()
@@ -229,7 +262,7 @@ Public Class DxEnti
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("Select * From xDep Where IdDep=" & valor, MyBase.conn)
+            Dim Comando As New SqlCommand("Select * From xDep Where IdDep='" & valor & "'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             Comando.Parameters.Add("@IdDep", SqlDbType.VarChar).Value = valor
             MyBase.conn.Open()
@@ -262,7 +295,7 @@ Public Class DxEnti
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("Select * From xProv Where IdProv=" & valor, MyBase.conn)
+            Dim Comando As New SqlCommand("Select * From xProv Where IdProv='" & valor & "'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             Comando.Parameters.Add("@IdProv", SqlDbType.VarChar).Value = valor
             MyBase.conn.Open()
@@ -295,7 +328,7 @@ Public Class DxEnti
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("Select * From xDist Where IdDist=" & valor, MyBase.conn)
+            Dim Comando As New SqlCommand("Select * From xDist Where IdDist='" & valor & "'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             Comando.Parameters.Add("@IdDist", SqlDbType.VarChar).Value = valor
             MyBase.conn.Open()
