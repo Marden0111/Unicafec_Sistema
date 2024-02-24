@@ -26,6 +26,28 @@ Public Class NxEntidades
         End Try
     End Function
 
+    Function Insertar(Obj As xEnti) As Boolean
+        Try
+            Dim Datos As New DxEnti
+            Datos.Insertar(Obj)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Function Actualizar(Obj As xEnti) As Boolean
+        Try
+            Dim Datos As New DxEnti
+            Datos.Actualizar(Obj)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
     Public Function BuscarDocIden(Valor As String) As DataTable
         Try
             Dim Datos As New DxEnti

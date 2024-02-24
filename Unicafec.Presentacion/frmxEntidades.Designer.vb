@@ -857,7 +857,6 @@ Partial Class frmxEntidades
         '
         'txtCorreo
         '
-        Me.txtCorreo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCorreo.Location = New System.Drawing.Point(404, 184)
         Me.txtCorreo.Margin = New System.Windows.Forms.Padding(2)

@@ -1,4 +1,7 @@
-﻿Public Class frmxEntidades
+﻿Imports System.IO
+Imports System.Net.Security
+
+Public Class frmxEntidades
 
     Dim IndexCellResaltada As Integer = 0 '-1Variable para seleccionar al pasar con el mouse
 
@@ -7,6 +10,122 @@
             Dim Neg As New Negocio.NxEntidades
             dgvRegistrosListado.DataSource = Neg.Listar()
             Me.Dimensionar_xEnti()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub xEnti_Insertar()
+        Try
+            If lblTipo_Enti.Text = "Empresa" And lblTipo_Empr.Text = "Natural" Then
+                txtNomEnti_RS.Text = txt1er_Apellido.Text & " " & txt2do_Apellido.Text & " " & txtNombres.Text
+            ElseIf lblTipo_Enti.Text = "Persona" Then
+                txtNomEnti_RS.Text = txtNombres.Text & " " & txt1er_Apellido.Text & " " & txt2do_Apellido.Text
+            End If
+
+            If Me.ValidateChildren = True And txtIdEnti.Text <> "" And lblTipo_Enti.Text <> "" And lblTipo_Empr.Text <> "" And txtNomEnti_RS.Text <> "" And txtTip_DocIden.Text <> "" And txtNum_DocIden.Text <> "" And txtIdTVia.Text <> "" And txtIdPais.Text <> "" And txtIdDep.Text <> "" And txtIdProv.Text <> "" And txtIdDist.Text <> "" Then
+
+                Dim Obj As New Entidades.xEnti
+                Dim Neg As New Negocio.NxEntidades
+
+                Obj.IdEnti = txtIdEnti.Text
+                Obj.TipoEnti = lblTipo_Enti.Text
+                Obj.TipoEmpr = lblTipo_Empr.Text
+                Obj.NomEntiRS = txtNomEnti_RS.Text
+                Obj.Nombres = txtNombres.Text
+                Obj.Apellido1 = txt1er_Apellido.Text
+                Obj.Apellido2 = txt2do_Apellido.Text
+                Obj.NomComercial = txtNom_Comercial.Text
+                Obj.TipoDocIden = txtTip_DocIden.Text
+                Obj.NumDocIden = txtNum_DocIden.Text
+                Obj.Socio = lblSocio.Text
+                Obj.Cliente = lblCliente.Text
+                Obj.Proveedor = lblProveedor.Text
+                Obj.Empleado = lblEmpleado.Text
+                Obj.Otros = lblOtros.Text
+                Obj.TipoVia = txtIdTVia.Text
+                Obj.NomVia = txtNom_TVia.Text
+                Obj.Nro = txtNroVia.Text
+                Obj.Interior = txtInterior.Text
+                Obj.DZona = txtZona.Text
+                Obj.VReferencia = txtReferencia.Text
+                Obj.Ubigeo = txtUbigeo.Text
+                Obj.Pais = txtIdPais.Text
+                Obj.Departamento = txtIdDep.Text
+                Obj.Provincia = txtIdProv.Text
+                Obj.Distrito = txtIdDist.Text
+                Obj.Telefono = txtTelefono.Text
+                Obj.Celular = txtCelular.Text
+                Obj.CorreoElectronico = txtCorreo.Text
+                Obj.Observaciones = txtObservaciones.Text
+                Obj.UserIngre = "ADMIN" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
+                Obj.FechaIngre = DateAndTime.Today
+
+                If (Neg.Insertar(Obj)) Then
+                    MsgBox("Se a registrado Correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                    Me.xEnti_Listar()
+                Else
+                    MsgBox("Hubo una falla en el registro", vbOKOnly + vbCritical, "Acción Fallida")
+                End If
+
+            Else
+                MsgBox("Insertar Información Requerida", vbOKOnly + vbCritical, "Falta Ingresar Datos")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub xEnti_Actualizar()
+        Try
+            If Me.ValidateChildren = True And txtIdEnti.Text <> "" And lblTipo_Enti.Text <> "" And lblTipo_Empr.Text <> "" And txtNomEnti_RS.Text <> "" And txtTip_DocIden.Text <> "" And txtNum_DocIden.Text <> "" And txtIdTVia.Text <> "" And txtIdPais.Text <> "" And txtIdDep.Text <> "" And txtIdProv.Text <> "" And txtIdDist.Text <> "" Then
+                Dim Obj As New Entidades.xEnti
+                Dim Neg As New Negocio.NxEntidades
+
+                Obj.IdEnti = txtIdEnti.Text
+                Obj.TipoEnti = lblTipo_Enti.Text
+                Obj.TipoEmpr = lblTipo_Empr.Text
+                Obj.NomEntiRS = txtNomEnti_RS.Text
+                Obj.Nombres = txtNombres.Text
+                Obj.Apellido1 = txt1er_Apellido.Text
+                Obj.Apellido2 = txt2do_Apellido.Text
+                Obj.NomComercial = txtNom_Comercial.Text
+                Obj.TipoDocIden = txtTip_DocIden.Text
+                Obj.NumDocIden = txtNum_DocIden.Text
+                Obj.Socio = lblSocio.Text
+                Obj.Cliente = lblCliente.Text
+                Obj.Proveedor = lblProveedor.Text
+                Obj.Empleado = lblEmpleado.Text
+                Obj.Otros = lblOtros.Text
+                Obj.TipoVia = txtIdTVia.Text
+                Obj.NomVia = txtNom_TVia.Text
+                Obj.Nro = txtNroVia.Text
+                Obj.Interior = txtInterior.Text
+                Obj.DZona = txtZona.Text
+                Obj.VReferencia = txtReferencia.Text
+                Obj.Ubigeo = txtUbigeo.Text
+                Obj.Pais = txtIdPais.Text
+                Obj.Departamento = txtIdDep.Text
+                Obj.Provincia = txtIdProv.Text
+                Obj.Distrito = txtIdDist.Text
+                Obj.Telefono = txtTelefono.Text
+                Obj.Celular = txtCelular.Text
+                Obj.CorreoElectronico = txtCorreo.Text
+                Obj.Observaciones = txtObservaciones.Text
+                Obj.UserModif = "ADMIN" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
+                Obj.FechaModif = DateAndTime.Today
+
+                If (Neg.Actualizar(Obj)) Then
+                    MsgBox("Se a actualizado Correctamente", vbOKOnly + vbInformation, "Actualizacion Correcta")
+                    Me.xEnti_Listar()
+                Else
+                    MsgBox("Hubo una falla en la actualización", vbOKOnly + vbCritical, "Acción Fallida")
+                End If
+
+            Else
+                MsgBox("Insertar Información Requerida", vbOKOnly + vbCritical, "Falta Ingresar Datos")
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -102,6 +221,74 @@
             rbtNatural.Checked = True
         End If
 
+        If lblTipo_Enti.Text = "Empresa" Then
+            Me.Visualizar_Campos_Empresa()
+        ElseIf lblTipo_Enti.Text = "Persona" Then
+            Me.Visualizar_Campos_Personas()
+        ElseIf lblTipo_Enti.Text = "Otros" Then
+            Me.Visualizar_Campos_Otro()
+        End If
+
+
+    End Sub
+
+    Private Sub Limpiar()
+        rbtEmpresa.Checked = True
+        rbtPersona.Checked = False
+        rbtOtro.Checked = False
+        lblTipo_Enti.Text = "Empresa"
+
+        rbtJuridica.Checked = True
+        rbtNatural.Checked = False
+        lblTipo_Empr.Text = "Juridica"
+
+        txtIdEnti.Text = ""
+        txtNomEnti_RS.Text = ""
+        txtNombres.Text = ""
+        txt1er_Apellido.Text = ""
+        txt2do_Apellido.Text = ""
+        txtNom_Comercial.Text = ""
+        txtTip_DocIden.Text = ""
+        txtNom_DocIden.Text = ""
+        txtNum_DocIden.Text = ""
+        txtIdTVia.Text = ""
+        txtNom_TVia.Text = ""
+        txtNombre_Via.Text = ""
+        txtNroVia.Text = ""
+        txtInterior.Text = ""
+        txtZona.Text = ""
+        txtIdPais.Text = ""
+        txtNom_Pais.Text = ""
+        txtIdDep.Text = ""
+        txtNom_Dep.Text = ""
+        txtIdProv.Text = ""
+        txtNom_Prov.Text = ""
+        txtIdDist.Text = ""
+        txtNom_Dist.Text = ""
+
+
+        lblSocio.Text = "False"
+        lblCliente.Text = "False"
+        lblProveedor.Text = "False"
+        lblEmpleado.Text = "False"
+        lblOtros.Text = "False"
+        txtReferencia.Text = ""
+        txtUbigeo.Text = ""
+        txtTelefono.Text = ""
+        txtCelular.Text = ""
+        txtCorreo.Text = ""
+        txtObservaciones.Text = ""
+
+        chbSocio.Checked = False
+        chbCliente.Checked = False
+        chbProveedor.Checked = False
+        chbEmpleado.Checked = False
+        chbOtros.Checked = False
+
+
+        Panel3.Visible = False
+        TabControl1.SelectedIndex = 0
+        TabControl1.Enabled = True
     End Sub
 
     Private Sub Dimensionar_xEnti()
@@ -297,10 +484,12 @@
             Case 2 'Nuevo
                 Panel3.Visible = True
                 TabControl1.Enabled = False
+                lblGuardar.Text = "Nuevo"
 
             Case 3 'Modificar
                 Panel3.Visible = True
                 TabControl1.Enabled = False
+                lblGuardar.Text = "Modificar"
                 CargarDatos()
 
             Case 4 'Eliminar
@@ -314,12 +503,13 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         If lblGuardar.Text = "Nuevo" Then
-
-
+            Me.xEnti_Insertar()
+            Me.Limpiar()
 
         ElseIf lblGuardar.Text = "Modificar" Then
 
-
+            Me.xEnti_Actualizar()
+            Me.Limpiar()
 
         Else
 
@@ -330,66 +520,13 @@
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
 
-        rbtEmpresa.Checked = True
-        rbtPersona.Checked = False
-        rbtOtro.Checked = False
-        lblTipo_Enti.Text = "Empresa"
+        Me.Limpiar()
 
-        rbtJuridica.Checked = True
-        rbtNatural.Checked = False
-        lblTipo_Empr.Text = "Juridica"
-
-        txtIdEnti.Text = ""
-        txtNomEnti_RS.Text = ""
-        txtNombres.Text = ""
-        txt1er_Apellido.Text = ""
-        txt2do_Apellido.Text = ""
-        txtNom_Comercial.Text = ""
-        txtTip_DocIden.Text = ""
-        txtNom_DocIden.Text = ""
-        txtNum_DocIden.Text = ""
-        txtIdTVia.Text = ""
-        txtNom_TVia.Text = ""
-        txtNombre_Via.Text = ""
-        txtNroVia.Text = ""
-        txtInterior.Text = ""
-        txtZona.Text = ""
-        txtIdPais.Text = ""
-        txtNom_Pais.Text = ""
-        txtIdDep.Text = ""
-        txtNom_Dep.Text = ""
-        txtIdProv.Text = ""
-        txtNom_Prov.Text = ""
-        txtIdDist.Text = ""
-        txtNom_Dist.Text = ""
-
-
-        lblSocio.Text = "False"
-        lblCliente.Text = "False"
-        lblProveedor.Text = "False"
-        lblEmpleado.Text = "False"
-        lblOtros.Text = "False"
-        txtReferencia.Text = ""
-        txtUbigeo.Text = ""
-        txtTelefono.Text = ""
-        txtCelular.Text = ""
-        txtCorreo.Text = ""
-        txtObservaciones.Text = ""
-
-        chbSocio.Checked = False
-        chbCliente.Checked = False
-        chbProveedor.Checked = False
-        chbEmpleado.Checked = False
-        chbOtros.Checked = False
-
-
-        Panel3.Visible = False
-        TabControl1.SelectedIndex = 0
-        TabControl1.Enabled = True
     End Sub
 
 
     Private Sub dgvRegistrosListado_DoubleClick(sender As Object, e As EventArgs) Handles dgvRegistrosListado.DoubleClick
+
         Me.CargarDatos()
 
         TabControl1.SelectedIndex = 1
@@ -1481,6 +1618,7 @@
 
 
 #Region "TEXTOS DE LOS COMBOBOX"
+
     Private Sub txtNom_DocIden_Click(sender As Object, e As EventArgs) Handles txtNom_DocIden.Click
 
         txtNom_DocIden.SelectionStart = 0
@@ -1489,77 +1627,50 @@
 
     End Sub
 
-
-    Private Sub txtNom_DocIden_LostFocus(sender As Object, e As EventArgs) Handles txtNom_DocIden.LostFocus
-
-        If dgvListarCombo.Visible = True Then
-            Me.picbxDocIden_Click(Nothing, Nothing)
-        End If
-
-    End Sub
-
     Private Sub txtNom_TVia_Click(sender As Object, e As EventArgs) Handles txtNom_TVia.Click
+
         txtNom_TVia.SelectionStart = 0
         txtNom_TVia.SelectionLength = txtNom_TVia.Text.Length
         Me.picbxTVia_Click(Nothing, Nothing)
-    End Sub
 
-    Private Sub txtNom_TVia_LostFocus(sender As Object, e As EventArgs) Handles txtNom_TVia.LostFocus
-        If dgvListarCombo.Visible = True Then
-            Me.picbxTVia_Click(Nothing, Nothing)
-        End If
     End Sub
 
     Private Sub txtNom_Pais_Click(sender As Object, e As EventArgs) Handles txtNom_Pais.Click
+
         txtNom_Pais.SelectionStart = 0
         txtNom_Pais.SelectionLength = txtNom_Pais.Text.Length
         Me.picbxPais_Click(Nothing, Nothing)
-    End Sub
 
-    Private Sub txtNom_Pais_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Pais.LostFocus
-        If dgvListarCombo.Visible = True Then
-            Me.picbxPais_Click(Nothing, Nothing)
-        End If
     End Sub
 
     Private Sub txtNom_Dep_Click(sender As Object, e As EventArgs) Handles txtNom_Dep.Click
+
         txtNom_Dep.SelectionStart = 0
         txtNom_Dep.SelectionLength = txtNom_Dep.Text.Length
         Me.picbxDep_Click(Nothing, Nothing)
-    End Sub
 
-    Private Sub txtNom_Dep_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Dep.LostFocus
-        If dgvListarCombo.Visible = True Then
-            Me.picbxDep_Click(Nothing, Nothing)
-        End If
     End Sub
 
     Private Sub txtNom_Prov_Click(sender As Object, e As EventArgs) Handles txtNom_Prov.Click
+
         txtNom_Prov.SelectionStart = 0
         txtNom_Prov.SelectionLength = txtNom_Prov.Text.Length
         Me.picbxProv_Click(Nothing, Nothing)
-    End Sub
 
-    Private Sub txtNom_Prov_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Prov.LostFocus
-        If dgvListarCombo.Visible = True Then
-            Me.picbxProv_Click(Nothing, Nothing)
-        End If
     End Sub
 
     Private Sub txtNom_Dist_Click(sender As Object, e As EventArgs) Handles txtNom_Dist.Click
+
         txtNom_Dist.SelectionStart = 0
         txtNom_Dist.SelectionLength = txtNom_Dist.Text.Length
         Me.picbxDist_Click(Nothing, Nothing)
+
     End Sub
 
-    Private Sub txtNom_Dist_LostFocus(sender As Object, e As EventArgs) Handles txtNom_Dist.LostFocus
-        If dgvListarCombo.Visible = True Then
-            Me.picbxDist_Click(Nothing, Nothing)
-        End If
-    End Sub
 #End Region
 
 #Region "botones de los texbox"
+
     Private Sub picbxDocIden_MouseEnter(sender As Object, e As EventArgs) Handles picbxDocIden.MouseEnter
 
         picbxDocIden.BackColor = Color.FromArgb(229, 241, 255)
@@ -1725,11 +1836,11 @@
 
 
         ElseIf dgvListarCombo.Visible = True Then
+            dgvListarCombo.Visible = False
             dgvListarCombo.Location = New Point(88, 205)
             dgvListarCombo.Size = New Size(90, 30)
             dgvListarCombo.DataSource = Nothing
             dgvListarCombo.Rows.Clear()
-            dgvListarCombo.Visible = False
         End If
     End Sub
 
@@ -1779,7 +1890,6 @@
             txtNum_DocIden.SelectionLength = txtNum_DocIden.Text.Length
 
             picbxDocIden_Click(Nothing, Nothing)
-
 
         ElseIf lblIdCombo.Text = "cboTipVia" Then
 
@@ -1862,7 +1972,14 @@
         dgvListarCombo.Rows.Clear()
     End Sub
 
-    Private Sub txtNom_DocIden_TextChanged(sender As Object, e As EventArgs) Handles txtNom_DocIden.TextChanged
+    Private Sub picbxDocIden_Leave(sender As Object, e As EventArgs) Handles picbxDocIden.Leave
+
+        dgvListarCombo.Visible = False
+        dgvListarCombo.Location = New Point(88, 205)
+        dgvListarCombo.Size = New Size(90, 30)
+        dgvListarCombo.DataSource = Nothing
+        dgvListarCombo.Rows.Clear()
 
     End Sub
+
 End Class

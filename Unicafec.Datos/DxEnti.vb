@@ -37,6 +37,95 @@ Public Class DxEnti
         End Try
     End Function
 
+    Public Sub Insertar(Obj As xEnti)
+        Try
+            Dim Comando As New SqlCommand("xEnti_insertar", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            Comando.Parameters.Add("@IdEnti", SqlDbType.NVarChar).Value = Obj.IdEnti
+            Comando.Parameters.Add("@TipoEnti", SqlDbType.NVarChar).Value = Obj.TipoEnti
+            Comando.Parameters.Add("@TipoEmpr", SqlDbType.NVarChar).Value = Obj.TipoEmpr
+            Comando.Parameters.Add("@NomEntiRS", SqlDbType.NVarChar).Value = Obj.NomEntiRS
+            Comando.Parameters.Add("@Nombres", SqlDbType.NVarChar).Value = Obj.Nombres
+            Comando.Parameters.Add("@Apellido1", SqlDbType.NVarChar).Value = Obj.Apellido1
+            Comando.Parameters.Add("@Apellido2", SqlDbType.NVarChar).Value = Obj.Apellido2
+            Comando.Parameters.Add("@NomComercial", SqlDbType.NVarChar).Value = Obj.NomComercial
+            Comando.Parameters.Add("@IdDocIden", SqlDbType.NVarChar).Value = Obj.TipoDocIden
+            Comando.Parameters.Add("@NumDocIden", SqlDbType.VarChar).Value = Obj.NumDocIden
+            Comando.Parameters.Add("@Socio", SqlDbType.Bit).Value = Obj.Socio
+            Comando.Parameters.Add("@Cliente", SqlDbType.Bit).Value = Obj.Cliente
+            Comando.Parameters.Add("@Proveedor", SqlDbType.Bit).Value = Obj.Proveedor
+            Comando.Parameters.Add("@Empleado", SqlDbType.Bit).Value = Obj.Empleado
+            Comando.Parameters.Add("@Otros", SqlDbType.Bit).Value = Obj.Otros
+            Comando.Parameters.Add("@TipoVia", SqlDbType.VarChar).Value = Obj.TipoVia
+            Comando.Parameters.Add("@NombreVia", SqlDbType.NVarChar).Value = Obj.NomVia
+            Comando.Parameters.Add("@Nro", SqlDbType.NVarChar).Value = Obj.Nro
+            Comando.Parameters.Add("@Interior", SqlDbType.NVarChar).Value = Obj.Interior
+            Comando.Parameters.Add("@DZona", SqlDbType.NVarChar).Value = Obj.DZona
+            Comando.Parameters.Add("@VReferencia", SqlDbType.NVarChar).Value = Obj.VReferencia
+            Comando.Parameters.Add("@Ubigeo", SqlDbType.VarChar).Value = Obj.Ubigeo
+            Comando.Parameters.Add("@Pais", SqlDbType.VarChar).Value = Obj.Pais
+            Comando.Parameters.Add("@Departamento", SqlDbType.VarChar).Value = Obj.Departamento
+            Comando.Parameters.Add("@Provincia", SqlDbType.VarChar).Value = Obj.Provincia
+            Comando.Parameters.Add("@Distrito", SqlDbType.VarChar).Value = Obj.Distrito
+            Comando.Parameters.Add("@Telefono", SqlDbType.NVarChar).Value = Obj.Telefono
+            Comando.Parameters.Add("@Celular", SqlDbType.NVarChar).Value = Obj.Celular
+            Comando.Parameters.Add("@CorreoElectronico", SqlDbType.NVarChar).Value = Obj.CorreoElectronico
+            Comando.Parameters.Add("@Observaciones", SqlDbType.NVarChar).Value = Obj.Observaciones
+            Comando.Parameters.Add("@UserIngre", SqlDbType.VarChar).Value = Obj.UserIngre
+            Comando.Parameters.Add("@FechaIngre", SqlDbType.DateTime).Value = Obj.FechaIngre
+            MyBase.conn.Open()
+            Comando.ExecuteNonQuery()
+            MyBase.conn.Close()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub Actualizar(Obj As xEnti)
+        Try
+            Dim Comando As New SqlCommand("xEnti_actualizar", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            Comando.Parameters.Add("@IdEnti", SqlDbType.NVarChar).Value = Obj.IdEnti
+            Comando.Parameters.Add("@TipoEnti", SqlDbType.NVarChar).Value = Obj.TipoEnti
+            Comando.Parameters.Add("@TipoEmpr", SqlDbType.NVarChar).Value = Obj.TipoEmpr
+            Comando.Parameters.Add("@NomEntiRS", SqlDbType.NVarChar).Value = Obj.NomEntiRS
+            Comando.Parameters.Add("@Nombres", SqlDbType.NVarChar).Value = Obj.Nombres
+            Comando.Parameters.Add("@Apellido1", SqlDbType.NVarChar).Value = Obj.Apellido1
+            Comando.Parameters.Add("@Apellido2", SqlDbType.NVarChar).Value = Obj.Apellido2
+            Comando.Parameters.Add("@NomComercial", SqlDbType.NVarChar).Value = Obj.NomComercial
+            Comando.Parameters.Add("@IdDocIden", SqlDbType.NVarChar).Value = Obj.TipoDocIden
+            Comando.Parameters.Add("@NumDocIden", SqlDbType.VarChar).Value = Obj.NumDocIden
+            Comando.Parameters.Add("@Socio", SqlDbType.Bit).Value = Obj.Socio
+            Comando.Parameters.Add("@Cliente", SqlDbType.Bit).Value = Obj.Cliente
+            Comando.Parameters.Add("@Proveedor", SqlDbType.Bit).Value = Obj.Proveedor
+            Comando.Parameters.Add("@Empleado", SqlDbType.Bit).Value = Obj.Empleado
+            Comando.Parameters.Add("@Otros", SqlDbType.Bit).Value = Obj.Otros
+            Comando.Parameters.Add("@TipoVia", SqlDbType.VarChar).Value = Obj.TipoVia
+            Comando.Parameters.Add("@NombreVia", SqlDbType.NVarChar).Value = Obj.NomVia
+            Comando.Parameters.Add("@Nro", SqlDbType.NVarChar).Value = Obj.Nro
+            Comando.Parameters.Add("@Interior", SqlDbType.NVarChar).Value = Obj.Interior
+            Comando.Parameters.Add("@DZona", SqlDbType.NVarChar).Value = Obj.DZona
+            Comando.Parameters.Add("@VReferencia", SqlDbType.NVarChar).Value = Obj.VReferencia
+            Comando.Parameters.Add("@Ubigeo", SqlDbType.VarChar).Value = Obj.Ubigeo
+            Comando.Parameters.Add("@Pais", SqlDbType.VarChar).Value = Obj.Pais
+            Comando.Parameters.Add("@Departamento", SqlDbType.VarChar).Value = Obj.Departamento
+            Comando.Parameters.Add("@Provincia", SqlDbType.VarChar).Value = Obj.Provincia
+            Comando.Parameters.Add("@Distrito", SqlDbType.VarChar).Value = Obj.Distrito
+            Comando.Parameters.Add("@Telefono", SqlDbType.NVarChar).Value = Obj.Telefono
+            Comando.Parameters.Add("@Celular", SqlDbType.NVarChar).Value = Obj.Celular
+            Comando.Parameters.Add("@CorreoElectronico", SqlDbType.NVarChar).Value = Obj.CorreoElectronico
+            Comando.Parameters.Add("@Observaciones", SqlDbType.NVarChar).Value = Obj.Observaciones
+            Comando.Parameters.Add("@UserModif", SqlDbType.VarChar).Value = Obj.UserModif
+            Comando.Parameters.Add("@FechaModif", SqlDbType.DateTime).Value = Obj.FechaModif
+            MyBase.conn.Open()
+            Comando.ExecuteNonQuery()
+            MyBase.conn.Close()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
     Public Function BuscarDocIden(valor As String) As DataTable
         Try
             Dim Resultado As SqlDataReader
