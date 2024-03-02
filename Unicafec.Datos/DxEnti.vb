@@ -26,7 +26,7 @@ Public Class DxEnti
             Dim Tabla As New DataTable
             Dim Comando As New SqlCommand("xEnti_CargarDatos", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@IdEnti", SqlDbType.VarChar).Value = valor
+            Comando.Parameters.Add("@IdEnti", SqlDbType.Char).Value = valor
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()
             Tabla.Load(Resultado)
@@ -41,7 +41,7 @@ Public Class DxEnti
         Try
             Dim Comando As New SqlCommand("xEnti_insertar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
-            Comando.Parameters.Add("@IdEnti", SqlDbType.NVarChar).Value = Obj.IdEnti
+            Comando.Parameters.Add("@IdEnti", SqlDbType.Char).Value = Obj.IdEnti
             Comando.Parameters.Add("@TipoEnti", SqlDbType.NVarChar).Value = Obj.TipoEnti
             Comando.Parameters.Add("@TipoEmpr", SqlDbType.NVarChar).Value = Obj.TipoEmpr
             Comando.Parameters.Add("@NomEntiRS", SqlDbType.NVarChar).Value = Obj.NomEntiRS
@@ -126,11 +126,24 @@ Public Class DxEnti
 
     End Sub
 
-    Public Function InsertarEntiOtro() As DataTable
+    Public Sub Eliminar(ID As String)
+        Try
+            Dim Comando As New SqlCommand("Delete From xEnti Where IdEnti='" & ID & "'", MyBase.conn)
+            Comando.CommandType = CommandType.Text
+            Comando.Parameters.Add("@IdEnti", SqlDbType.NVarChar).Value = ID
+            MyBase.conn.Open()
+            Comando.ExecuteNonQuery()
+            MyBase.conn.Close()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Function GenerarIdOtros() As DataTable
         Try
             Dim Resultado As SqlDataReader
             Dim Tabla As New DataTable
-            Dim Comando As New SqlCommand("select Max(IdEnti) from xEnti Where TipoEnti ='Otros'", MyBase.conn)
+            Dim Comando As New SqlCommand("Select Max(IdEnti) from xEnti Where TipoEnti ='Otros'", MyBase.conn)
             Comando.CommandType = CommandType.Text
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()

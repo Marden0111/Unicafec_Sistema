@@ -1,6 +1,7 @@
 ﻿Imports System.Data.Common
 Imports System.IO
 Imports System.Net
+Imports System.Reflection
 Imports Newtonsoft.Json.Linq
 
 Public Class frmxTablas
@@ -74,6 +75,8 @@ Public Class frmxTablas
             Me.Listar_xDistrito()
         ElseIf lblIdTabla.Text = "xTipVia" Then
             Me.Listar_xTipoVia()
+        ElseIf lblIdTabla.Text = "xMePa" Then
+            Me.Listar_xMediosPago()
         End If
 
         LimpiarDgvTabla()
@@ -87,9 +90,9 @@ Public Class frmxTablas
 #Region "Dimensionar tablas"
 
     Private Sub Dimensionar_zxTablas()
-        dgvTablas.Columns(0).HeaderText = "Código"
+        dgvTablas.Columns(0).HeaderText = "CÓDIGO"
         dgvTablas.Columns(1).Visible = False
-        dgvTablas.Columns(2).HeaderText = "Nombre de tabla"
+        dgvTablas.Columns(2).HeaderText = "NOMBRE DE TABLA"
 
         dgvTablas.Columns(0).Width = 55
         dgvTablas.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
@@ -102,13 +105,15 @@ Public Class frmxTablas
     End Sub
 
     Private Sub Dimensionar_xDocIden()
-        dgvListado.Columns(0).HeaderText = "Código"
-        dgvListado.Columns(1).HeaderText = "Tipo"
-        dgvListado.Columns(2).HeaderText = "Abreviatura"
-        dgvListado.Columns(3).HeaderText = "Agregado"
-        dgvListado.Columns(4).HeaderText = "Fecha"
-        dgvListado.Columns(5).HeaderText = "Modificado"
-        dgvListado.Columns(6).HeaderText = "Fecha"
+        dgvListado.Columns(0).HeaderText = "CÓDIGO"
+        dgvListado.Columns(1).HeaderText = "TIPO"
+        dgvListado.Columns(2).HeaderText = "ABREVIATURA"
+        dgvListado.Columns(3).HeaderText = "INGRESADO"
+        dgvListado.Columns(4).HeaderText = "FECHA"
+        dgvListado.Columns(4).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
+        dgvListado.Columns(5).HeaderText = "MODIFICADO"
+        dgvListado.Columns(6).HeaderText = "FECHA"
+        dgvListado.Columns(6).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
 
         dgvListado.Columns(0).Width = 80
         dgvListado.Columns(1).Width = 400
@@ -125,12 +130,14 @@ Public Class frmxTablas
     End Sub
 
     Private Sub Dimensionar_xPais()
-        dgvListado.Columns(0).HeaderText = " CODIGO"
+        dgvListado.Columns(0).HeaderText = " CÓDIGO"
         dgvListado.Columns(1).HeaderText = " NOMBRE"
-        dgvListado.Columns(2).HeaderText = " INGRESO"
+        dgvListado.Columns(2).HeaderText = " INGRESADO"
         dgvListado.Columns(3).HeaderText = " FECHA"
-        dgvListado.Columns(4).HeaderText = " MODIFICACIÓN"
+        dgvListado.Columns(3).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
+        dgvListado.Columns(4).HeaderText = " MODIFICADO"
         dgvListado.Columns(5).HeaderText = " FECHA"
+        dgvListado.Columns(5).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
 
         dgvListado.Columns(0).Width = 70
         dgvListado.Columns(1).Width = 420
@@ -144,13 +151,15 @@ Public Class frmxTablas
     End Sub
 
     Private Sub Dimensionar_xTablasDePais()
-        dgvListado.Columns(0).HeaderText = " CODIGO"
+        dgvListado.Columns(0).HeaderText = " CÓDIGO"
         dgvListado.Columns(1).HeaderText = " NOMBRE"
         dgvListado.Columns(2).Visible = False
-        dgvListado.Columns(3).HeaderText = " INGRESO"
+        dgvListado.Columns(3).HeaderText = " INGRESADO"
         dgvListado.Columns(4).HeaderText = " FECHA"
-        dgvListado.Columns(5).HeaderText = " MODIFICACIÓN"
+        dgvListado.Columns(4).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
+        dgvListado.Columns(5).HeaderText = " MODIFICADO"
         dgvListado.Columns(6).HeaderText = " FECHA"
+        dgvListado.Columns(6).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
 
         dgvListado.Columns(0).Width = 70
         dgvListado.Columns(1).Width = 420
@@ -162,6 +171,7 @@ Public Class frmxTablas
         dgvListado.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
         dgvListado.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
     End Sub
+
 #End Region
 
 #Region "Listado de tablas"
@@ -235,12 +245,29 @@ Public Class frmxTablas
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub Listar_xMediosPago()
+        Try
+            Dim Neg As New Negocio.NxTablas
+            dgvListado.DataSource = Neg.Listar_MediosPago()
+            Me.Dimensionar_xPais()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 #End Region
 
     Private Sub frmxTablas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Listar_xPais()
         lblTablas.Text = "Paises"
         lblIdTabla.Text = "xPais"
+
+        'Lineas para desactivar parpadeo del DataGridView al cargar varios registros
+        Dim systemType As Type = dgvListado.GetType()
+        Dim propertyInfo As PropertyInfo = systemType.GetProperty("DoubleBuffered", BindingFlags.Instance Or BindingFlags.NonPublic)
+        propertyInfo.SetValue(dgvListado, True, Nothing)
+        '--------------------------------------------------------------------------
+
 
         Dim Neg As New Negocio.NxTablas
         Dim Valor As String
@@ -328,11 +355,20 @@ Public Class frmxTablas
                 'por definir
 
             Case 1 'Detalle
-                Panel3.Visible = True
-                txtIdCampo.Text = dgvCargarDatos.SelectedCells.Item(0).Value
-                txtNomCampo.Text = dgvCargarDatos.SelectedCells.Item(1).Value
-                btnGuardar.Visible = False
-                TabControl1.Enabled = False
+                If dgvListado.Rows.Count = 0 Then
+                    MsgBox("No existe registros para detallar", vbInformation, "Mesnaje del sistema")
+                    TabControl1.SelectedIndex = 0
+                    Exit Sub
+                Else
+                    Panel3.Visible = True
+                    TabControl1.Enabled = False
+                    'CargarDatos()
+
+                    'GvoTipoEnti.Enabled = False
+                    'gvoTipoEmpr.Enabled = False
+                    'gvoDatosEnti.Enabled = False
+                    btnGuardar.Enabled = False
+                End If
 
 
             Case 2 'Ingresar
@@ -341,7 +377,7 @@ Public Class frmxTablas
                 txtNomCampo.Text = Nothing
                 TabControl1.Enabled = False
                 btnGuardar.Visible = True
-                lblGuardar.Text = "INGRESAR"
+                lblGuardar.Text = "NUEVO"
                 txtIdCampo.Select()
 
 
@@ -371,7 +407,7 @@ Public Class frmxTablas
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If lblGuardar.Text = "INGRESAR" Then
+        If lblGuardar.Text = "NUEVO" Then
 
 
         ElseIf lblGuardar.Text = "MODIFICAR" Then
@@ -389,10 +425,12 @@ Public Class frmxTablas
         Panel3.Visible = False
         TabControl1.SelectedIndex = 0
 
-        btnSunat.Visible = True
         lblTablas.Enabled = True
         Me.btnTablas.Enabled = True
+
+        btnGuardar.Enabled = True
     End Sub
+
 
     'Private Sub btnSunat_Click(sender As Object, e As EventArgs) Handles btnSunat.Click
     '    Dim idcampo = txtNomCampo.Text

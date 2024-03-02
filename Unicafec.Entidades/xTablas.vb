@@ -34,7 +34,9 @@
     Private _IdTipVia As String
     Private _NomVia As String
 
-
+    'Campos de Tabla xMedioDePago
+    Private _IdMepa As String
+    Private _Descripcion As String
 
     Public Property Orden As String
         Get
@@ -213,6 +215,24 @@
         End Get
         Set(value As String)
             _NomVia = value
+        End Set
+    End Property
+
+    Public Property IdMepa As String
+        Get
+            Return _IdMepa
+        End Get
+        Set(value As String)
+            _IdMepa = value
+        End Set
+    End Property
+
+    Public Property Descripcion As String
+        Get
+            Return _Descripcion
+        End Get
+        Set(value As String)
+            _Descripcion = value
         End Set
     End Property
 End Class

@@ -48,6 +48,29 @@ Public Class NxEntidades
         End Try
     End Function
 
+    Function Eliminar(Id As String) As Boolean
+        Try
+            Dim Datos As New DxEnti
+            Datos.Eliminar(Id)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Function GenerarIdOtros() As DataTable
+        Try
+            Dim Datos As New DxEnti
+            Dim Tabla As New DataTable
+            Tabla = Datos.GenerarIdOtros
+            Return Tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function BuscarIdEnti(Valor As String) As DataTable
         Try
             Dim Datos As New DxEnti

@@ -64,6 +64,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CajaBcosMov.vb" />
+    <Compile Include="CajaBcosReg.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -79,7 +81,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="xDocIden.vb" />
+    <Compile Include="xDocumentos.vb" />
     <Compile Include="xEnti.vb" />
     <Compile Include="xTablas.vb" />
     <Compile Include="xUsua.vb" />

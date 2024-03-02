@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class mdiMenu
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class mdiMenu
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mdiMenu))
@@ -38,19 +38,38 @@ Partial Class mdiMenu
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.Entidades_ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GrupoTablas_ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDeDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripSeparator()
         Me.ImprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfigurarImpresiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CooperativaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SociosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PadrónDeSociosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripSeparator()
         Me.RegistroParticipaciónAsambleasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcopioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeCajasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NomvreToolStripMenuItem = New System.Windows.Forms.ToolStripSeparator()
+        Me.TiposDeMovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SubtipoDeMovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AperturaDiariaDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MovimientosDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ArqueoYCierroDiarioDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ReporteDiarioDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FlujoMensualizadoDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BancosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegsitrosDeBancosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AprturaMensualDeBancosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MovimientosDeBancosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CierreMensualDeBancosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripSeparator()
         Me.CréditosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoDeCréditosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
@@ -61,6 +80,7 @@ Partial Class mdiMenu
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoDeAportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SubTiposDeAportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripSeparator()
         Me.RegistroDeAportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeDevolucionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -84,21 +104,16 @@ Partial Class mdiMenu
         Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ArrangeIconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.PrintToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.PrintPreviewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TsCorp = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tsbTablas = New System.Windows.Forms.ToolStripButton()
         Me.tsbEntidades = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbDocumentos = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
@@ -112,7 +127,7 @@ Partial Class mdiMenu
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.CooperativaToolStripMenuItem, Me.CajaToolStripMenuItem, Me.BancosToolStripMenuItem, Me.CréditosToolStripMenuItem, Me.AportesToolStripMenuItem, Me.LaboratorioToolStripMenuItem, Me.ViewMenu, Me.WindowsMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.SociosToolStripMenuItem, Me.AcopioToolStripMenuItem, Me.CajaToolStripMenuItem, Me.BancosToolStripMenuItem, Me.CréditosToolStripMenuItem, Me.AportesToolStripMenuItem, Me.LaboratorioToolStripMenuItem, Me.ViewMenu, Me.WindowsMenu})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
@@ -122,7 +137,7 @@ Partial Class mdiMenu
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator3, Me.ConfigurarDataBaseToolStripMenuItem, Me.ToolStripSeparator4, Me.ConfigurarCampañaToolStripMenuItem, Me.ConfigurarPeriodoToolStripMenuItem, Me.ToolStripSeparator5, Me.ConfigurarUsuariosToolStripMenuItem, Me.CambioPasswordToolStripMenuItem, Me.ToolStripMenuItem1, Me.Entidades_ToolStripMenuItem, Me.GrupoTablas_ToolStripMenuItem, Me.ToolStripMenuItem2, Me.ImprimirToolStripMenuItem, Me.ConfigurarImpresiónToolStripMenuItem, Me.ToolStripMenuItem3, Me.SalirToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator3, Me.ConfigurarDataBaseToolStripMenuItem, Me.ToolStripSeparator4, Me.ConfigurarCampañaToolStripMenuItem, Me.ConfigurarPeriodoToolStripMenuItem, Me.ToolStripSeparator5, Me.ConfigurarUsuariosToolStripMenuItem, Me.CambioPasswordToolStripMenuItem, Me.ToolStripMenuItem1, Me.Entidades_ToolStripMenuItem, Me.GrupoTablas_ToolStripMenuItem, Me.RegistroDeDocumentosToolStripMenuItem, Me.ToolStripMenuItem2, Me.BuscarToolStripMenuItem, Me.ToolStripMenuItem11, Me.ImprimirToolStripMenuItem, Me.ConfigurarImpresiónToolStripMenuItem, Me.ToolStripMenuItem3, Me.SalirToolStripMenuItem})
         Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(60, 20)
@@ -131,102 +146,120 @@ Partial Class mdiMenu
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(205, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(243, 6)
         '
         'ConfigurarDataBaseToolStripMenuItem
         '
         Me.ConfigurarDataBaseToolStripMenuItem.Name = "ConfigurarDataBaseToolStripMenuItem"
-        Me.ConfigurarDataBaseToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ConfigurarDataBaseToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.ConfigurarDataBaseToolStripMenuItem.Text = "Configurar DataBase"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(205, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(243, 6)
         '
         'ConfigurarCampañaToolStripMenuItem
         '
         Me.ConfigurarCampañaToolStripMenuItem.Name = "ConfigurarCampañaToolStripMenuItem"
-        Me.ConfigurarCampañaToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ConfigurarCampañaToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.ConfigurarCampañaToolStripMenuItem.Text = "Configurar Campaña"
         '
         'ConfigurarPeriodoToolStripMenuItem
         '
         Me.ConfigurarPeriodoToolStripMenuItem.Name = "ConfigurarPeriodoToolStripMenuItem"
-        Me.ConfigurarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ConfigurarPeriodoToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.ConfigurarPeriodoToolStripMenuItem.Text = "Configurar Periodo"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(205, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(243, 6)
         '
         'ConfigurarUsuariosToolStripMenuItem
         '
         Me.ConfigurarUsuariosToolStripMenuItem.Name = "ConfigurarUsuariosToolStripMenuItem"
-        Me.ConfigurarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ConfigurarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.ConfigurarUsuariosToolStripMenuItem.Text = "Registro de Usuarios"
         '
         'CambioPasswordToolStripMenuItem
         '
         Me.CambioPasswordToolStripMenuItem.Name = "CambioPasswordToolStripMenuItem"
-        Me.CambioPasswordToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.CambioPasswordToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.CambioPasswordToolStripMenuItem.Text = "Cambio Password"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(205, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(243, 6)
         '
         'Entidades_ToolStripMenuItem
         '
         Me.Entidades_ToolStripMenuItem.Name = "Entidades_ToolStripMenuItem"
         Me.Entidades_ToolStripMenuItem.ShortcutKeyDisplayString = ""
         Me.Entidades_ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.Entidades_ToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.Entidades_ToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.Entidades_ToolStripMenuItem.Text = "Registro de Entidades"
         '
         'GrupoTablas_ToolStripMenuItem
         '
         Me.GrupoTablas_ToolStripMenuItem.Name = "GrupoTablas_ToolStripMenuItem"
         Me.GrupoTablas_ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
-        Me.GrupoTablas_ToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.GrupoTablas_ToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.GrupoTablas_ToolStripMenuItem.Text = "Registro de Tablas"
+        '
+        'RegistroDeDocumentosToolStripMenuItem
+        '
+        Me.RegistroDeDocumentosToolStripMenuItem.Name = "RegistroDeDocumentosToolStripMenuItem"
+        Me.RegistroDeDocumentosToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.RegistroDeDocumentosToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.RegistroDeDocumentosToolStripMenuItem.Text = "Registro de Documentos"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(205, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(243, 6)
+        '
+        'BuscarToolStripMenuItem
+        '
+        Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.BuscarToolStripMenuItem.Text = "Buscar"
+        '
+        'ToolStripMenuItem11
+        '
+        Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(243, 6)
         '
         'ImprimirToolStripMenuItem
         '
         Me.ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
-        Me.ImprimirToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ImprimirToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.ImprimirToolStripMenuItem.Text = "Imprimir"
         '
         'ConfigurarImpresiónToolStripMenuItem
         '
         Me.ConfigurarImpresiónToolStripMenuItem.Name = "ConfigurarImpresiónToolStripMenuItem"
-        Me.ConfigurarImpresiónToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ConfigurarImpresiónToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.ConfigurarImpresiónToolStripMenuItem.Text = "Configurar Impresión"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(205, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(243, 6)
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'CooperativaToolStripMenuItem
+        'SociosToolStripMenuItem
         '
-        Me.CooperativaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PadrónDeSociosToolStripMenuItem, Me.ToolStripMenuItem8, Me.RegistroParticipaciónAsambleasToolStripMenuItem})
-        Me.CooperativaToolStripMenuItem.Name = "CooperativaToolStripMenuItem"
-        Me.CooperativaToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
-        Me.CooperativaToolStripMenuItem.Text = "Cooperativa"
+        Me.SociosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PadrónDeSociosToolStripMenuItem, Me.ToolStripMenuItem8, Me.RegistroParticipaciónAsambleasToolStripMenuItem})
+        Me.SociosToolStripMenuItem.Name = "SociosToolStripMenuItem"
+        Me.SociosToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.SociosToolStripMenuItem.Text = "Socios"
         '
         'PadrónDeSociosToolStripMenuItem
         '
@@ -245,9 +278,15 @@ Partial Class mdiMenu
         Me.RegistroParticipaciónAsambleasToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.RegistroParticipaciónAsambleasToolStripMenuItem.Text = "Registro Asambleas Generales"
         '
+        'AcopioToolStripMenuItem
+        '
+        Me.AcopioToolStripMenuItem.Name = "AcopioToolStripMenuItem"
+        Me.AcopioToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.AcopioToolStripMenuItem.Text = "Acopio"
+        '
         'CajaToolStripMenuItem
         '
-        Me.CajaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeCajasToolStripMenuItem})
+        Me.CajaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeCajasToolStripMenuItem, Me.NomvreToolStripMenuItem, Me.TiposDeMovimientosToolStripMenuItem, Me.SubtipoDeMovimientosToolStripMenuItem, Me.ToolStripMenuItem14, Me.AperturaDiariaDeCajaToolStripMenuItem, Me.MovimientosDeCajaToolStripMenuItem, Me.ArqueoYCierroDiarioDeCajaToolStripMenuItem, Me.ToolStripMenuItem12, Me.ReporteDiarioDeCajaToolStripMenuItem, Me.FlujoMensualizadoDeCajaToolStripMenuItem})
         Me.CajaToolStripMenuItem.Name = "CajaToolStripMenuItem"
         Me.CajaToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
         Me.CajaToolStripMenuItem.Text = "Caja"
@@ -255,12 +294,69 @@ Partial Class mdiMenu
         'RegistroDeCajasToolStripMenuItem
         '
         Me.RegistroDeCajasToolStripMenuItem.Name = "RegistroDeCajasToolStripMenuItem"
-        Me.RegistroDeCajasToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.RegistroDeCajasToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.RegistroDeCajasToolStripMenuItem.Text = "Registro de Cajas"
+        '
+        'NomvreToolStripMenuItem
+        '
+        Me.NomvreToolStripMenuItem.Name = "NomvreToolStripMenuItem"
+        Me.NomvreToolStripMenuItem.Size = New System.Drawing.Size(230, 6)
+        '
+        'TiposDeMovimientosToolStripMenuItem
+        '
+        Me.TiposDeMovimientosToolStripMenuItem.Name = "TiposDeMovimientosToolStripMenuItem"
+        Me.TiposDeMovimientosToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.TiposDeMovimientosToolStripMenuItem.Text = "Tipos de Movimientos"
+        '
+        'SubtipoDeMovimientosToolStripMenuItem
+        '
+        Me.SubtipoDeMovimientosToolStripMenuItem.Name = "SubtipoDeMovimientosToolStripMenuItem"
+        Me.SubtipoDeMovimientosToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.SubtipoDeMovimientosToolStripMenuItem.Text = "Subtipos de Movimientos"
+        '
+        'ToolStripMenuItem14
+        '
+        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
+        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(230, 6)
+        '
+        'AperturaDiariaDeCajaToolStripMenuItem
+        '
+        Me.AperturaDiariaDeCajaToolStripMenuItem.Name = "AperturaDiariaDeCajaToolStripMenuItem"
+        Me.AperturaDiariaDeCajaToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.AperturaDiariaDeCajaToolStripMenuItem.Text = "Apertura Diaria de Caja"
+        '
+        'MovimientosDeCajaToolStripMenuItem
+        '
+        Me.MovimientosDeCajaToolStripMenuItem.Name = "MovimientosDeCajaToolStripMenuItem"
+        Me.MovimientosDeCajaToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.MovimientosDeCajaToolStripMenuItem.Text = "Movimientos de Caja"
+        '
+        'ArqueoYCierroDiarioDeCajaToolStripMenuItem
+        '
+        Me.ArqueoYCierroDiarioDeCajaToolStripMenuItem.Name = "ArqueoYCierroDiarioDeCajaToolStripMenuItem"
+        Me.ArqueoYCierroDiarioDeCajaToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.ArqueoYCierroDiarioDeCajaToolStripMenuItem.Text = "Arqueo y Cierro Diario de Caja"
+        '
+        'ToolStripMenuItem12
+        '
+        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
+        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(230, 6)
+        '
+        'ReporteDiarioDeCajaToolStripMenuItem
+        '
+        Me.ReporteDiarioDeCajaToolStripMenuItem.Name = "ReporteDiarioDeCajaToolStripMenuItem"
+        Me.ReporteDiarioDeCajaToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.ReporteDiarioDeCajaToolStripMenuItem.Text = "Reporte Diario de Caja"
+        '
+        'FlujoMensualizadoDeCajaToolStripMenuItem
+        '
+        Me.FlujoMensualizadoDeCajaToolStripMenuItem.Name = "FlujoMensualizadoDeCajaToolStripMenuItem"
+        Me.FlujoMensualizadoDeCajaToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.FlujoMensualizadoDeCajaToolStripMenuItem.Text = "Flujo Mensualizado de Caja"
         '
         'BancosToolStripMenuItem
         '
-        Me.BancosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegsitrosDeBancosToolStripMenuItem})
+        Me.BancosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegsitrosDeBancosToolStripMenuItem, Me.ToolStripMenuItem13, Me.AprturaMensualDeBancosToolStripMenuItem, Me.MovimientosDeBancosToolStripMenuItem, Me.CierreMensualDeBancosToolStripMenuItem, Me.ToolStripMenuItem15})
         Me.BancosToolStripMenuItem.Name = "BancosToolStripMenuItem"
         Me.BancosToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.BancosToolStripMenuItem.Text = "Bancos"
@@ -268,8 +364,36 @@ Partial Class mdiMenu
         'RegsitrosDeBancosToolStripMenuItem
         '
         Me.RegsitrosDeBancosToolStripMenuItem.Name = "RegsitrosDeBancosToolStripMenuItem"
-        Me.RegsitrosDeBancosToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.RegsitrosDeBancosToolStripMenuItem.Text = "Regsitros de Bancos"
+        Me.RegsitrosDeBancosToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.RegsitrosDeBancosToolStripMenuItem.Text = "Cuentas de Bancos"
+        '
+        'ToolStripMenuItem13
+        '
+        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(216, 6)
+        '
+        'AprturaMensualDeBancosToolStripMenuItem
+        '
+        Me.AprturaMensualDeBancosToolStripMenuItem.Name = "AprturaMensualDeBancosToolStripMenuItem"
+        Me.AprturaMensualDeBancosToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.AprturaMensualDeBancosToolStripMenuItem.Text = "Aprtura Mensual de Bancos"
+        '
+        'MovimientosDeBancosToolStripMenuItem
+        '
+        Me.MovimientosDeBancosToolStripMenuItem.Name = "MovimientosDeBancosToolStripMenuItem"
+        Me.MovimientosDeBancosToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.MovimientosDeBancosToolStripMenuItem.Text = "Movimientos de Bancos"
+        '
+        'CierreMensualDeBancosToolStripMenuItem
+        '
+        Me.CierreMensualDeBancosToolStripMenuItem.Name = "CierreMensualDeBancosToolStripMenuItem"
+        Me.CierreMensualDeBancosToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.CierreMensualDeBancosToolStripMenuItem.Text = "Cierre Mensual de Bancos"
+        '
+        'ToolStripMenuItem15
+        '
+        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
+        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(216, 6)
         '
         'CréditosToolStripMenuItem
         '
@@ -320,7 +444,7 @@ Partial Class mdiMenu
         '
         'AportesToolStripMenuItem
         '
-        Me.AportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoDeAportesToolStripMenuItem, Me.ToolStripMenuItem6, Me.RegistroDeAportesToolStripMenuItem, Me.RegistroDeDevolucionesToolStripMenuItem, Me.ToolStripMenuItem7, Me.EstadoDeCuentaPorEntidadToolStripMenuItem1})
+        Me.AportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TipoDeAportesToolStripMenuItem, Me.SubTiposDeAportesToolStripMenuItem, Me.ToolStripMenuItem6, Me.RegistroDeAportesToolStripMenuItem, Me.RegistroDeDevolucionesToolStripMenuItem, Me.ToolStripMenuItem7, Me.EstadoDeCuentaPorEntidadToolStripMenuItem1})
         Me.AportesToolStripMenuItem.Name = "AportesToolStripMenuItem"
         Me.AportesToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.AportesToolStripMenuItem.Text = "Aportes"
@@ -328,36 +452,42 @@ Partial Class mdiMenu
         'TipoDeAportesToolStripMenuItem
         '
         Me.TipoDeAportesToolStripMenuItem.Name = "TipoDeAportesToolStripMenuItem"
-        Me.TipoDeAportesToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.TipoDeAportesToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
         Me.TipoDeAportesToolStripMenuItem.Text = "Tipo de Aportes"
+        '
+        'SubTiposDeAportesToolStripMenuItem
+        '
+        Me.SubTiposDeAportesToolStripMenuItem.Name = "SubTiposDeAportesToolStripMenuItem"
+        Me.SubTiposDeAportesToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.SubTiposDeAportesToolStripMenuItem.Text = "Subtipo de Aportes"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(230, 6)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(229, 6)
         '
         'RegistroDeAportesToolStripMenuItem
         '
         Me.RegistroDeAportesToolStripMenuItem.Name = "RegistroDeAportesToolStripMenuItem"
-        Me.RegistroDeAportesToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.RegistroDeAportesToolStripMenuItem.Text = "Registro de Aportes"
+        Me.RegistroDeAportesToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.RegistroDeAportesToolStripMenuItem.Text = "Registro de Aportes Recibidos"
         '
         'RegistroDeDevolucionesToolStripMenuItem
         '
         Me.RegistroDeDevolucionesToolStripMenuItem.Name = "RegistroDeDevolucionesToolStripMenuItem"
-        Me.RegistroDeDevolucionesToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.RegistroDeDevolucionesToolStripMenuItem.Text = "Registro de Devoluciones"
+        Me.RegistroDeDevolucionesToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.RegistroDeDevolucionesToolStripMenuItem.Text = "Registro de Aportes Devueltos"
         '
         'ToolStripMenuItem7
         '
         Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(230, 6)
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(229, 6)
         '
         'EstadoDeCuentaPorEntidadToolStripMenuItem1
         '
         Me.EstadoDeCuentaPorEntidadToolStripMenuItem1.Name = "EstadoDeCuentaPorEntidadToolStripMenuItem1"
-        Me.EstadoDeCuentaPorEntidadToolStripMenuItem1.Size = New System.Drawing.Size(233, 22)
-        Me.EstadoDeCuentaPorEntidadToolStripMenuItem1.Text = "Estado de Aportes por Entidad"
+        Me.EstadoDeCuentaPorEntidadToolStripMenuItem1.Size = New System.Drawing.Size(232, 22)
+        Me.EstadoDeCuentaPorEntidadToolStripMenuItem1.Text = "EE.CC. de Aportes Por Socios"
         '
         'LaboratorioToolStripMenuItem
         '
@@ -471,42 +601,12 @@ Partial Class mdiMenu
         'ToolStrip
         '
         Me.ToolStrip.AutoSize = False
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.OpenToolStripButton, Me.SaveToolStripButton, Me.ToolStripSeparator1, Me.PrintToolStripButton, Me.PrintPreviewToolStripButton, Me.ToolStripSeparator2, Me.HelpToolStripButton})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.PrintToolStripButton, Me.ToolStripSeparator2})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(957, 30)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "ToolStrip"
-        '
-        'NewToolStripButton
-        '
-        Me.NewToolStripButton.AutoSize = False
-        Me.NewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.NewToolStripButton.Image = CType(resources.GetObject("NewToolStripButton.Image"), System.Drawing.Image)
-        Me.NewToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
-        Me.NewToolStripButton.Name = "NewToolStripButton"
-        Me.NewToolStripButton.Size = New System.Drawing.Size(25, 25)
-        Me.NewToolStripButton.Text = "Nuevo"
-        '
-        'OpenToolStripButton
-        '
-        Me.OpenToolStripButton.AutoSize = False
-        Me.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.OpenToolStripButton.Image = CType(resources.GetObject("OpenToolStripButton.Image"), System.Drawing.Image)
-        Me.OpenToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
-        Me.OpenToolStripButton.Name = "OpenToolStripButton"
-        Me.OpenToolStripButton.Size = New System.Drawing.Size(25, 25)
-        Me.OpenToolStripButton.Text = "Abrir"
-        '
-        'SaveToolStripButton
-        '
-        Me.SaveToolStripButton.AutoSize = False
-        Me.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.SaveToolStripButton.Image = CType(resources.GetObject("SaveToolStripButton.Image"), System.Drawing.Image)
-        Me.SaveToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
-        Me.SaveToolStripButton.Name = "SaveToolStripButton"
-        Me.SaveToolStripButton.Size = New System.Drawing.Size(25, 25)
-        Me.SaveToolStripButton.Text = "Guardar"
         '
         'ToolStripSeparator1
         '
@@ -523,30 +623,10 @@ Partial Class mdiMenu
         Me.PrintToolStripButton.Size = New System.Drawing.Size(25, 25)
         Me.PrintToolStripButton.Text = "Imprimir"
         '
-        'PrintPreviewToolStripButton
-        '
-        Me.PrintPreviewToolStripButton.AutoSize = False
-        Me.PrintPreviewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.PrintPreviewToolStripButton.Image = CType(resources.GetObject("PrintPreviewToolStripButton.Image"), System.Drawing.Image)
-        Me.PrintPreviewToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PrintPreviewToolStripButton.Name = "PrintPreviewToolStripButton"
-        Me.PrintPreviewToolStripButton.Size = New System.Drawing.Size(25, 25)
-        Me.PrintPreviewToolStripButton.Text = "Vista previa de impresión"
-        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 30)
-        '
-        'HelpToolStripButton
-        '
-        Me.HelpToolStripButton.AutoSize = False
-        Me.HelpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.HelpToolStripButton.Image = CType(resources.GetObject("HelpToolStripButton.Image"), System.Drawing.Image)
-        Me.HelpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
-        Me.HelpToolStripButton.Name = "HelpToolStripButton"
-        Me.HelpToolStripButton.Size = New System.Drawing.Size(25, 25)
-        Me.HelpToolStripButton.Text = "Ayuda"
         '
         'StatusStrip
         '
@@ -566,7 +646,7 @@ Partial Class mdiMenu
         'ToolStrip1
         '
         Me.ToolStrip1.AutoSize = False
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbTablas, Me.tsbEntidades, Me.ToolStripButton3, Me.ToolStripSeparator10, Me.ToolStripButton5, Me.ToolStripButton4, Me.ToolStripSeparator9, Me.ToolStripButton6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbTablas, Me.tsbEntidades, Me.tsbDocumentos, Me.ToolStripSeparator10, Me.ToolStripButton5, Me.ToolStripButton4, Me.ToolStripSeparator9, Me.ToolStripButton6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 54)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(957, 30)
@@ -581,7 +661,7 @@ Partial Class mdiMenu
         Me.tsbTablas.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbTablas.Name = "tsbTablas"
         Me.tsbTablas.Size = New System.Drawing.Size(30, 30)
-        Me.tsbTablas.Text = "ToolStripButton1"
+        Me.tsbTablas.Text = "Registro de tablas"
         '
         'tsbEntidades
         '
@@ -591,17 +671,17 @@ Partial Class mdiMenu
         Me.tsbEntidades.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsbEntidades.Name = "tsbEntidades"
         Me.tsbEntidades.Size = New System.Drawing.Size(30, 30)
-        Me.tsbEntidades.Text = "ToolStripButton2"
+        Me.tsbEntidades.Text = "Entidades"
         '
-        'ToolStripButton3
+        'tsbDocumentos
         '
-        Me.ToolStripButton3.AutoSize = False
-        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(30, 30)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
+        Me.tsbDocumentos.AutoSize = False
+        Me.tsbDocumentos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbDocumentos.Image = Global.Unicafec.Presentacion.My.Resources.Resources.Documentos
+        Me.tsbDocumentos.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbDocumentos.Name = "tsbDocumentos"
+        Me.tsbDocumentos.Size = New System.Drawing.Size(30, 30)
+        Me.tsbDocumentos.Text = "Documentos"
         '
         'ToolStripSeparator10
         '
@@ -678,17 +758,12 @@ Partial Class mdiMenu
     Friend WithEvents CascadeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TileVerticalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TileHorizontalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents PrintPreviewToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
     Friend WithEvents TsCorp As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents PrintToolStripButton As System.Windows.Forms.ToolStripButton
-    Friend WithEvents NewToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStrip As System.Windows.Forms.ToolStrip
-    Friend WithEvents OpenToolStripButton As System.Windows.Forms.ToolStripButton
-    Friend WithEvents SaveToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents FileMenu As System.Windows.Forms.ToolStripMenuItem
@@ -703,7 +778,7 @@ Partial Class mdiMenu
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents tsbTablas As ToolStripButton
     Friend WithEvents tsbEntidades As ToolStripButton
-    Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents tsbDocumentos As ToolStripButton
     Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
     Friend WithEvents ToolStripButton4 As ToolStripButton
     Friend WithEvents ToolStripButton5 As ToolStripButton
@@ -737,7 +812,7 @@ Partial Class mdiMenu
     Friend WithEvents RegistroDeDevolucionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem7 As ToolStripSeparator
     Friend WithEvents EstadoDeCuentaPorEntidadToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents CooperativaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SociosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PadrónDeSociosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroParticipaciónAsambleasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroDeCajasToolStripMenuItem As ToolStripMenuItem
@@ -751,4 +826,24 @@ Partial Class mdiMenu
     Friend WithEvents CatacionesMuestrasEmbarqueToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem10 As ToolStripSeparator
     Friend WithEvents CatacionesVariasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RegistroDeDocumentosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BuscarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem11 As ToolStripSeparator
+    Friend WithEvents NomvreToolStripMenuItem As ToolStripSeparator
+    Friend WithEvents AperturaDiariaDeCajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MovimientosDeCajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ArqueoYCierroDiarioDeCajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem12 As ToolStripSeparator
+    Friend WithEvents ToolStripMenuItem13 As ToolStripSeparator
+    Friend WithEvents AprturaMensualDeBancosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MovimientosDeBancosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CierreMensualDeBancosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDiarioDeCajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FlujoMensualizadoDeCajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem15 As ToolStripSeparator
+    Friend WithEvents SubTiposDeAportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcopioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TiposDeMovimientosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SubtipoDeMovimientosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem14 As ToolStripSeparator
 End Class

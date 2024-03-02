@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net.Security
+Imports System.Reflection
 
 Public Class frmxEntidades
 
@@ -58,11 +59,11 @@ Public Class frmxEntidades
                 Obj.Celular = txtCelular.Text
                 Obj.CorreoElectronico = txtCorreo.Text
                 Obj.Observaciones = txtObservaciones.Text
-                Obj.UserIngre = "ADMIN" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
+                Obj.UserIngre = "ADMINIST" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
                 Obj.FechaIngre = DateAndTime.Now.ToLocalTime
 
                 If (Neg.Insertar(Obj)) Then
-                    MsgBox("Se a registrado Correctamente", vbOKOnly + vbInformation, "Registro Correcto")
+                    'MsgBox("Se a registrado Correctamente", vbOKOnly + vbInformation, "Registro Correcto")
                     Me.xEnti_Listar()
                 Else
                     MsgBox("Hubo una falla en el registro", vbOKOnly + vbCritical, "Acción Fallida")
@@ -78,6 +79,12 @@ Public Class frmxEntidades
 
     Private Sub xEnti_Actualizar()
         Try
+            If lblTipo_Enti.Text = "Empresa" And lblTipo_Empr.Text = "Natural" Then
+                txtNomEnti_RS.Text = txt1er_Apellido.Text & " " & txt2do_Apellido.Text & " " & txtNombres.Text
+            ElseIf lblTipo_Enti.Text = "Persona" Then
+                txtNomEnti_RS.Text = txtNombres.Text & " " & txt1er_Apellido.Text & " " & txt2do_Apellido.Text
+            End If
+
             If Me.ValidateChildren = True And txtIdEnti.Text <> "" And lblTipo_Enti.Text <> "" And lblTipo_Empr.Text <> "" And txtNomEnti_RS.Text <> "" And txtTip_DocIden.Text <> "" And txtNum_DocIden.Text <> "" And txtIdTVia.Text <> "" And txtIdPais.Text <> "" And txtIdDep.Text <> "" And txtIdProv.Text <> "" And txtIdDist.Text <> "" Then
                 Dim Obj As New Entidades.xEnti
                 Dim Neg As New Negocio.NxEntidades
@@ -112,11 +119,11 @@ Public Class frmxEntidades
                 Obj.Celular = txtCelular.Text
                 Obj.CorreoElectronico = txtCorreo.Text
                 Obj.Observaciones = txtObservaciones.Text
-                Obj.UserModif = "ADMIN" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
+                Obj.UserModif = "ADMINIST" 'FALTA RELACIONARLO CON VARIABLES DEL ID USUARIO Q SE RECIBE DEL LOGIN 
                 Obj.FechaModif = DateAndTime.Now.ToLocalTime
 
                 If (Neg.Actualizar(Obj)) Then
-                    MsgBox("Se a actualizado Correctamente", vbOKOnly + vbInformation, "Actualizacion Correcta")
+                    'MsgBox("Se a actualizado Correctamente", vbOKOnly + vbInformation, "Actualizacion Correcta")
                     Me.xEnti_Listar()
                 Else
                     MsgBox("Hubo una falla en la actualización", vbOKOnly + vbCritical, "Acción Fallida")
@@ -129,6 +136,14 @@ Public Class frmxEntidades
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub xEnti_Eliminar()
+
+        Dim Neg As New Negocio.NxEntidades
+        Neg.Eliminar(Trim(txtIdEnti.Text))
+
+
     End Sub
 
     Private Sub CargarDatos()
@@ -232,6 +247,51 @@ Public Class frmxEntidades
 
     End Sub
 
+    Private Sub BuscarIndexDatagridview()
+
+        Dim NumeroFilas, IndexActual, IndexPrevius, IndexNex As Integer
+        NumeroFilas = dgvRegistrosListado.Rows.Count
+        IndexActual = dgvRegistrosListado.CurrentRow.Index.ToString
+        IndexPrevius = IndexActual - 1
+        IndexNex = IndexActual + 1
+
+        If NumeroFilas > 0 Then
+
+            If IndexPrevius > -1 Then
+                dgvRegistrosListado.Rows(IndexPrevius).Selected = True
+                dgvRegistrosListado.CurrentCell = dgvRegistrosListado.Rows(IndexPrevius).Cells(1)
+                lblBuscarID.Text = dgvRegistrosListado(0, dgvRegistrosListado.CurrentRow.Index).Value
+
+            ElseIf IndexPrevius = -1 Then
+
+                If IndexNex < NumeroFilas Then
+                    dgvRegistrosListado.Rows(IndexNex).Selected = True
+                    dgvRegistrosListado.CurrentCell = dgvRegistrosListado.Rows(IndexNex).Cells(1)
+                    lblBuscarID.Text = dgvRegistrosListado(0, dgvRegistrosListado.CurrentRow.Index).Value
+
+                ElseIf IndexNex = dgvRegistrosListado.Rows.Count Then
+                    Exit Sub
+
+                End If
+
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub SeleccionarFilaDatagridview(ByVal Busqueda As String, Datagrid As DataGridView)
+
+        For Each row As DataGridViewRow In Datagrid.Rows
+
+            If row.Cells("IdEnti").Value = Busqueda Then
+                Datagrid.CurrentCell = row.Cells(0)
+                Exit For
+            End If
+        Next
+
+    End Sub
+
     Private Sub Limpiar()
         rbtEmpresa.Checked = True
         rbtPersona.Checked = False
@@ -241,6 +301,12 @@ Public Class frmxEntidades
         rbtJuridica.Checked = True
         rbtNatural.Checked = False
         lblTipo_Empr.Text = "Juridica"
+
+        txtIdEnti.Enabled = True
+        txtTip_DocIden.Enabled = True
+        txtNom_DocIden.Enabled = True
+        picbxDocIden.Enabled = True
+        txtNum_DocIden.Enabled = True
 
         txtIdEnti.Text = ""
         txtNomEnti_RS.Text = ""
@@ -266,7 +332,6 @@ Public Class frmxEntidades
         txtIdDist.Text = ""
         txtNom_Dist.Text = ""
 
-
         lblSocio.Text = "False"
         lblCliente.Text = "False"
         lblProveedor.Text = "False"
@@ -285,15 +350,17 @@ Public Class frmxEntidades
         chbEmpleado.Checked = False
         chbOtros.Checked = False
 
+        lblBuscarID.Text = ""
+
+        GvoTipoEnti.Enabled = True
+        gvoTipoEmpr.Enabled = True
+        gvoTipoEmpr.Visible = True
+        gvoDatosEnti.Enabled = True
 
         Panel3.Visible = False
         TabControl1.SelectedIndex = 0
         TabControl1.Enabled = True
 
-        GvoTipoEnti.Enabled = True
-        gvoTipoEmpr.Enabled = True
-        gvoDatosEnti.Enabled = True
-        gvoFuncionEnti.Enabled = True
         btnGuardar.Enabled = True
     End Sub
 
@@ -310,21 +377,16 @@ Public Class frmxEntidades
         dgvRegistrosListado.Columns(9).HeaderText = "PROVEEDOR"
         dgvRegistrosListado.Columns(10).HeaderText = "EMPLEADO"
         dgvRegistrosListado.Columns(11).HeaderText = "OTROS"
-        dgvRegistrosListado.Columns(12).HeaderText = "INGRESO"
+        dgvRegistrosListado.Columns(12).HeaderText = "INGRESADO"
         dgvRegistrosListado.Columns(13).HeaderText = "FECHA"
         dgvRegistrosListado.Columns(13).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight
         dgvRegistrosListado.Columns(13).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
-        dgvRegistrosListado.Columns(14).HeaderText = "MODIFICACIÓN"
+        dgvRegistrosListado.Columns(14).HeaderText = "MODIFICADO"
         dgvRegistrosListado.Columns(15).HeaderText = "FECHA"
         dgvRegistrosListado.Columns(15).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight
         dgvRegistrosListado.Columns(15).DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss"
 
         dgvRegistrosListado.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
-        dgvRegistrosListado.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
-        dgvRegistrosListado.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
-        dgvRegistrosListado.Columns(9).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
-        dgvRegistrosListado.Columns(10).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
-        dgvRegistrosListado.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
         dgvRegistrosListado.Columns(13).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
         dgvRegistrosListado.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight
 
@@ -346,10 +408,10 @@ Public Class frmxEntidades
 
     Private Sub Dimensionar_ListaCombo()
 
-        dgvListarCombo.Columns(0).HeaderText = "Código"
+        dgvListarCombo.Columns(0).HeaderText = "CÓDIGO"
         dgvListarCombo.Columns(0).Width = 45
         dgvListarCombo.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
-        dgvListarCombo.Columns(1).HeaderText = "Nombre"
+        dgvListarCombo.Columns(1).HeaderText = "NOMBRE"
 
         If lblIdCombo.Text = "cboDocIden" Then
             dgvListarCombo.Columns(2).HeaderText = "Abrevt."
@@ -406,7 +468,6 @@ Public Class frmxEntidades
 
         Panel4.Location = New Point(15, 109)
         gvoDatosEnti.Height = 360
-        gvoFuncionEnti.Height = 360
         btnGuardar.Top = 440
         btnCancelar.Top = 440
 
@@ -430,7 +491,6 @@ Public Class frmxEntidades
 
         Panel4.Location = New Point(15, 78)
         gvoDatosEnti.Height = 330
-        gvoFuncionEnti.Height = 330
         btnGuardar.Top = 410
         btnCancelar.Top = 410
     End Sub
@@ -456,13 +516,19 @@ Public Class frmxEntidades
 
         Panel4.Location = New Point(15, 78)
         gvoDatosEnti.Height = 330
-        gvoFuncionEnti.Height = 330
         btnGuardar.Top = 410
         btnCancelar.Top = 410
     End Sub
 
     Private Sub frmxEntidades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Me.xEnti_Listar()
+
+        'Lineas para desactivar parpadeo del DataGridView al cargar varios registros
+        Dim systemType As Type = dgvRegistrosListado.GetType()
+        Dim propertyInfo As PropertyInfo = systemType.GetProperty("DoubleBuffered", BindingFlags.Instance Or BindingFlags.NonPublic)
+        propertyInfo.SetValue(dgvRegistrosListado, True, Nothing)
+        '--------------------------------------------------------------------------
 
     End Sub
 
@@ -487,32 +553,68 @@ Public Class frmxEntidades
                 'por definir
 
             Case 1 ' Detalle
-                Panel3.Visible = True
-                TabControl1.Enabled = False
-                CargarDatos()
+                If dgvRegistrosListado.Rows.Count = 0 Then
+                    MsgBox("No existe registros para detallar", vbInformation, "Mesnaje del sistema")
+                    TabControl1.SelectedIndex = 0
+                    Exit Sub
+                Else
+                    Panel3.Visible = True
+                    TabControl1.Enabled = False
+                    CargarDatos()
 
-                GvoTipoEnti.Enabled = False
-                gvoTipoEmpr.Enabled = False
-                gvoDatosEnti.Enabled = False
-                gvoFuncionEnti.Enabled = False
-                btnGuardar.Enabled = False
+                    GvoTipoEnti.Enabled = False
+                    gvoTipoEmpr.Enabled = False
+                    gvoDatosEnti.Enabled = False
+                    btnGuardar.Enabled = False
+                End If
 
             Case 2 'Nuevo
                 Panel3.Visible = True
+                txtIdEnti.Select()
                 TabControl1.Enabled = False
                 lblGuardar.Text = "Nuevo"
 
             Case 3 'Modificar
-                Panel3.Visible = True
-                TabControl1.Enabled = False
-                lblGuardar.Text = "Modificar"
-                CargarDatos()
+                If dgvRegistrosListado.Rows.Count = 0 Then
+                    MsgBox("No existe registros para modificar", vbInformation, "Mesnaje del sistema")
+                    TabControl1.SelectedIndex = 0
+                    Exit Sub
+                Else
+                    Panel3.Visible = True
+                    txtIdEnti.Enabled = False
+                    TabControl1.Enabled = False
+                    lblGuardar.Text = "Modificar"
+                    CargarDatos()
+                End If
 
             Case 4 'Eliminar
-                Panel3.Visible = True
-                TabControl1.Enabled = False
-                CargarDatos()
-                lblGuardar.Text = "Eliminar"
+                If dgvRegistrosListado.Rows.Count = 0 Then
+                    MsgBox("No existe registros para eliminar", vbInformation, "Mesnaje del sistema")
+                    TabControl1.SelectedIndex = 0
+                    Exit Sub
+                Else
+                    Panel3.Visible = True
+                    TabControl1.Enabled = False
+                    CargarDatos()
+                    lblGuardar.Text = "Eliminar"
+
+                    GvoTipoEnti.Enabled = False
+                    gvoTipoEmpr.Enabled = False
+                    gvoDatosEnti.Enabled = False
+                    btnGuardar.Enabled = False
+
+                    If MsgBox("¿Esta seguro de eliminar el registro seleccionado?", vbYesNo + vbQuestion, "Mensaje del Sistema") = vbYes Then
+
+                        Me.BuscarIndexDatagridview()
+                        Me.xEnti_Eliminar()
+                        Me.xEnti_Listar()
+                        Me.SeleccionarFilaDatagridview(lblBuscarID.Text, dgvRegistrosListado)
+                        Me.btnCancelar_Click(Nothing, Nothing)
+
+                    Else
+                        Me.btnCancelar_Click(Nothing, Nothing)
+                    End If
+                End If
 
         End Select
     End Sub
@@ -521,15 +623,13 @@ Public Class frmxEntidades
 
         If lblGuardar.Text = "Nuevo" Then
             Me.xEnti_Insertar()
+            Me.SeleccionarFilaDatagridview(txtIdEnti.Text, dgvRegistrosListado)
             Me.Limpiar()
 
         ElseIf lblGuardar.Text = "Modificar" Then
-
             Me.xEnti_Actualizar()
+            Me.SeleccionarFilaDatagridview(txtIdEnti.Text, dgvRegistrosListado)
             Me.Limpiar()
-
-        ElseIf lblGuardar.Text = "Eliminar" And lblGuardar.Text = "Detalle" Then
-
 
         End If
 
@@ -546,7 +646,7 @@ Public Class frmxEntidades
 
         Me.CargarDatos()
 
-        TabControl1.SelectedIndex = 1
+        TabControl1.SelectedIndex = 3
         TabControl1_Click(Nothing, Nothing)
 
     End Sub
@@ -577,6 +677,24 @@ Public Class frmxEntidades
         lblTipo_Enti.Text = "Otros"
         lblTipo_Empr.Text = "Otros"
         Me.Visualizar_Campos_Otro()
+
+        Dim Neg As New Negocio.NxEntidades
+        Dim IdOtros As DataTable = Neg.GenerarIdOtros
+
+        If IdOtros.Rows(0)(columnIndex:=0).ToString() = Nothing Then
+            txtIdEnti.Text = "00000001"
+        Else
+            txtIdEnti.Text = Format(CLng(IdOtros.Rows(0)(columnIndex:=0).ToString() + 1), "00000000")
+        End If
+
+        txtIdEnti.Enabled = False
+        txtTip_DocIden.Text = "000"
+        txtTip_DocIden_LostFocus(Nothing, Nothing)
+        txtTip_DocIden.Enabled = False
+        txtNom_DocIden.Enabled = False
+        picbxDocIden.Enabled = False
+        txtNum_DocIden.Text = txtIdEnti.Text
+        txtNum_DocIden.Enabled = False
 
     End Sub
 
@@ -909,11 +1027,11 @@ Public Class frmxEntidades
             txtTip_DocIden.Text = Format(CLng(txtTip_DocIden.Text), "000")
 
             Dim Neg As New Negocio.NxEntidades
-            dgvListarCombo.DataSource = Neg.BuscarDocIden(txtTip_DocIden.Text)
+            Dim IdDocIden = Neg.BuscarDocIden(txtTip_DocIden.Text)
 
-            If dgvListarCombo.Rows.Count = 1 Then
+            If IdDocIden.Rows.Count = 1 Then
 
-                txtNom_DocIden.Text = dgvListarCombo.SelectedCells.Item(1).Value
+                txtNom_DocIden.Text = IdDocIden.Rows(0)(columnIndex:=1).ToString()
             Else
 
                 MsgBox("El código " & txtTip_DocIden.Text & " no existe en los registros Documentos de Identidad", vbCritical, "Mensjae del Sistema")
@@ -924,9 +1042,6 @@ Public Class frmxEntidades
                 txtTip_DocIden.SelectionLength = txtTip_DocIden.Text.Length
 
             End If
-
-            dgvListarCombo.DataSource = Nothing
-            dgvListarCombo.Rows.Clear()
 
         End If
 
@@ -1013,11 +1128,11 @@ Public Class frmxEntidades
             txtIdTVia.Text = Format(CLng(txtIdTVia.Text), "000")
 
             Dim Neg As New Negocio.NxEntidades
-            dgvListarCombo.DataSource = Neg.BuscarTipVia(txtIdTVia.Text)
+            Dim IdVia = Neg.BuscarTipVia(txtIdTVia.Text)
 
-            If dgvListarCombo.Rows.Count = 1 Then
+            If IdVia.Rows.Count = 1 Then
 
-                txtNom_TVia.Text = dgvListarCombo.SelectedCells.Item(1).Value
+                txtNom_TVia.Text = IdVia.Rows(0)(columnIndex:=1).ToString()
             Else
 
                 MsgBox("El código " & txtIdTVia.Text & " no existe en los registros De Vias", vbCritical, "Mensjae del Sistema")
@@ -1029,8 +1144,6 @@ Public Class frmxEntidades
 
             End If
 
-            dgvListarCombo.DataSource = Nothing
-            dgvListarCombo.Rows.Clear()
 
         End If
 
@@ -1215,11 +1328,11 @@ Public Class frmxEntidades
             txtIdPais.Text = Format(CLng(txtIdPais.Text), "000000")
 
             Dim Neg As New Negocio.NxEntidades
-            dgvListarCombo.DataSource = Neg.BuscarPais(txtIdPais.Text)
+            Dim IdPais = Neg.BuscarPais(txtIdPais.Text)
 
-            If dgvListarCombo.Rows.Count = 1 Then
+            If IdPais.Rows.Count = 1 Then
 
-                txtNom_Pais.Text = dgvListarCombo.SelectedCells.Item(1).Value
+                txtNom_Pais.Text = IdPais.Rows(0)(columnIndex:=1).ToString()
             Else
 
                 MsgBox("El código " & txtIdPais.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
@@ -1231,8 +1344,6 @@ Public Class frmxEntidades
 
             End If
 
-            dgvListarCombo.DataSource = Nothing
-            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdPais.BackColor = Color.White
@@ -1278,11 +1389,11 @@ Public Class frmxEntidades
             txtIdDep.Text = Format(CLng(txtIdDep.Text), "000")
 
             Dim Neg As New Negocio.NxEntidades
-            dgvListarCombo.DataSource = Neg.BuscarDep(txtIdDep.Text)
+            Dim IdDep = Neg.BuscarDep(txtIdDep.Text)
 
-            If dgvListarCombo.Rows.Count = 1 Then
+            If IdDep.Rows.Count = 1 Then
 
-                txtNom_Dep.Text = dgvListarCombo.SelectedCells.Item(1).Value
+                txtNom_Dep.Text = IdDep.Rows(0)(columnIndex:=1).ToString()
             Else
 
                 MsgBox("El código " & txtIdDep.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
@@ -1294,8 +1405,6 @@ Public Class frmxEntidades
 
             End If
 
-            dgvListarCombo.DataSource = Nothing
-            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdDep.BackColor = Color.White
@@ -1341,11 +1450,11 @@ Public Class frmxEntidades
             txtIdProv.Text = Format(CLng(txtIdProv.Text), "0000")
 
             Dim Neg As New Negocio.NxEntidades
-            dgvListarCombo.DataSource = Neg.BuscarProv(txtIdProv.Text)
+            Dim IdProv = Neg.BuscarProv(txtIdProv.Text)
 
-            If dgvListarCombo.Rows.Count = 1 Then
+            If IdProv.Rows.Count = 1 Then
 
-                txtNom_Prov.Text = dgvListarCombo.SelectedCells.Item(1).Value
+                txtNom_Prov.Text = IdProv.Rows(0)(columnIndex:=1).ToString()
             Else
 
                 MsgBox("El código " & txtIdProv.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
@@ -1357,8 +1466,6 @@ Public Class frmxEntidades
 
             End If
 
-            dgvListarCombo.DataSource = Nothing
-            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdProv.BackColor = Color.White
@@ -1401,14 +1508,14 @@ Public Class frmxEntidades
     Private Sub txtIdDist_LostFocus(sender As Object, e As EventArgs) Handles txtIdDist.LostFocus
 
         If txtIdDist.Text <> "" Then
-            txtIdDist.Text = Format(CLng(txtIdDist.Text), "0000")
+            txtIdDist.Text = Format(CLng(txtIdDist.Text), "000000")
 
             Dim Neg As New Negocio.NxEntidades
-            dgvListarCombo.DataSource = Neg.BuscarDist(txtIdDist.Text)
+            Dim IdDist = Neg.BuscarDist(txtIdDist.Text)
 
-            If dgvListarCombo.Rows.Count = 1 Then
+            If IdDist.Rows.Count = 1 Then
 
-                txtNom_Dist.Text = dgvListarCombo.SelectedCells.Item(1).Value
+                txtNom_Dist.Text = IdDist.Rows(0)(columnIndex:=1).ToString()
             Else
 
                 MsgBox("El código " & txtIdDist.Text & " no existe en los registros De Paises", vbCritical, "Mensjae del Sistema")
@@ -1420,8 +1527,6 @@ Public Class frmxEntidades
 
             End If
 
-            dgvListarCombo.DataSource = Nothing
-            dgvListarCombo.Rows.Clear()
         End If
 
         txtIdDist.BackColor = Color.White
@@ -1458,6 +1563,7 @@ Public Class frmxEntidades
     Private Sub txtUbigeo_GotFocus(sender As Object, e As EventArgs) Handles txtUbigeo.GotFocus
 
         txtUbigeo.BackColor = Color.LightYellow
+        btnUbigeo_Click(Nothing, Nothing)
 
     End Sub
 
@@ -2015,7 +2121,10 @@ Public Class frmxEntidades
 
     End Sub
 
-    Private Sub txtIdEnti_TextChanged(sender As Object, e As EventArgs) Handles txtIdEnti.TextChanged
-
+    Private Sub btnUbigeo_Click(sender As Object, e As EventArgs) Handles btnUbigeo.Click
+        If txtIdDep.Text <> "" And txtIdProv.Text <> "" And txtIdDist.Text <> "" Then
+            txtUbigeo.Text = txtIdDep.Text & txtIdProv.Text & txtIdDist.Text
+        End If
     End Sub
+
 End Class

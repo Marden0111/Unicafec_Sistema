@@ -38,7 +38,7 @@ Public Class DxTablas
         End Try
     End Function
 
-    Public Function Insertar_DocIden(Obj As xTablas) As DataTable
+    Public Sub Insertar_DocIden(Obj As xTablas)
         Try
             Dim Comando As New SqlCommand("xDocIden_Insertar", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
@@ -52,7 +52,7 @@ Public Class DxTablas
         Catch ex As Exception
             Throw ex
         End Try
-    End Function
+    End Sub
 
     Public Function CargarDatos_DocIden(valor As String) As DataTable
         Try
@@ -231,6 +231,23 @@ Public Class DxTablas
             Dim Comando As New SqlCommand("xTipVia_CargarDatos", MyBase.conn)
             Comando.CommandType = CommandType.StoredProcedure
             Comando.Parameters.Add("@IdTipVia", SqlDbType.VarChar).Value = valor
+            MyBase.conn.Open()
+            Resultado = Comando.ExecuteReader()
+            Tabla.Load(Resultado)
+            MyBase.conn.Close()
+            Return Tabla
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    'Medios de Pago
+    Public Function Listar_MediosPago() As DataTable
+        Try
+            Dim Resultado As SqlDataReader
+            Dim Tabla As New DataTable
+            Dim Comando As New SqlCommand("Select * From xMePa Order By IdMePa Asc", MyBase.conn)
+            Comando.CommandType = CommandType.Text
             MyBase.conn.Open()
             Resultado = Comando.ExecuteReader()
             Tabla.Load(Resultado)

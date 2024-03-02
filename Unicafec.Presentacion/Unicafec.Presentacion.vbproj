@@ -97,6 +97,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCajaBcosMov.Designer.vb">
+      <DependentUpon>frmCajaBcosMov.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCajaBcosMov.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCajaBcosReg101.Designer.vb">
+      <DependentUpon>frmCajaBcosReg101.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCajaBcosReg101.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocumentos.Designer.vb">
+      <DependentUpon>frmDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -146,6 +164,15 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCajaBcosMov.resx">
+      <DependentUpon>frmCajaBcosMov.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCajaBcosReg101.resx">
+      <DependentUpon>frmCajaBcosReg101.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocumentos.resx">
+      <DependentUpon>frmDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flecha-hacia-abajo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iconos\Documentos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

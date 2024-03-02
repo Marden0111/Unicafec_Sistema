@@ -79,7 +79,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NxDocIden.vb" />
+    <Compile Include="NCajaBcosMov.vb" />
+    <Compile Include="NCajaBcosReg.vb" />
+    <Compile Include="NxDocumentos.vb" />
     <Compile Include="NxEntidades.vb" />
     <Compile Include="NxTablas.vb" />
     <Compile Include="NxUsua.vb" />

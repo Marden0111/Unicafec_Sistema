@@ -178,4 +178,16 @@ Public Class NxTablas
         End Try
     End Function
 
+    'Medio de Pago
+    Function Listar_MediosPago() As DataTable
+        Try
+            Dim Datos As New DxTablas
+            Dim Tabla As New DataTable
+            Tabla = Datos.Listar_MediosPago()
+            Return Tabla
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

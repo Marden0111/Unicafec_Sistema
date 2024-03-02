@@ -23,7 +23,6 @@ Partial Class frmxTablas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmxTablas))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -34,9 +33,9 @@ Partial Class frmxTablas
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmxTablas))
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -59,6 +58,7 @@ Partial Class frmxTablas
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnTablas = New System.Windows.Forms.Button()
         Me.lblTablas = New System.Windows.Forms.Label()
@@ -77,17 +77,6 @@ Partial Class frmxTablas
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvTablas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "09. Modificar.ico")
-        Me.ImageList1.Images.SetKeyName(1, "Nuevo.png")
-        Me.ImageList1.Images.SetKeyName(2, "ver.png")
-        Me.ImageList1.Images.SetKeyName(3, "Listar.png")
-        Me.ImageList1.Images.SetKeyName(4, "Eliminar.png")
-        Me.ImageList1.Images.SetKeyName(5, "sunat.png")
         '
         'PictureBox1
         '
@@ -185,7 +174,6 @@ Partial Class frmxTablas
         Me.dgvCargarDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCargarDatos.Size = New System.Drawing.Size(775, 47)
         Me.dgvCargarDatos.TabIndex = 19
-        Me.dgvCargarDatos.Visible = False
         '
         'txtRespuesta
         '
@@ -245,7 +233,6 @@ Partial Class frmxTablas
         'btnSunat
         '
         Me.btnSunat.ImageKey = "sunat.png"
-        Me.btnSunat.ImageList = Me.ImageList1
         Me.btnSunat.Location = New System.Drawing.Point(137, 21)
         Me.btnSunat.Name = "btnSunat"
         Me.btnSunat.Size = New System.Drawing.Size(23, 23)
@@ -335,7 +322,6 @@ Partial Class frmxTablas
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvListado.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvListado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvListado.EnableHeadersVisualStyles = False
         Me.dgvListado.Location = New System.Drawing.Point(0, 0)
         Me.dgvListado.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvListado.Name = "dgvListado"
@@ -357,7 +343,7 @@ Partial Class frmxTablas
         Me.dgvListado.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvListado.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvListado.RowTemplate.Height = 24
-        Me.dgvListado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.dgvListado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListado.Size = New System.Drawing.Size(361, 66)
         Me.dgvListado.TabIndex = 21
@@ -439,6 +425,17 @@ Partial Class frmxTablas
         Me.TabPage5.Size = New System.Drawing.Size(1000, 0)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Eliminar"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "modificar.png")
+        Me.ImageList1.Images.SetKeyName(1, "Nuevo.png")
+        Me.ImageList1.Images.SetKeyName(2, "detalle.png")
+        Me.ImageList1.Images.SetKeyName(3, "Listar.png")
+        Me.ImageList1.Images.SetKeyName(4, "Eliminar.png")
+        Me.ImageList1.Images.SetKeyName(5, "flecha-hacia-abajo.png")
         '
         'GroupBox1
         '
@@ -546,7 +543,6 @@ Partial Class frmxTablas
         Me.lblIdTabla.Name = "lblIdTabla"
         Me.lblIdTabla.Size = New System.Drawing.Size(43, 13)
         Me.lblIdTabla.TabIndex = 107
-        Me.lblIdTabla.Visible = False
         '
         'frmxTablas
         '
@@ -578,7 +574,6 @@ Partial Class frmxTablas
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ImageList1 As ImageList
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
@@ -591,7 +586,6 @@ Partial Class frmxTablas
     Friend WithEvents txtIdCampo As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents dgvListado As DataGridView
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Public WithEvents TabPage2 As TabPage
@@ -608,4 +602,6 @@ Partial Class frmxTablas
     Friend WithEvents btnSunat As Button
     Friend WithEvents txtRespuesta As TextBox
     Friend WithEvents dgvCargarDatos As DataGridView
+    Friend WithEvents dgvListado As DataGridView
+    Friend WithEvents ImageList1 As ImageList
 End Class
